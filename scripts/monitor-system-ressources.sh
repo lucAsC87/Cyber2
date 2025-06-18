@@ -1,46 +1,100 @@
 #!/bin/bash
 
-source "$(dirname "${BASH_SOURCE[0]}")/system_monitoring_functions/cpu_stats.sh"
-source "$(dirname "${BASH_SOURCE[0]}")/system_monitoring_functions/disk_io_stats.sh"
-source "$(dirname "${BASH_SOURCE[0]}")/system_monitoring_functions/memory_stats.sh"
-source "$(dirname "${BASH_SOURCE[0]}")/system_monitoring_functions/process_stats.sh"
+# Main Menu options
+main_menu=("Hardware Management" "Network Management" "User Management" "IPS" "EXIT")
 
-# Interactive menu
-while true; do
+# Submenus
+hardware_menu=("CPU" "DISK" "RAM" "SYSTEM INFO" "BACK")
+network_menu=("OPEN PORTS" "TRAFFIC" "LOGS" "BACK")
+user_menu=("AUTHENTICATIONS" "INSTALLATIONS" "BACK")
+ips_menu=("ONE TIME" "REAL TIME" "BACK")
+
+# Sub-submenus for CPU and DISK
+cpu_menu=("AVERAGE" "ALL" "BACK")
+disk_menu=("AVERAGE" "ALL" "BACK")
+
+# Arrow-key menu function (same as before)
+navigate_menu() {
+  local -n menu_items=$1
+  local prompt="${2:-Select an option:}"
+  local selected=0
+
+  while true; do
     clear
-    echo "===================================="
-    echo "   System Monitoring Tool (sysmon)"
-    echo "===================================="
-    echo "1) Load Average"
-    echo "2) Disk I/O"
-    echo "3) CPU Wait / Steal Time"
-    echo "4) Swap Activity"
-    echo "5) Process Hierarchy"
-    echo "6) All Metrics"
-    echo "q) Quit"
-    echo -n "Select an option: "
-    read -r choice
+    echo "=== $prompt ==="
+    for i in "${!menu_items[@]}"; do
+      if [[ $i -eq $selected ]]; then
+        echo -e "> \e[1;32m${menu_items[$i]}\e[0m"
+      else
+        echo "  ${menu_items[$i]}"
+      fi
+    done
 
-    case "$choice" in
-        1) show_load ;;
-        2) show_disk_io ;;
-        3) show_cpu_wait_steal ;;
-        4) show_swap ;;
-        5) show_process_tree ;;
-        6)
-            show_load
-            show_disk_io
-            show_cpu_wait_steal
-            show_swap
-            show_process_tree
-            ;;
-        q|Q)
-            echo "Exiting..."
-            exit 0
-            ;;
-        *) echo "Invalid selection." ;;
+    # Read arrow key or enter
+    read -rsn1 key
+    if [[ $key == $'\x1b' ]]; then
+      read -rsn2 -t 0.1 key
+    fi
+
+    case "$key" in
+      "[A")  # Up
+        ((selected--))
+        ((selected < 0)) && selected=$((${#menu_items[@]} - 1))
+        ;;
+      "[B")  # Down
+        ((selected++))
+        ((selected >= ${#menu_items[@]})) && selected=0
+        ;;
+      "")  # Enter
+        return $selected
+        ;;
     esac
+  done
+}
 
-    echo -n "Press [Enter] to continue..."
-    read -r
+# Submenu dispatcher (updated to handle nested submenus)
+handle_submenu() {
+  local -n submenu=$1
+  local title=$2
+
+  while true; do
+    navigate_menu submenu "$title"
+    choice=$?
+
+    # Handle sub-submenus:
+    if [[ "$title" == "Hardware Management" ]]; then
+      case "${submenu[$choice]}" in
+        "CPU")
+          handle_submenu cpu_menu "CPU"
+          continue
+          ;;
+        "DISK")
+          handle_submenu disk_menu "DISK"
+          continue
+          ;;
+      esac
+    fi
+
+    if [[ "${submenu[$choice]}" == "BACK" ]]; then
+      return
+    fi
+
+    clear
+    echo ">>> ${submenu[$choice]} selected."
+    read -p "Press Enter to return to $title..."
+  done
+}
+
+# Main program loop
+while true; do
+  navigate_menu main_menu "Main Menu"
+  choice=$?
+
+  case $choice in
+    0) handle_submenu hardware_menu "Hardware Management" ;;
+    1) handle_submenu network_menu "Network Management" ;;
+    2) handle_submenu user_menu "User Management" ;;
+    3) handle_submenu ips_menu "IPS" ;;
+    4) clear; echo "Exiting..."; exit ;;
+  esac
 done

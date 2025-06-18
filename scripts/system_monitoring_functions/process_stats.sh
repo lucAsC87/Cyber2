@@ -1,9 +1,9 @@
 #!/bin/bash
 show_process_tree() {
-    echo -e "=== Top 10 Processes by Memory Usage ==="
+    echo -e "${BLUE}${BOLD}=== Top 10 Processes by Memory Usage ===${RESET}"
     echo "PID: Process ID, PPID: Parent Process ID, CMD: Command name, %MEM: Memory usage percentage, %CPU: CPU usage percentage"
     ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 11
-    echo -e "\n=== Process Tree (first 20 lines) ==="
+    echo -e "\n${BLUE}${BOLD}=== Process Tree (first 20 lines) ===${RESET}"
     echo "Shows process hierarchy with PIDs."
     if command -v pstree &>/dev/null; then
         pstree -p --show-pids | head -n 20
@@ -14,7 +14,7 @@ show_process_tree() {
 }
 
 show_load() {
-    echo -e "=== Load Average ==="
+
     echo "Load average indicates the average number of processes waiting to run."
     echo "Values correspond to 1 minute, 5 minutes, and 15 minutes intervals respectively."
     echo "Lower values mean the system is less busy; values higher than your CPU count indicate possible overload."
