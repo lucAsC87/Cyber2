@@ -1,4 +1,3 @@
-#!/bin/bash
 show_process_tree() {
     echo -e "${BLUE}${BOLD}=== Top 10 Processes by Memory Usage ===${RESET}"
     echo "PID: Process ID, PPID: Parent Process ID, CMD: Command name, %MEM: Memory usage percentage, %CPU: CPU usage percentage"

@@ -92,13 +92,27 @@ handle_submenu() {
           "SYSTEM INFO") handle_submenu system_info_menu "SYSTEM INFO" ;;
           "DISK")
             clear
-            get_disk_io_stats
-            read -p "Press Enter to return to DISK menu..."
+            tput civis
+            trap "tput cnorm; stty echo" EXIT
+            while true; do
+              tput cup 0 0
+              get_disk_io_stats
+              echo -e "\nPress [Enter] to exit real-time view."
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done
+            tput cnorm
             ;;
           "RAM")
             clear
-            get_memory_stats
-            read -p "Press Enter to return to Hardware menu..."
+            tput civis  # Hide cursor
+            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
+            while true; do
+              tput cup 0 0
+              get_memory_stats
+              echo -e "\nPress [Enter] to exit RAM monitoring."
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done
+            tput cnorm  # Ensure cursor is shown again
             ;;
         esac
         ;;
@@ -107,13 +121,27 @@ handle_submenu() {
         case "$selected" in
           "AVERAGE CPU UTIL")
             clear
-            get_average_cpu_stats
-            read -p "Press Enter to return to CPU menu..."
+            tput civis  # Hide cursor
+            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
+            while true; do
+              tput cup 0 0
+              get_average_cpu_stats
+              echo -e "\nPress [Enter] to exit AVERAGE CPU monitoring."
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done
+            tput cnorm
             ;;
           "ALL CPU UTIL")
             clear
-            get_all_cpu_stats
-            read -p "Press Enter to return to CPU menu..."
+            tput civis  # Hide cursor
+            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
+            while true; do
+              tput cup 0 0
+              get_all_cpu_stats
+              echo -e "\nPress [Enter] to exit ALL CPU monitoring."
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done
+            tput cnorm
             ;;
         esac
         ;;
