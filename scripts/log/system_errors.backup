@@ -1,0 +1,370 @@
+Jun 02 11:09:56 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 02 11:09:56 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 02 11:09:56 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 02 11:09:56 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 02 11:10:29 kali lightdm[1002]: gkr-pam: unable to locate daemon control file
+Jun 02 11:10:29 kali lightdm[892]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 02 11:10:46 kali obexd[1507]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 02 11:10:46 kali obexd[1507]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot f2166561442c418dad03d96578536e6e --
+Jun 03 04:00:30 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 03 04:00:30 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 03 04:00:30 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 03 04:00:30 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 03 04:00:52 kali lightdm[937]: gkr-pam: unable to locate daemon control file
+Jun 03 04:00:52 kali lightdm[831]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 03 04:01:03 kali obexd[1486]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 03 04:01:03 kali obexd[1486]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 03 05:50:18 kali xfce4-screensaver-dialog[57070]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 03 05:50:18 kali xfce4-screensaver-dialog[57070]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+-- Boot c209ff93ba524f9ba375a7ce42b9cb1f --
+Jun 05 03:35:20 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 05 03:35:20 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 05 03:35:20 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 05 03:35:20 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 05 03:35:42 kali lightdm[859]: gkr-pam: unable to locate daemon control file
+Jun 05 03:35:42 kali lightdm[751]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 05 03:35:53 kali obexd[1430]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 05 03:35:53 kali obexd[1430]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 36d7fa0754c14321a72ed6d4a22b45a2 --
+Jun 05 04:17:16 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 05 04:17:16 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 05 04:17:16 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 05 04:17:16 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 05 04:17:36 kali lightdm[806]: gkr-pam: unable to locate daemon control file
+Jun 05 04:17:36 kali lightdm[701]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 05 04:17:47 kali obexd[1381]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 05 04:17:47 kali obexd[1381]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 7fed9046123f418494553953fc0d6a1f --
+Jun 06 02:44:15 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 06 02:44:15 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 06 02:44:15 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 06 02:44:15 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 06 02:44:15 kali (sd-exec-[307]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal ABRT.
+Jun 06 02:45:29 kali lightdm[870]: pam_winbind(lightdm:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 06 02:45:29 kali lightdm[870]: pam_winbind(lightdm:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 06 02:45:34 kali lightdm[873]: gkr-pam: unable to locate daemon control file
+Jun 06 02:45:34 kali lightdm[753]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 06 02:45:45 kali obexd[1440]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 06 02:45:45 kali obexd[1440]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 06 02:57:47 kali nm-openvpn[7077]: ERROR: could not read Auth username/password/ok/string from management interface
+Jun 06 03:08:42 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 03:13:44 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 03:39:42 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 03:44:43 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 03:49:44 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 03:54:45 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 04:09:55 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 04:34:43 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 04:39:44 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 04:44:45 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 04:49:47 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 04:54:49 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 04:59:51 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:04:52 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:09:54 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:14:55 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:19:56 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:24:57 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:27:47 kali xfce4-screensaver-dialog[75101]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 06 05:27:47 kali xfce4-screensaver-dialog[75101]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 06 05:46:37 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:50:38 kali xfce4-screensaver-dialog[85491]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 06 05:50:38 kali xfce4-screensaver-dialog[85491]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 06 05:51:37 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 05:56:39 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 06:01:40 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 06:06:42 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 06:11:43 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 06:16:45 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 06:21:47 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 06:26:48 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 06:31:49 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 07:27:58 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 07:33:00 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 07:38:01 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 07:43:02 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 07:48:02 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 07:53:03 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 07:58:05 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 08:03:06 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 08:08:07 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 08:19:57 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 08:27:46 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 09:22:12 kali nm-openvpn[7745]: Connection reset, restarting [0]
+Jun 06 09:59:40 kali kernel: ohci-pci 0000:00:06.0: frame counter not updating; disabled
+Jun 06 09:59:40 kali kernel: ohci-pci 0000:00:06.0: HC died; cleaning up
+Jun 06 10:03:31 kali nm-openvpn[7745]: event_wait : Interrupted system call (fd=-1,code=4)
+-- Boot 681cf39fb38b4b1cbfd1dc6386ca8527 --
+Jun 10 03:05:53 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 10 03:05:53 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 10 03:05:53 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 10 03:05:53 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 10 03:06:27 kali lightdm[861]: gkr-pam: unable to locate daemon control file
+Jun 10 03:06:27 kali lightdm[752]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 10 03:06:40 kali obexd[1442]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 10 03:06:40 kali obexd[1442]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 10 04:00:57 kali xfce4-screensaver-dialog[27566]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 10 04:00:57 kali xfce4-screensaver-dialog[27566]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 10 04:06:48 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 04:11:17 kali xfce4-screensaver-dialog[32607]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 10 04:11:17 kali xfce4-screensaver-dialog[32607]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 10 04:11:20 kali xfce4-screensaver-dialog[32607]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 10 04:11:20 kali xfce4-screensaver-dialog[32607]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 10 04:11:49 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 04:16:51 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 04:56:46 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 05:19:33 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 05:41:11 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 06:11:56 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 07:04:26 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 07:09:27 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 07:14:29 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 07:19:30 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 07:24:32 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 07:29:33 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 08:09:18 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 08:14:20 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 08:19:21 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 08:42:27 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 08:47:28 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 08:52:29 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 08:57:31 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:02:32 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:07:32 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:12:34 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:17:35 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:22:36 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:27:38 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:32:40 kali nm-openvpn[28031]: Connection reset, restarting [0]
+Jun 10 09:37:41 kali nm-openvpn[28031]: Connection reset, restarting [0]
+-- Boot 5c960f78b620463a921b5642c8117cf9 --
+Jun 11 00:05:51 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 11 00:05:51 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 11 00:05:51 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 11 00:05:51 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 11 00:06:36 kali lightdm[863]: gkr-pam: unable to locate daemon control file
+Jun 11 00:06:36 kali lightdm[752]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 11 00:06:52 kali obexd[1450]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 11 00:06:52 kali obexd[1450]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot d1fa6690f28d4b82ae51b7a5803423fa --
+Jun 11 10:12:56 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 11 10:12:56 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 11 10:12:56 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 11 10:12:56 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 11 10:14:09 kali lightdm[857]: gkr-pam: unable to locate daemon control file
+Jun 11 10:14:09 kali lightdm[747]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 11 10:14:22 kali obexd[1433]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 11 10:14:22 kali obexd[1433]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 11 10:22:05 kali xfce4-screensaver-dialog[5119]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 11 10:22:05 kali xfce4-screensaver-dialog[5119]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 11 10:29:53 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 10:41:10 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 10:46:11 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 10:51:12 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 10:56:14 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 10:58:07 kali nm-openvpn[5505]: Connection reset, restarting [-1]
+Jun 11 13:13:35 kali nm-openvpn[5505]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 11 13:18:37 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:23:39 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:28:40 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:33:41 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:38:43 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:43:44 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:48:46 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:53:46 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 13:58:47 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 14:03:48 kali nm-openvpn[5505]: Connection reset, restarting [0]
+Jun 11 14:07:05 kali nm-openvpn[5505]: event_wait : Interrupted system call (fd=-1,code=4)
+-- Boot 8df43d7c40874e1a8c13e2251185e4e4 --
+Jun 12 03:10:58 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 12 03:10:59 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 12 03:10:59 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 12 03:10:59 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 12 03:10:59 kali (sd-exec-[307]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal ABRT.
+Jun 12 03:15:45 kali lightdm[873]: gkr-pam: unable to locate daemon control file
+Jun 12 03:15:45 kali lightdm[759]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 12 03:16:05 kali obexd[1496]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 12 03:16:05 kali obexd[1496]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 12 06:17:25 kali kernel: ohci-pci 0000:00:06.0: frame counter not updating; disabled
+Jun 12 06:17:25 kali kernel: ohci-pci 0000:00:06.0: HC died; cleaning up
+Jun 12 08:43:28 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 08:48:29 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 08:53:31 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 08:58:32 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 09:05:38 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 09:32:29 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 09:37:30 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 09:51:31 kali (sd-exec-[161579]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal ABRT.
+Jun 12 10:02:49 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 10:23:05 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 10:28:06 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 10:38:19 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 10:43:21 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 10:58:36 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 13:24:09 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 12 13:24:10 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 12 13:24:11 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 12 13:24:12 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 12 13:34:28 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 13:39:30 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 13:49:43 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 13:54:44 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:05:05 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:10:06 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:20:35 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:25:36 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:36:04 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:41:05 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:51:43 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 14:56:44 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 15:28:36 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 15:33:36 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 15:43:52 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 15:48:53 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 15:59:10 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 16:04:11 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 16:14:28 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 16:19:29 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 16:29:45 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 16:34:46 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 16:45:02 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 16:50:03 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 17:00:20 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 17:05:21 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 17:15:37 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 17:20:38 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 17:30:53 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 17:35:55 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 12 17:38:58 kali nm-openvpn[114275]: Connection reset, restarting [-1]
+Jun 12 17:38:59 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 12 17:39:00 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 12 17:39:02 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 12 17:39:03 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 00:15:58 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 00:15:59 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 00:16:02 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 00:16:06 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 00:22:00 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 00:33:29 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 00:38:30 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 00:48:23 kali nm-openvpn[114275]: Connection reset, restarting [-1]
+Jun 13 00:48:24 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 00:48:25 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 00:48:26 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 02:14:51 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 02:14:53 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 02:19:54 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 02:30:28 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 02:35:29 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 02:50:45 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 02:55:46 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 03:05:57 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 03:11:00 kali nm-openvpn[114275]: Connection reset, restarting [0]
+Jun 13 03:16:06 kali nm-openvpn[114275]: Connection reset, restarting [-1]
+Jun 13 03:16:28 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:16:50 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:17:12 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:17:34 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:17:56 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:18:18 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:18:42 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:19:07 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:19:37 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:20:14 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:21:07 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:22:32 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:25:01 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:29:38 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:34:59 kali nm-openvpn[114275]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+-- Boot 49dc4b69cb324655bdda4380365b2211 --
+Jun 12 16:04:04 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 12 16:04:04 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 12 16:04:04 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 12 16:04:04 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 13 03:38:56 kali lightdm[830]: gkr-pam: unable to locate daemon control file
+Jun 13 03:38:56 kali lightdm[724]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 13 03:39:06 kali obexd[1414]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 13 03:39:06 kali obexd[1414]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 13 03:54:16 kali nm-openvpn[8893]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+Jun 13 03:54:38 kali nm-openvpn[8893]: TCP: connect to [AF_INET]85.201.62.18:11194 failed: Connection refused
+-- Boot 59b616c1631441cfbead01f612457526 --
+Jun 13 04:19:34 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 13 04:19:34 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 13 04:19:34 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 13 04:19:34 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 13 04:19:34 kali (sd-exec-[305]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal SEGV.
+Jun 13 04:19:49 kali lightdm[806]: gkr-pam: unable to locate daemon control file
+Jun 13 04:19:49 kali lightdm[701]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 13 04:20:02 kali obexd[1384]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 13 04:20:02 kali obexd[1384]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 645330999fae428f9013f9857c5edbb5 --
+Jun 16 03:45:31 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 16 03:45:31 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 16 03:45:31 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 16 03:45:31 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 16 03:45:46 kali lightdm[860]: gkr-pam: unable to locate daemon control file
+Jun 16 03:45:46 kali lightdm[752]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 16 03:45:58 kali obexd[1435]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 16 03:45:58 kali obexd[1435]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 16 05:00:13 kali kernel: e1000 0000:00:03.0 eth0: Reset adapter
+-- Boot 7ffb4f539a05485a9b4efd7a9c589004 --
+Jun 16 07:21:52 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 16 07:21:52 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 16 07:21:52 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 16 07:21:52 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 16 07:22:10 kali lightdm[857]: gkr-pam: unable to locate daemon control file
+Jun 16 07:22:10 kali lightdm[749]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 16 07:22:21 kali obexd[1410]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 16 07:22:21 kali obexd[1410]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot b043f934df3c40b780f84dab57e66e15 --
+Jun 17 04:21:45 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 17 04:21:45 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 17 04:21:45 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 17 04:21:45 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 17 04:22:01 kali lightdm[921]: gkr-pam: unable to locate daemon control file
+Jun 17 04:22:02 kali lightdm[813]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 17 04:22:16 kali obexd[1498]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 04:22:16 kali obexd[1498]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 19789d98917a44169c51822bd80f96c0 --
+Jun 17 04:32:57 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 17 04:32:57 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 17 04:32:57 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 17 04:32:57 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 17 04:33:11 kali lightdm[807]: gkr-pam: unable to locate daemon control file
+Jun 17 04:33:11 kali lightdm[702]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 17 04:33:23 kali obexd[1377]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 04:33:23 kali obexd[1377]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 05:00:19 kali xfce4-screensaver-dialog[14348]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 17 05:00:19 kali xfce4-screensaver-dialog[14348]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+Jun 17 05:00:24 kali xfce4-screensaver-dialog[14348]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 17 05:00:24 kali xfce4-screensaver-dialog[14348]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'kali')
+-- Boot 08ceb6e2f6814675ba7f48ddc4f3cdd4 --
+Jun 17 05:38:54 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 17 05:38:54 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 17 05:38:54 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 17 05:38:54 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 17 05:39:14 kali lightdm[900]: gkr-pam: unable to locate daemon control file
+Jun 17 05:39:14 kali lightdm[746]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 17 05:39:25 kali obexd[1466]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 05:39:25 kali obexd[1466]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 98c6f59ced14484b8f8ccdd91a33ada0 --
+Jun 17 12:50:38 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 17 12:50:38 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 17 12:50:38 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 17 12:50:38 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 17 12:51:26 kali lightdm[853]: gkr-pam: unable to locate daemon control file
+Jun 17 12:51:26 kali lightdm[742]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 17 12:51:38 kali obexd[1432]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 12:51:38 kali obexd[1432]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 14:09:08 kali kernel: ohci-pci 0000:00:06.0: frame counter not updating; disabled
+Jun 17 14:09:08 kali kernel: ohci-pci 0000:00:06.0: HC died; cleaning up
+-- Boot e329e38254b5462cb3fc718eb9938b24 --
+Jun 18 03:20:49 kali kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 18 03:20:49 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 18 03:20:49 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 18 03:20:49 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 18 03:21:21 kali lightdm[857]: gkr-pam: unable to locate daemon control file
+Jun 18 03:21:21 kali lightdm[751]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 18 03:21:35 kali obexd[1444]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 18 03:21:35 kali obexd[1444]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
