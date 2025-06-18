@@ -48,8 +48,9 @@ check_suspicious() {
         # Check connections on ports 22, 3389, 5900 (ssh, rdp, vnc)
         SUSP=$(netstat -nt | awk '$4 ~ /:22$|:3389$|:5900$/ && $6 == "ESTABLISHED"')
         if [[ -n "$SUSP" ]]; then
-            logger "HIDS ALERT: Suspicious connection detected on port 22/3389/5900!"
-            echo "[ALERT] $(date '+%H:%M:%S') Suspicious connection detected on port 22/3389/5900!"
+            PORTS=$(echo "$SUSP" | awk '{split($4, a, ":"); print a[length(a)]}' | sort -u | paste -sd "," -)
+            logger "HIDS ALERT: Suspicious connection detected on port(s): $PORTS"
+            echo "[ALERT] $(date '+%H:%M:%S') Suspicious connection detected on port(s): $PORTS"
         fi
         sleep 5
     done
