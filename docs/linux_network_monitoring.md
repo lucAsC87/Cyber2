@@ -13,7 +13,7 @@ Linux has at its disposal a plethora of tools to monitor network traffic. Among 
 - **tshark:** The terminal-based counterpart of Wireshark, allowing for packet capture and analysis directly from the command line.
 - **nmap:** Can scan for unauthorized devices on the network or for suspicious open ports.
 
-The main issue in implementing them in a script is that most of these tools either need to be installed separately or require execution with sudo privileges. Therefore, to avoid complicating the code and make it more portable, I opted to use only **netstat** to check the ports most commonly used for malicious purposes, and to read the network usage directly from the `/proc/net/dev` file.
+Most of these tools require separate installation or sudo privileges, which adds complexity and reduces portability. This script therefore uses only **netstat** to monitor commonly targeted ports and reads network usage directly from `/proc/net/dev`.
 
 ## Script Overview
 
