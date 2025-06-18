@@ -2,13 +2,18 @@
 
 Linux has at its disposal a plethora of tools to monitor network traffic. Among the most commonly used are:
 
-- **tcpdump:** Can capture and analyze the traffic to or from a specific port or IP address.
-- **netstat:** Checks for connections to unknown IP addresses or unusual ports.
+- **ifconfig:** Displays and configures network interface parameters. Useful for checking the status and statistics of network interfaces.
+- **ip:** The modern replacement for ifconfig. It manages and displays IP addresses, routes, and more, and can show real-time packet statistics.
+- **netstat:** Checks for connections to unknown IP addresses or unusual ports, displaying network connections, routing tables, and interface statistics.
 - **iftop:** Monitors real-time bandwidth usage and shows which hosts are sending or receiving the most data.
+- **nload:** Provides a simple, real-time graphical representation of incoming and outgoing network traffic on the terminal.
+- **bmon:** (Bandwidth Monitor) Shows bandwidth usage on all network interfaces in a graphical, terminal-based interface.
 - **vnstat:** Useful for tracking historical network traffic statistics and detecting if unusual amounts of data are being sent to other networks.
+- **tcpdump:** Can capture and analyze the traffic to or from a specific port or IP address.
+- **tshark:** The terminal-based counterpart of Wireshark, allowing for packet capture and analysis directly from the command line.
 - **nmap:** Can scan for unauthorized devices on the network or for suspicious open ports.
 
-The main issue in implementing them in a script is that most of these tools either need to be installed separately or require execution with sudo privileges. Therefore, to avoid complicating the code too much, I opted to use only **netstat** to check the ports most commonly used for malicious purposes, and to read the network usage directly from the `/proc/net/dev` file.
+The main issue in implementing them in a script is that most of these tools either need to be installed separately or require execution with sudo privileges. Therefore, to avoid complicating the code too much adn in order to make it more portable, I opted to use only **netstat** to check the ports most commonly used for malicious purposes, and to read the network usage directly from the `/proc/net/dev` file.
 
 ## Script Overview
 
