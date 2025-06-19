@@ -78,8 +78,8 @@ check_suspicious() {
                 remote_ip=$(echo "$remote_addr" | awk -F: '{OFS=":"; for(i=1;i<NF;i++) printf $i (i==NF-1?OFS:"")}')
                 remote_port=$(echo "$remote_addr" | awk -F: '{print $NF}')
                 pid=$(echo "$proc_info" | grep -oP 'pid=\K[0-9]+')
-                pname=$(echo "$proc_info" | grep -oP '^\w+')
-                logger "HIDS ALERT: $local_ip:$local_port -> $remote_ip:$remote_port PID=$pid PROC=$pname"
+                pname=$(echo "$proc_info" | awk -F',' '{print $1}' | tr -d '"')
+				logger "HIDS ALERT: $local_ip:$local_port -> $remote_ip:$remote_port PID=$pid PROC=$pname"
                 echo -e "\033[31m[ALERT] $(date '+%H:%M:%S') $local_ip:$local_port -> $remote_ip:$remote_port PID=$pid PROC=$pname\033[0m"
             done
         fi
