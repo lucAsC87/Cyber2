@@ -1,109 +1,58 @@
-#!/bin/bash
-
-# Construct the log file path from the root
-LOG_FILE="$CYBER2_ROOT/logs/warnings.log"
-mkdir -p "$(dirname "$LOG_FILE")"
-
 get_average_cpu_stats() {
+    local print_statements=""
 
     if ! command -v mpstat &>/dev/null; then
-        echo -e "${RED}mpstat not found. Please install the sysstat package.${RESET}"
+        echo -e "${COLOR_ABOVE_THRESHOLD}mpstat not found. Please install the sysstat package.${COLOR_RESET}"
         return
     fi
 
-    echo -e "${BOLD}${BLUE}=== Real-Time CPU Average Utilization ===${RESET}"
-
-    cpu_stats=$(mpstat 1 1 | awk '/^Average:/ {print}')
+    # Extract overall average stats (line with "all")
+    local cpu_stats
+    cpu_stats=$(mpstat 1 1 | awk '/^Average:/ && $2 == "all" {print}')
     read -r _ _ usr nice sys iowait irq soft steal guest gnice idle <<<"$cpu_stats"
     total=$(awk -v idle="$idle" 'BEGIN { printf "%.2f", 100 - idle }')
 
-    declare -A warnings
-    is_over() { awk -v v1="$1" -v v2="$2" 'BEGIN { exit (v1 > v2) ? 0 : 1 }'; }
-    is_under() { awk -v v1="$1" -v v2="$2" 'BEGIN { exit (v1 < v2) ? 0 : 1 }'; }
+    print_statements+="\n${BOLD}$(print_metric "Total (%)" "$total" $DEFAULT_CPU_TOTAL_THRESHOLD "over" "CPU usage is high; may be overloaded")\n"
+    print_statements+="$(print_metric "usr (%)" "$usr" $DEFAULT_CPU_USR_THRESHOLD "over" "Too much user-space processing")\n"
+    print_statements+="$(print_metric "nice (%)" "$nice" $DEFAULT_CPU_NICE_THRESHOLD "over" "Too many low-priority background jobs")\n"
+    print_statements+="$(print_metric "sys (%)" "$sys" $DEFAULT_CPU_SYS_THRESHOLD "over" "Excessive system/kernel activity")\n"
+    print_statements+="$(print_metric "iowait (%)" "$iowait" $DEFAULT_CPU_IOWAIT_THRESHOLD "over" "Waiting too long on disk or I/O")\n"
+    print_statements+="$(print_metric "irq (%)" "$irq" $DEFAULT_CPU_IRQ_THRESHOLD "over" "Too many hardware interrupts")\n"
+    print_statements+="$(print_metric "soft (%)" "$soft" $DEFAULT_CPU_SOFT_THRESHOLD "over" "Too many software interrupts")\n"
+    print_statements+="$(print_metric "steal (%)" "$steal" $DEFAULT_CPU_STEAL_THRESHOLD "over" "Other VMs are stealing CPU time")\n"
+    print_statements+="$(print_metric "guest (%)" "$guest" $DEFAULT_CPU_GUEST_THRESHOLD "over" "Unusual guest CPU usage")\n"
+    print_statements+="$(print_metric "gnice (%)" "$gnice" $DEFAULT_CPU_GNICE_THRESHOLD "over" "Unusual guest nice usage")\n"
+    print_statements+="$(print_metric "idle (%)" "$idle" $DEFAULT_CPU_IDLE_THRESHOLD "under" "Low idle means CPU is heavily loaded")\n"
 
-    print_metric() {
-        local name=$1 value=$2 threshold=$3 condition=$4 explain=$5
-        local color="$GREEN"
-        local violated=0
-
-        if [[ "$condition" == "over" ]]; then
-            if is_over "$value" "$threshold"; then
-                color="$RED"
-                violated=1
-            fi
-        elif [[ "$condition" == "under" ]]; then
-            if is_under "$value" "$threshold"; then
-                color="$RED"
-                violated=1
-            fi
-        fi
-
-        echo -e "  ${BROWN}${name}:${RESET} ${color}${value}%${RESET}"
-        (( violated )) && warnings["$name"]="$explain"
-    }
-
-    print_metric "Total Avg" "$total"   85 "over"  "CPU usage is high; may be overloaded"
-    print_metric "usr"       "$usr"     70 "over"  "Too much user-space processing"
-    print_metric "nice"      "$nice"    20 "over"  "Too many low-priority background jobs"
-    print_metric "sys"       "$sys"     30 "over"  "Excessive system/kernel activity"
-    print_metric "iowait"    "$iowait"  10 "over"  "Waiting too long on disk or I/O"
-    print_metric "irq"       "$irq"     10 "over"  "Too many hardware interrupts"
-    print_metric "soft"      "$soft"    10 "over"  "Too many software interrupts"
-    print_metric "steal"     "$steal"   10 "over"  "Other VMs are stealing CPU time"
-    print_metric "guest"     "$guest"   50 "over"  "Unusual guest CPU usage"
-    print_metric "gnice"     "$gnice"   20 "over"  "Unusual guest nice usage"
-    print_metric "idle"      "$idle"    20 "under" "Low idle means CPU is heavily loaded"
-
-    if (( ${#warnings[@]} > 0 )); then
-        echo -e "\n${RED}${BOLD}Warnings:${RESET}"
-        for key in "${!warnings[@]}"; do
-            echo -e "${RED}- $key: ${warnings[$key]}${RESET}"
-            echo -e "CPU WARNING$: $key: ${warnings[$key]} ($(date '+%F %T'))" >> "$LOG_FILE"
-        done
-    fi
+    echo -e "$print_statements"
 }
 
 get_all_cpu_stats() {
     if ! command -v mpstat &>/dev/null; then
-        echo -e "${RED}mpstat not found. Please install the sysstat package.${RESET}"
+        echo -e "${COLOR_ABOVE_THRESHOLD}mpstat not found. Please install the sysstat package.${COLOR_RESET}"
         return
     fi
 
-    echo -e "${BLUE}${BOLD}=== Real-Time CPU Utilization Per Core ===${RESET}"
-    warnings=()
-    is_over() { awk -v v1="$1" -v v2="$2" 'BEGIN { exit (v1 > v2) ? 0 : 1 }'; }
-
-    mpstat -P ALL 1 1 | awk '
-        /^Average:/ && $2 != "all" && $2 != "CPU" {
-            print $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12
-        }
-    ' | while read -r cpu_id usr nice sys iowait irq soft steal guest gnice idle; do
+    local print_statements=""
+    while IFS= read -r line; do
+        read -r cpu_id usr nice sys iowait irq soft steal guest gnice idle <<<"$line"
         total=$(awk -v i="$idle" 'BEGIN { printf "%.2f", 100 - i }')
-        color="$GREEN"
-        if is_over "$total" 85; then
-            color="$RED"
-            warning="Core $cpu_id high usage (${total}%)"
-            warnings+=("$warning")
-            echo "$(date '+%F %T') - Core $cpu_id: $warning" >> "$LOG_FILE"
-        fi
 
-        echo -en "${BROWN}Core ${cpu_id}:${RESET} ${BOLD}Total: ${color}${total}%%${RESET} ${BROWN}|${RESET} "
-        echo -en "${BROWN}usr:${RESET} ${color}${usr}%% "
-        echo -en "${BROWN}nice:${RESET} ${color}${nice}%% "
-        echo -en "${BROWN}sys:${RESET} ${color}${sys}%% "
-        echo -en "${BROWN}iowait:${RESET} ${color}${iowait}%% "
-        echo -en "${BROWN}irq:${RESET} ${color}${irq}%% "
-        echo -en "${BROWN}soft:${RESET} ${color}${soft}%% "
-        echo -en "${BROWN}steal:${RESET} ${color}${steal}%% "
-        echo -en "${BROWN}guest:${RESET} ${color}${guest}%% "
-        echo -en "${BROWN}gnice:${RESET} ${color}${gnice}%% "
-        echo -e "${BROWN}idle:${RESET} ${color}${idle}%%${RESET}"
-    done
+        print_statements+="\n${BOLD}Core $cpu_id:\n"
+        print_statements+="${BOLD}$(print_metric "Total (%)" "$total" $DEFAULT_CPU_TOTAL_THRESHOLD "over" "High usage on Core $cpu_id")  "
+        print_statements+="$(print_metric "usr (%)" "$usr" $DEFAULT_CPU_USR_THRESHOLD "over" "High usr on Core $cpu_id")  "
+        print_statements+="$(print_metric "nice (%)" "$nice" $DEFAULT_CPU_NICE_THRESHOLD "over" "High nice on Core $cpu_id")  "
+        print_statements+="$(print_metric "sys (%)" "$sys" $DEFAULT_CPU_SYS_THRESHOLD "over" "High sys on Core $cpu_id")  "
+        print_statements+="$(print_metric "iowait (%)" "$iowait" $DEFAULT_CPU_IOWAIT_THRESHOLD "over" "High iowait on Core $cpu_id")  "
+        print_statements+="$(print_metric "irq (%)" "$irq" $DEFAULT_CPU_IRQ_THRESHOLD "over" "High irq on Core $cpu_id")  "
+        print_statements+="$(print_metric "soft (%)" "$soft" $DEFAULT_CPU_SOFT_THRESHOLD "over" "High soft on Core $cpu_id")  "
+        print_statements+="$(print_metric "steal (%)" "$steal" $DEFAULT_CPU_STEAL_THRESHOLD "over" "High steal on Core $cpu_id")  "
+        print_statements+="$(print_metric "guest (%)" "$guest" $DEFAULT_CPU_GUEST_THRESHOLD "over" "Unusual guest usage")  "
+        print_statements+="$(print_metric "gnice (%)" "$gnice" $DEFAULT_CPU_GNICE_THRESHOLD "over" "Unusual gnice usage")  "
+        print_statements+="$(print_metric "idle (%)" "$idle" $DEFAULT_CPU_IDLE_THRESHOLD "under" "Low idle on Core $cpu_id")\n"
+    done < <(mpstat -P ALL 1 1 | awk '/^Average:/ && $2 != "all" && $2 != "CPU" {
+        print $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12
+    }')
 
-    if (( ${#warnings[@]} > 0 )); then
-        echo -e "\n${RED}${BOLD}Warnings:${RESET}"
-        for w in "${warnings[@]}"; do
-            echo -e "${RED}- $w${RESET}"
-        done
-    fi
+    echo -e "$print_statements"
 }

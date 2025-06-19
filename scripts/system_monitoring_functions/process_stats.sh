@@ -1,8 +1,8 @@
 show_process_tree() {
-    echo -e "${BLUE}${BOLD}=== Top 10 Processes by Memory Usage ===${RESET}"
+    echo -e "${COLOR_MENU}${BOLD}=== Top 10 Processes by Memory Usage ===${COLOR_RESET}"
     echo "PID: Process ID, PPID: Parent Process ID, CMD: Command name, %MEM: Memory usage percentage, %CPU: CPU usage percentage"
     ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 11
-    echo -e "\n${BLUE}${BOLD}=== Process Tree (first 20 lines) ===${RESET}"
+    echo -e "\n${COLOR_MENU}${BOLD}=== Process Tree (first 20 lines) ===${COLOR_RESET}"
     echo "Shows process hierarchy with PIDs."
     if command -v pstree &>/dev/null; then
         pstree -p --show-pids | head -n 20

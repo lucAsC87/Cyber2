@@ -1,0 +1,21 @@
+2025-06-19 15:51:48 - WARNING - METRIC: usr (%) - VALUE: 74.37 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:51:50 - WARNING - METRIC: usr (%) - VALUE: 72.00 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:51:52 - WARNING - METRIC: Total (%) - VALUE: 100.00 - THRESHOLD: 85.0 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-19 15:51:52 - WARNING - METRIC: usr (%) - VALUE: 99.25 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:51:52 - WARNING - METRIC: idle (%) - VALUE: 0.00 - THRESHOLD: 20.0 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-19 15:51:54 - WARNING - METRIC: usr (%) - VALUE: 71.65 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:51:56 - WARNING - METRIC: Total (%) - VALUE: 100.00 - THRESHOLD: 85.0 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-19 15:51:56 - WARNING - METRIC: usr (%) - VALUE: 99.50 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:51:57 - WARNING - METRIC: idle (%) - VALUE: 0.00 - THRESHOLD: 20.0 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-19 15:52:01 - WARNING - METRIC: usr (%) - VALUE: 84.56 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:52:01 - WARNING - METRIC: idle (%) - VALUE: 15.19 - THRESHOLD: 20.0 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-19 15:52:03 - WARNING - METRIC: Total (%) - VALUE: 100.00 - THRESHOLD: 85.0 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-19 15:52:03 - WARNING - METRIC: usr (%) - VALUE: 99.50 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:52:03 - WARNING - METRIC: idle (%) - VALUE: 0.00 - THRESHOLD: 20.0 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-19 15:52:05 - WARNING - METRIC: usr (%) - VALUE: 70.45 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:52:07 - WARNING - METRIC: usr (%) - VALUE: 75.19 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:52:10 - WARNING - METRIC: usr (%) - VALUE: 78.05 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:52:10 - WARNING - METRIC: idle (%) - VALUE: 17.46 - THRESHOLD: 20.0 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-19 15:52:12 - WARNING - METRIC: Total (%) - VALUE: 100.00 - THRESHOLD: 85.0 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-19 15:52:12 - WARNING - METRIC: usr (%) - VALUE: 95.74 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
+2025-06-19 15:52:12 - WARNING - METRIC: idle (%) - VALUE: 0.00 - THRESHOLD: 20.0 - MESSAGE: Low idle means CPU is heavily loaded
