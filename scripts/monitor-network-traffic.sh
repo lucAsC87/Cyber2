@@ -70,7 +70,6 @@ check_suspicious() {
         SUSP=$(ss -ntp state established | awk -v regex=":($ports_regex)( |$)" '{if ($4 ~ regex || $5 ~ regex) print $0}')
         if [[ -n "$SUSP" ]]; then
             echo "$SUSP" | while read -r line; do
-                state=$(echo "$line" | awk '{print $1}')
                 local_addr=$(echo "$line" | awk '{print $4}')
                 remote_addr=$(echo "$line" | awk '{print $5}')
                 proc_info=$(echo "$line" | grep -oP 'users:\(\(\K[^)]*')
