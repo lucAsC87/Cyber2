@@ -43,8 +43,8 @@ print_metric() {
     [[ "$clean_name" == "Total" ]] && is_bold="${BOLD}"
 
     # Final formatted output
-    printf "${COLOR_TEXT}${is_bold}%s:${COLOR_RESET} ${color}${is_bold}%.2f%s${COLOR_RESET}" \
-        "$clean_name" "$value" "$unit"
+    printf "${COLOR_TEXT}${is_bold}%s:${COLOR_RESET} ${color}${is_bold}%.2f %s${COLOR_RESET}" \
+    "$clean_name" "$value" "$unit"
 }
 
 log_hardware_warning() {
