@@ -22,8 +22,7 @@ show_load() {
 }
 
 # Function to get top processes
-get_top_processes() {
-    echo -e "${BOLD}${COLOR_MENU}=== Top cpu-consuming processes ===${COLOR_RESET}\n"
+get_top_processes_cpu() {
     process_tree_cpu=""
     while IFS= read -r line; do
         read -r user pid cpu path <<<"$line"
@@ -35,7 +34,9 @@ get_top_processes() {
     }')
     echo -e "$process_tree_cpu"
 
-    echo -e "${BOLD}${COLOR_MENU}=== Top memory-consuming processes ===${COLOR_RESET}\n"
+}
+
+get_top_processes_mem(){
     process_tree_mem=""
     while IFS= read -r line; do
         read -r user pid mem path <<<"$line"

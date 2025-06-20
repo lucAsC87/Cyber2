@@ -24,3 +24,4 @@
 2025-06-20 00:11:00 - WARNING - METRIC: CPU process: /usr/sbin/updatedb.plocate (PID 369681) (%) - VALUE: 39.1 - THRESHOLD: 30.00 - MESSAGE: Process using too much CPU
 2025-06-20 00:11:02 - WARNING - METRIC: CPU process: /usr/sbin/updatedb.plocate (PID 369681) (%) - VALUE: 40.9 - THRESHOLD: 30.00 - MESSAGE: Process using too much CPU
 2025-06-20 01:15:08 - WARNING - METRIC: twinkpad (%) - VALUE: 60.0 - THRESHOLD: 30.00 - MESSAGE: Process 586710 is using a lot of compute power
+2025-06-20 09:19:37 - WARNING - METRIC: twinkpad (%) - VALUE: 100 - THRESHOLD: 30.00 - MESSAGE: Process 104938 is using a lot of compute power

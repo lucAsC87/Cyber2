@@ -15,7 +15,7 @@ touch $LOG_FILE
 main_menu=("System Info" "Hardware Management" "Process Management" "Network Management" "User Management" "IPS" "EXIT")
 hardware_menu=("CPU" "DISK" "RAM" "back")
 network_menu=("PORTS" "TRAFFIC" "back")
-user_menu=("AUTH" "INSTALLATIONS" "back")
+user_menu=("LOGS" "back")
 ips_menu=("ONE TIME" "REAL TIME" "back")
 cpu_menu=("AVERAGE CPU UTIL" "ALL CPU UTIL" "back")
 system_info_menu=("INFO" "SPECS" "back")
@@ -207,10 +207,15 @@ handle_submenu() {
             tput civis  # Hide cursor
             trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
             while true; do
-              demanding_processes=$(get_top_processes)
+              demanding_processes_cpu=$(get_top_processes_cpu)
+              demanding_processes_mem=$(get_top_processes_mem)
               tput cup 0 0
               tput ed
-              echo "$demanding_processes"
+              echo -e "${BOLD}${COLOR_MENU}=== Top cpu-consuming processes ===${COLOR_RESET}\n"
+              echo "$demanding_processes_cpu"
+              echo
+              echo -e "${BOLD}${COLOR_MENU}=== Top memory-consuming processes ===${COLOR_RESET}\n"
+              echo "$demanding_processes_mem"
               echo -e "\nPress [Enter] to exit DEMANDING PROCESS monitoring."
               read -t 1 -s input && [[ -z "$input" ]] && break
             done  
@@ -227,6 +232,14 @@ handle_submenu() {
             echo -e "${BOLD}${COLOR_MENU}=== Load Average ===${COLOR_RESET}"
             show_load
             read -p "Press Enter to return to Process Management menu..."
+            ;;
+        esac
+        ;;
+      "User Management")
+        case "$selected" in
+          "LOGS")
+            clear
+            source "$PROJECT_DIR/scripts/monitor-log-files.sh" 
             ;;
         esac
         ;;
