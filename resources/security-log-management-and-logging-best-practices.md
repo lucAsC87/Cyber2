@@ -43,12 +43,6 @@ This guide provides essential practices for implementing secure and effective lo
    - Document logging policies
    - Regular compliance audits
 
-## Common Tools
-- ELK Stack (Elasticsearch, Logstash, Kibana)
-- Splunk
-- Graylog
-- Syslog
-
 ## Tips
 - Only log necessary information
 - Avoid logging sensitive data (passwords, tokens)
