@@ -2,7 +2,7 @@
 export LC_ALL=C
 
 echo "Active network interfaces:"
-awk -F: '/:/ {print $1}' /proc/net/dev | tail -n +3 | sed 's/ //g'
+cat /proc/net/dev | tail -n +3 | cut -d: -f1 | tr -d ' '
 
 echo -en "\nSelect network interface: "
 read IFACE

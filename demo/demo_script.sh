@@ -7,21 +7,24 @@ LOG_FILE="$LOG_DIR/system_logs.log"
 # Source stat functions
 source "$PROJECT_DIR/toolkit/config.sh"
 source "$PROJECT_DIR/scripts/monitor-system-ressources.sh"
+
 mkdir -p "$LOG_DIR"
 touch $LOG_FILE
+
 # Menu definitions
-main_menu=("System Info" "Hardware Management" "Network Management" "User Management" "IPS" "EXIT")
+main_menu=("System Info" "Hardware Management" "Process Management" "Network Management" "User Management" "IPS" "EXIT")
 hardware_menu=("CPU" "DISK" "RAM" "back")
-network_menu=("OPEN PORTS" "TRAFFIC" "LOGS" "back")
+network_menu=("PORTS" "TRAFFIC" "back")
 user_menu=("AUTH" "INSTALLATIONS" "back")
 ips_menu=("ONE TIME" "REAL TIME" "back")
 cpu_menu=("AVERAGE CPU UTIL" "ALL CPU UTIL" "back")
-system_info_menu=("PROCESSES" "INFO" "SPECS" "back")
+system_info_menu=("INFO" "SPECS" "back")
+process_menu=("DEMANDING PROCESSES" "PROCESS TREE" "LOAD AVERAGE" "back")
 
 # Detect if menu entry is a submenu
 is_menu() {
   case "$1" in
-    "Hardware Management"|"Network Management"|"User Management"|"IPS"|"CPU"|"System Info")
+    "Hardware Management"|"Network Management"|"User Management"|"IPS"|"CPU"|"System Info"|"Process Management")
       return 0
       ;;
     *) return 1 ;;
@@ -168,11 +171,6 @@ handle_submenu() {
 
       "System Info")
         case "$selected" in
-          "PROCESSES")
-            clear
-            show_process_tree
-            read -p "Press Enter to return to System Info menu..."
-            ;;
           "INFO")
             clear
             echo -e "${BOLD}${COLOR_MENU}=== System Info ===${COLOR_RESET}"
@@ -187,8 +185,52 @@ handle_submenu() {
             ;;
         esac
         ;;
-
-      "Network Management"|"User Management"|"IPS")
+      "Network Management")
+        case "$selected" in
+          "TRAFFIC")
+            clear
+            source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
+            read -p "Press Enter to return to System Info menu..."
+            ;;
+          "PORTS")
+            clear
+            echo -e "${BOLD}${COLOR_MENU}=== System Info ===${COLOR_RESET}"
+            get_system_info
+            read -p "Press Enter to return to System Info menu..."
+            ;;
+        esac
+        ;;
+      "Process Management")
+        case "$selected" in
+          "DEMANDING PROCESSES")
+            clear
+            tput civis  # Hide cursor
+            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
+            while true; do
+              demanding_processes=$(get_top_processes)
+              tput cup 0 0
+              tput ed
+              echo "$demanding_processes"
+              echo -e "\nPress [Enter] to exit DEMANDING PROCESS monitoring."
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done  
+            tput cnorm
+            ;;
+          "PROCESS TREE")
+            clear
+            echo -e "${BOLD}${COLOR_MENU}=== Process Tree ===${COLOR_RESET}"
+            show_process_tree
+            read -p "Press Enter to return to Process Management menu..."
+            ;;
+          "LOAD AVERAGE")
+            clear
+            echo -e "${BOLD}${COLOR_MENU}=== Load Average ===${COLOR_RESET}"
+            show_load
+            read -p "Press Enter to return to Process Management menu..."
+            ;;
+        esac
+        ;;
+      "User Management"|"IPS")
         clear
         echo -e "${COLOR_ENDPOINT}>>> '$selected' selected (feature not implemented yet).${COLOR_RESET}"
         read -p "Press Enter to return to $title menu..."
@@ -209,6 +251,7 @@ while true; do
     "User Management") handle_submenu user_menu "User Management" ;;
     "IPS") handle_submenu ips_menu "IPS" ;;
     "System Info") handle_submenu system_info_menu "System Info" ;;
+    "Process Management") handle_submenu process_menu "Process Management" ;;
     "EXIT") clear; echo "Exiting..."; exit 0 ;;
   esac
 done

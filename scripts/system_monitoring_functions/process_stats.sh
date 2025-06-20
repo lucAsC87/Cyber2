@@ -1,11 +1,6 @@
 show_process_tree() {
-    echo -e "${COLOR_MENU}${BOLD}=== Top 10 Processes by Memory Usage ===${COLOR_RESET}"
-    echo "PID: Process ID, PPID: Parent Process ID, CMD: Command name, %MEM: Memory usage percentage, %CPU: CPU usage percentage"
-    ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 11
-    echo -e "\n${COLOR_MENU}${BOLD}=== Process Tree (first 20 lines) ===${COLOR_RESET}"
-    echo "Shows process hierarchy with PIDs."
     if command -v pstree &>/dev/null; then
-        pstree -p --show-pids | head -n 20
+        pstree -lAC age
     else
         echo "pstree not found. Please install the psmisc package."
     fi
@@ -24,4 +19,31 @@ show_load() {
     echo "5 minutes: $load5"
     echo "15 minutes:$load15"
     echo
+}
+
+# Function to get top processes
+get_top_processes() {
+    echo -e "${BOLD}${COLOR_MENU}=== Top cpu-consuming processes ===${COLOR_RESET}\n"
+    process_tree_cpu=""
+    while IFS= read -r line; do
+        read -r user pid cpu path <<<"$line"
+        process_tree_cpu+="$(print_metric "${user} (%)" "$cpu" $DEFAULT_PROCESS_CPU_THRESHOLD "over" "Process ${pid} is using a lot of compute power")  PID: $pid  $path\n"
+    done < <(ps aux --sort=-%cpu | grep -v "[p]s aux" | head -21 | tail -20 | awk '{
+        cmd=""; 
+        for(i=11;i<=NF;i++) cmd=cmd $i (i==NF ? "" : " ");
+        printf "%s %s %s %s\n", $1, $2, $3, $11
+    }')
+    echo -e "$process_tree_cpu"
+
+    echo -e "${BOLD}${COLOR_MENU}=== Top memory-consuming processes ===${COLOR_RESET}\n"
+    process_tree_mem=""
+    while IFS= read -r line; do
+        read -r user pid mem path <<<"$line"
+        process_tree_mem+="$(print_metric "${user} (%)" "$mem" $DEFAULT_PROCESS_MEM_THRESHOLD "over" "Process ${pid} is using a lot of memory")  PID: $pid  $path\n"
+    done < <(ps aux --sort=-%mem | grep -v "[p]s aux" | head -21 | tail -20 | awk '{
+        cmd="";
+        for(i=11;i<=NF;i++) cmd=cmd $i (i==NF ? "" : " ");
+        printf "%s %s %s %s\n", $1, $2, $4, $11
+    }')
+    echo -e "$process_tree_mem"
 }

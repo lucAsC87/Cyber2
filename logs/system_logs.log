@@ -19,3 +19,8 @@
 2025-06-19 15:52:12 - WARNING - METRIC: Total (%) - VALUE: 100.00 - THRESHOLD: 85.0 - MESSAGE: CPU usage is high; may be overloaded
 2025-06-19 15:52:12 - WARNING - METRIC: usr (%) - VALUE: 95.74 - THRESHOLD: 70.0 - MESSAGE: Too much user-space processing
 2025-06-19 15:52:12 - WARNING - METRIC: idle (%) - VALUE: 0.00 - THRESHOLD: 20.0 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-20 00:10:58 - WARNING - METRIC: CPU process: /usr/sbin/updatedb.plocate (PID 369681) (%) - VALUE: 42.7 - THRESHOLD: 30.00 - MESSAGE: Process using too much CPU
+2025-06-20 00:10:59 - WARNING - METRIC: CPU process: /usr/sbin/updatedb.plocate (PID 369681) (%) - VALUE: 37.7 - THRESHOLD: 30.00 - MESSAGE: Process using too much CPU
+2025-06-20 00:11:00 - WARNING - METRIC: CPU process: /usr/sbin/updatedb.plocate (PID 369681) (%) - VALUE: 39.1 - THRESHOLD: 30.00 - MESSAGE: Process using too much CPU
+2025-06-20 00:11:02 - WARNING - METRIC: CPU process: /usr/sbin/updatedb.plocate (PID 369681) (%) - VALUE: 40.9 - THRESHOLD: 30.00 - MESSAGE: Process using too much CPU
+2025-06-20 01:15:08 - WARNING - METRIC: twinkpad (%) - VALUE: 60.0 - THRESHOLD: 30.00 - MESSAGE: Process 586710 is using a lot of compute power
