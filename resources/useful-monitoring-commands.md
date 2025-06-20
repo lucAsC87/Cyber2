@@ -17,7 +17,7 @@ This script provides automated monitoring and analysis of system log files. It p
 ```
 
 ## Output
-The script creates a `log_analysis` directory containing:
+The script creates a `log` directory containing:
 - history_report.txt: Analysis of APT history logs
 - system_error_report.txt: Recent system errors
 - history.backup: Backup of the APT history log
