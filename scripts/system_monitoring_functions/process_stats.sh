@@ -8,17 +8,16 @@ show_process_tree() {
 }
 
 show_load() {
-
-    echo "Load average indicates the average number of processes waiting to run."
-    echo "Values correspond to 1 minute, 5 minutes, and 15 minutes intervals respectively."
-    echo "Lower values mean the system is less busy; values higher than your CPU count indicate possible overload."
-    load_vals=$(uptime | awk -F 'load average:' '{ print $2 }' | sed 's/^ *//')
-    # Split into 3 variables
+    print_statements="\n"
+    load_vals=$(uptime | awk -F 'load average: ' '{ print $2 }' | sed 's/^ *//')
+    
     IFS=', ' read -r load1 load5 load15 <<< "$load_vals"
-    echo "1 minute:  $load1"
-    echo "5 minutes: $load5"
-    echo "15 minutes:$load15"
-    echo
+
+    print_statements+="$(print_metric "1min : " "$load1" "$DEFAULT_LOAD_AVERAGE" "over" "Load average is too high")\n"
+    print_statements+="$(print_metric "5min : " "$load5" "$DEFAULT_LOAD_AVERAGE" "over" "Load average is too high")\n"
+    print_statements+="$(print_metric "15min: " "$load15" "$DEFAULT_LOAD_AVERAGE" "over" "Load average is too high")\n"
+
+    echo -e "$print_statements"
 }
 
 # Function to get top processes
@@ -33,7 +32,6 @@ get_top_processes_cpu() {
         printf "%s %s %s %s\n", $1, $2, $3, $11
     }')
     echo -e "$process_tree_cpu"
-
 }
 
 get_top_processes_mem(){

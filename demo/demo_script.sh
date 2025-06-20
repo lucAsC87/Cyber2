@@ -229,7 +229,7 @@ handle_submenu() {
             ;;
           "LOAD AVERAGE")
             clear
-            echo -e "${BOLD}${COLOR_MENU}=== Load Average ===${COLOR_RESET}"
+            echo -e "${BOLD}${COLOR_MENU}=== Load Average Over 1min, 5min and 15min ===${COLOR_RESET}"
             show_load
             read -p "Press Enter to return to Process Management menu..."
             ;;
