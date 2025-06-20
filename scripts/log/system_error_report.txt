@@ -1,5 +1,5 @@
-Jun 18 03:20:49 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
-Jun 18 03:21:21 kali lightdm[857]: gkr-pam: unable to locate daemon control file
-Jun 18 03:21:21 kali lightdm[751]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
-Jun 18 03:21:35 kali obexd[1444]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
-Jun 18 03:21:35 kali obexd[1444]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 20 03:00:36 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 20 03:01:08 kali lightdm[858]: gkr-pam: unable to locate daemon control file
+Jun 20 03:01:08 kali lightdm[750]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 20 03:01:20 kali obexd[1441]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 20 03:01:20 kali obexd[1441]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
