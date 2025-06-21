@@ -1,6 +1,12 @@
 #!/bin/bash
-export LC_ALL=C
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(echo "$SCRIPT_DIR" | sed -E 's|(./Cyber2).*|\1|')"
+LOG_DIR="$PROJECT_DIR/logs"
+LOG_FILE="$LOG_DIR/system_logs.log"
+source "$PROJECT_DIR/scripts/system_monitoring_functions/logging.sh"
+source "$PROJECT_DIR/toolkit/config.sh"
 
+export LC_ALL=C
 echo "Active network interfaces:"
 cat /proc/net/dev | tail -n +3 | cut -d: -f1 | tr -d ' '
 
@@ -29,8 +35,20 @@ show_traffic() {
         tx_kb=$(echo "scale=2; $tx_diff/1024" | LC_NUMERIC=C bc)
         rx_mb=$(echo "scale=2; $rx/1048576" | LC_NUMERIC=C bc)
         tx_mb=$(echo "scale=2; $tx/1048576" | LC_NUMERIC=C bc)
+        echo
         printf "[%s] IN: %.2f KB/s | OUT: %.2f KB/s | Total: %.2f MB downloaded, %.2f MB uploaded\n" \
             "$(date '+%H:%M:%S')" "$rx_kb" "$tx_kb" "$rx_mb" "$tx_mb"
+
+        if (( $(echo "$rx_kb > $DEFAULT_DOWNLOAD_THRESHOLD" | bc -l) )); then
+            echo
+            print_metric "Download (KB/s)" "$rx_kb" "$DEFAULT_DOWNLOAD_THRESHOLD" "over" "Suspicious download on the network: incoming traffic above threshold"
+        fi
+
+        if (( $(echo "$tx_kb > $DEFAULT_UPLOAD_THRESHOLD" | bc -l) )); then
+            echo
+            print_metric "Upload (KB/s)" "$tx_kb" "$DEFAULT_UPLOAD_THRESHOLD" "over" "Suspicious upload on the network: outgoing traffic above threshold"
+        fi
+
         old_rx=$rx
         old_tx=$tx
         sleep 1
@@ -80,8 +98,12 @@ check_suspicious() {
                 pid=$(echo "$proc_info" | grep -oP 'pid=\K[0-9]+')
                 pname=$(echo "$proc_info" | awk -F',' '{print $1}' | tr -d '"')
 				logger "HIDS ALERT: $local_ip:$local_port -> $remote_ip:$remote_port PID=$pid PROC=$pname"
+                echo
                 echo -e "\033[31m[ALERT] $(date '+%H:%M:%S') $local_ip:$local_port -> $remote_ip:$remote_port PID=$pid PROC=$pname\033[0m"
             done
+		else
+            echo
+			echo "No suspicious connections found."
         fi
         sleep 5
     done
