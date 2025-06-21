@@ -206,6 +206,7 @@ handle_submenu() {
             clear
             tput civis  # Hide cursor
             trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
+            echo -e "${BOLD}${COLOR_MENU}=== Top consuming processes ===${COLOR_RESET}\n"
             while true; do
               demanding_processes_cpu=$(get_top_processes_cpu)
               demanding_processes_mem=$(get_top_processes_mem)
