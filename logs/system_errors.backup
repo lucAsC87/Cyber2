@@ -1,0 +1,110 @@
+Jun 03 15:14:50 TwinkPad (sd-exec-[75581]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal ABRT.
+Jun 03 15:15:06 TwinkPad (sd-exec-[76386]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal ABRT.
+-- Boot d819fbc729d24930bf9d573f57d8c4cf --
+Jun 16 09:30:41 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 16 09:30:42 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 16 09:30:42 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 16 09:30:42 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 16 09:30:42 TwinkPad (sd-exec-[384]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal ABRT.
+Jun 16 09:32:37 TwinkPad lightdm[993]: pam_winbind(lightdm:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 16 09:32:37 TwinkPad lightdm[993]: pam_winbind(lightdm:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'root')
+Jun 16 09:33:03 TwinkPad lightdm[1002]: gkr-pam: unable to locate daemon control file
+Jun 16 09:33:03 TwinkPad lightdm[862]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 16 09:33:07 TwinkPad obexd[1507]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 16 09:33:07 TwinkPad obexd[1507]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 23b989a29bef4fd38209399a8a0a90bd --
+Jun 16 12:53:53 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 16 12:53:53 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 16 12:53:53 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 16 12:53:53 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 16 12:54:15 TwinkPad lightdm[916]: gkr-pam: unable to locate daemon control file
+Jun 16 12:54:15 TwinkPad lightdm[809]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 16 12:54:19 TwinkPad obexd[1442]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 16 12:54:19 TwinkPad obexd[1442]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 8735979fbc494c31bd58ac0a1ee4d466 --
+Jun 17 08:37:48 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 17 08:37:48 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 17 08:37:48 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 17 08:37:48 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 17 08:38:19 TwinkPad lightdm[914]: gkr-pam: unable to locate daemon control file
+Jun 17 08:38:20 TwinkPad lightdm[805]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 17 08:38:26 TwinkPad obexd[1432]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 08:38:26 TwinkPad obexd[1432]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 614392b774134ffa93e7c77105da9775 --
+Jun 17 13:37:39 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 17 13:37:39 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 17 13:37:39 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 17 13:37:39 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 17 13:38:43 TwinkPad lightdm[926]: gkr-pam: unable to locate daemon control file
+Jun 17 13:38:43 TwinkPad lightdm[805]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 17 13:38:46 TwinkPad obexd[1438]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 13:38:46 TwinkPad obexd[1438]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 17 13:55:52 TwinkPad xfce4-screensaver-dialog[10293]: pam_winbind(xfce4-screensaver:auth): request wbcLogonUser failed: WBC_ERR_WINBIND_NOT_AVAILABLE, PAM error: PAM_AUTHINFO_UNAVAIL (9)!
+Jun 17 13:55:52 TwinkPad xfce4-screensaver-dialog[10293]: pam_winbind(xfce4-screensaver:auth): internal module error (retval = PAM_AUTHINFO_UNAVAIL(9), user = 'twinkpad')
+-- Boot 8e4b5007b622474aa435792af763e2dd --
+Jun 18 08:44:21 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 18 08:44:21 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 18 08:44:21 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 18 08:44:21 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 18 08:44:35 TwinkPad lightdm[967]: gkr-pam: unable to locate daemon control file
+Jun 18 08:44:35 TwinkPad lightdm[861]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 18 08:44:39 TwinkPad obexd[1479]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 18 08:44:39 TwinkPad obexd[1479]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot ac5d33ac57894ff8bdad998e107e75ae --
+Jun 19 09:02:39 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 19 09:02:39 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 19 09:02:39 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 19 09:02:39 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 19 09:02:56 TwinkPad lightdm[919]: gkr-pam: unable to locate daemon control file
+Jun 19 09:02:56 TwinkPad lightdm[811]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 19 09:03:00 TwinkPad obexd[1421]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 19 09:03:00 TwinkPad obexd[1421]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 5c75d25743684d86b2d6e13762ab633b --
+Jun 19 15:17:50 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 19 15:17:50 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 19 15:17:50 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 19 15:17:50 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 19 15:18:07 TwinkPad lightdm[872]: gkr-pam: unable to locate daemon control file
+Jun 19 15:18:07 TwinkPad lightdm[766]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 19 15:18:10 TwinkPad obexd[1386]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 19 15:18:10 TwinkPad obexd[1386]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 19 22:15:08 TwinkPad kernel: ohci-pci 0000:00:06.0: frame counter not updating; disabled
+Jun 19 22:15:08 TwinkPad kernel: ohci-pci 0000:00:06.0: HC died; cleaning up
+-- Boot 7f8b2d68d70743eca2486a59a3dbaa16 --
+Jun 20 08:51:13 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 20 08:51:13 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 20 08:51:13 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 20 08:51:13 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 20 08:51:13 TwinkPad (sd-exec-[382]: /usr/lib/systemd/system-generators/systemd-sslh-generator terminated by signal ABRT.
+Jun 20 08:51:28 TwinkPad lightdm[912]: gkr-pam: unable to locate daemon control file
+Jun 20 08:51:28 TwinkPad lightdm[803]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 20 08:51:32 TwinkPad obexd[1425]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 20 08:51:32 TwinkPad obexd[1425]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 20 09:14:00 TwinkPad kernel: ohci-pci 0000:00:06.0: frame counter not updating; disabled
+Jun 20 09:14:00 TwinkPad kernel: ohci-pci 0000:00:06.0: HC died; cleaning up
+Jun 20 09:40:47 TwinkPad sudo[179196]: pam_unix(sudo:auth): conversation failed
+Jun 20 09:40:47 TwinkPad sudo[179196]: pam_unix(sudo:auth): auth could not identify password for [twinkpad]
+Jun 20 09:40:51 TwinkPad sudo[179531]: pam_unix(sudo:auth): conversation failed
+Jun 20 09:40:51 TwinkPad sudo[179531]: pam_unix(sudo:auth): auth could not identify password for [twinkpad]
+Jun 20 09:41:02 TwinkPad sudo[179640]: pam_unix(sudo:auth): conversation failed
+Jun 20 09:41:02 TwinkPad sudo[179640]: pam_unix(sudo:auth): auth could not identify password for [twinkpad]
+Jun 20 09:41:02 TwinkPad sudo[179660]: pam_unix(sudo:auth): conversation failed
+Jun 20 09:41:02 TwinkPad sudo[179660]: pam_unix(sudo:auth): auth could not identify password for [twinkpad]
+-- Boot b85a97d150104c8da50cc83507f66448 --
+Jun 20 14:50:01 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 20 14:50:01 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 20 14:50:01 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 20 14:50:01 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 20 14:50:36 TwinkPad lightdm[913]: gkr-pam: unable to locate daemon control file
+Jun 20 14:50:36 TwinkPad lightdm[799]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 20 14:50:43 TwinkPad obexd[1440]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 20 14:50:43 TwinkPad obexd[1440]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+-- Boot 2639cc7519594800858da93f57427c98 --
+Jun 21 15:58:43 TwinkPad kernel: RETBleed: WARNING: Spectre v2 mitigation leaves CPU vulnerable to RETBleed attacks, data leaks possible!
+Jun 21 15:58:43 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Jun 21 15:58:43 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Jun 21 15:58:43 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 21 15:59:04 TwinkPad lightdm[979]: gkr-pam: unable to locate daemon control file
+Jun 21 15:59:04 TwinkPad lightdm[872]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 21 15:59:08 TwinkPad obexd[1504]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 21 15:59:08 TwinkPad obexd[1504]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.

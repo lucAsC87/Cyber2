@@ -8,9 +8,9 @@ get_disk_io_stats() {
 
     while read -r dev read_mb write_mb util; do
         print_statements+="\n${BOLD}Device ${dev}:${COLOR_RESET}\n"
-        print_statements+="$(print_metric "Read MB/s" "$read_mb" $DEFAULT_DISK_READ_THRESHOLD "over" "High read on $dev")  "
-        print_statements+="$(print_metric "Write MB/s" "$write_mb" $DEFAULT_DISK_WRITE_THRESHOLD "over" "High write on $dev")  "
-        print_statements+="$(print_metric "Util (%)" "$util" $DEFAULT_DISK_TPS_THRESHOLD "over" "High utilization on $dev")${COLOR_RESET}\n"
+        print_statements+="$(print_metric "Read MB/s" "$read_mb" $DEFAULT_DISK_READ_THRESHOLD "over" "High read on $dev" "DISK")  "
+        print_statements+="$(print_metric "Write MB/s" "$write_mb" $DEFAULT_DISK_WRITE_THRESHOLD "over" "High write on $dev" "DISK")  "
+        print_statements+="$(print_metric "Util (%)" "$util" $DEFAULT_DISK_TPS_THRESHOLD "over" "High utilization on $dev" "DISK")${COLOR_RESET}\n"
     done < <(
         iostat -dx 1 1 | awk '
             BEGIN { found = 0 }
@@ -44,7 +44,7 @@ get_disk_usage() {
         print_statements+="$(print_metric "Size (GB)" "$size_gb" 0 "none" "")  "
         print_statements+="$(print_metric "Used (GB)" "$used_gb" 0 "none" "")  "
         print_statements+="$(print_metric "Avail (GB)" "$avail_gb" 0 "none" "")  "
-        print_statements+="$(print_metric "Usage (%)" "$usage_val" $DEFAULT_DISK_THRESHOLD "over" "Disk almost full: $source")${COLOR_RESET}\n"
+        print_statements+="$(print_metric "Usage (%)" "$usage_val" $DEFAULT_DISK_THRESHOLD "over" "Disk almost full: $source" "DISK")${COLOR_RESET}\n"
     done < <(
         df --block-size=1K --output=source,size,used,avail,pcent |
         grep -E '^(/dev/sd|/dev/nvme|/dev/vd|/dev/hd)'

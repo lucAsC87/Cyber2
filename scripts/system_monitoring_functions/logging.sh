@@ -14,7 +14,7 @@ log_alert() {
 
 # Print metric and log alert immediately if violated
 print_metric() {
-    local name="$1" value="$2" threshold="$3" condition="$4" message="$5"
+    local name="$1" value="$2" threshold="$3" condition="$4" message="$5" metric="$6"
     local color="$COLOR_BELOW_THRESHOLD"
     local violated=0
     local is_bold=""
@@ -37,7 +37,7 @@ print_metric() {
     fi
 
     (( violated )) && {
-        log_alert "WARNING" "$name" "$value" "$threshold" "$message"
+        log_alert "WARNING" "$metric" "$value" "$threshold" "$message"
     }
 
     [[ "$clean_name" == "Total" ]] && is_bold="${BOLD}"
