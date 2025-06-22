@@ -1,4 +1,6 @@
 monitor_all(){
+    show_traffic "$IFACE" >/dev/null
+    check_suspicious >/dev/null
     get_average_cpu_stats >/dev/null
     get_disk_io_stats >/dev/null
     get_memory_stats >/dev/null

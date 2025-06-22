@@ -159,3 +159,14 @@
 2025-06-22 18:00:52 - WARNING - METRIC: CPU - VALUE: 87.91 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
 2025-06-22 18:00:53 - WARNING - METRIC: CPU - VALUE: 7.81 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
 2025-06-22 18:00:54 - WARNING - METRIC: PROCESS - VALUE: 73.50 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power
+2025-06-22 23:16:12 - WARNING - METRIC: TRAFFIC - VALUE: 4602.91 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:16:15 - WARNING - METRIC: TRAFFIC - VALUE: 4406.91 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:16:17 - WARNING - METRIC: TRAFFIC - VALUE: 5663.15 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:16:19 - WARNING - METRIC: TRAFFIC - VALUE: 5376.52 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:16:21 - WARNING - METRIC: TRAFFIC - VALUE: 5815.04 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:16:23 - WARNING - METRIC: TRAFFIC - VALUE: 6255.89 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:16:25 - WARNING - METRIC: TRAFFIC - VALUE: 4660.29 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:30:52 - WARNING - METRIC: NETWORK - VALUE: 2799.90 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:30:56 - WARNING - METRIC: NETWORK - VALUE: 4508.62 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:31:01 - WARNING - METRIC: NETWORK - VALUE: 4573.81 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-22 23:31:06 - WARNING - METRIC: NETWORK - VALUE: 4457.30 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold

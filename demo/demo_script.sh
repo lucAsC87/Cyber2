@@ -20,6 +20,7 @@ touch "$LOG_FILE"
 # Source configuration and resource monitoring functions
 source "$PROJECT_DIR/toolkit/config.sh"
 source "$PROJECT_DIR/scripts/monitor-system-ressources.sh"
+source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
 source "$PROJECT_DIR/scripts/monitor-all.sh"
 
 
@@ -27,7 +28,7 @@ source "$PROJECT_DIR/scripts/monitor-all.sh"
 # Define main and submenu options as arrays
 main_menu=("System Info" "IDS" "Hardware Management" "Process Management" "Network Management" "User Management" "EXIT")
 hardware_menu=("CPU" "DISK" "RAM" "back")
-network_menu=("PORTS" "TRAFFIC" "back")
+network_menu=("TRAFFIC" "CHECK SUPICIOUS PORT ACTIVITY" "back")
 user_menu=("LOGS" "back")
 ids_menu=("ONE TIME" "REAL TIME" "back")
 system_info_menu=("INFO" "SPECS" "back")
@@ -135,11 +136,13 @@ handle_submenu() {
             clear
             tput civis
             trap "tput cnorm; stty echo" EXIT
+            echo -e "${BOLD}${COLOR_MENU}=== Choose Network Interface ===${COLOR_RESET}"
+            IFACE=$(choose_interface)
+            clear
             echo -e "${BOLD}${COLOR_MENU}=== Please Wait a Few Seconds to View the Warnings ===${COLOR_RESET}"
-            output=$(monitor_all)
+            monitor_all
             clear
             echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}"
-            echo -e "$output"
             cat "$LOG_FILE"
             cat "$LOG_FILE" >> "$LOG_DIR/system_logs.log"
             WARNING_COUNT=$(wc -l < "$LOG_FILE")
@@ -150,6 +153,9 @@ handle_submenu() {
             read -p "Press [Enter] to return to IDS menu..."
             ;;
           "REAL TIME")
+            clear
+            echo -e "${BOLD}${COLOR_MENU}=== Choose Network Interface ===${COLOR_RESET}"
+            IFACE=$(choose_interface)
             clear
             echo -e "${BOLD}${COLOR_MENU}=== Please Wait a Few Seconds to View the Warnings ===${COLOR_RESET}"
             WARNING_COUNT=0
@@ -279,14 +285,34 @@ handle_submenu() {
         case "$selected" in
           "TRAFFIC")
             clear
-            source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
-            read -p "Press [Enter] to return to Network menu..."
+            tput civis
+            trap "tput cnorm; stty echo" EXIT
+            echo -e "${BOLD}${COLOR_MENU}=== Network Traffic ===${COLOR_RESET}"
+            IFACE=$(choose_interface)
+            while true; do
+              output=$(show_traffic "$IFACE")
+              tput cup 0 0; tput ed
+              echo -e "${BOLD}${COLOR_MENU}=== Network Traffic ===${COLOR_RESET}\n"
+              echo "$output"
+              echo -e "\nPress [Enter] to exit TRAFFIC monitoring."
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done
+            tput cnorm
             ;;
-          "PORTS")
+          "CHECK SUPICIOUS PORT ACTIVITY")
             clear
-            echo -e "${BOLD}${COLOR_MENU}=== Open Ports ===${COLOR_RESET}\n"
-
-            read -p "Press [Enter] to return to Network menu..."
+            tput civis
+            trap "tput cnorm; stty echo" EXIT
+            echo -e "${BOLD}${COLOR_MENU}=== CHECKING SUPICIOUS PORT ACTIVITY ===${COLOR_RESET}"
+            while true; do
+              output=$(check_suspicious)
+              tput cup 0 0; tput ed
+              echo -e "${BOLD}${COLOR_MENU}=== CHECKING SUPICIOUS PORT ACTIVITY ===${COLOR_RESET}"
+              echo "$output"
+              echo -e "\nPress [Enter] to exit  SUPICIOUS PORT ACTIVITY monitoring."
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done
+            tput cnorm
             ;;
         esac
         ;;
