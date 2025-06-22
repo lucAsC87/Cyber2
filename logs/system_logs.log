@@ -126,3 +126,36 @@
 2025-06-21 20:02:47 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
 2025-06-21 20:02:47 - WARNING - METRIC: CPU - VALUE: 97.51 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
 2025-06-21 20:02:48 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 17:36:26 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-22 17:36:26 - WARNING - METRIC: CPU - VALUE: 99.25 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 17:36:26 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 17:36:27 - WARNING - METRIC: PROCESS - VALUE: 71.00 - THRESHOLD: 30.00 - MESSAGE: Process 53208 is using a lot of compute power
+2025-06-22 17:55:40 - WARNING - METRIC: CPU - VALUE: 71.32 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 17:55:41 - WARNING - METRIC: PROCESS - VALUE: 65.75 - THRESHOLD: 30.00 - MESSAGE: Process 75797 is using a lot of compute power
+2025-06-22 17:59:34 - WARNING - METRIC: CPU - VALUE: 98.26 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-22 17:59:34 - WARNING - METRIC: CPU - VALUE: 97.01 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 17:59:35 - WARNING - METRIC: CPU - VALUE: 1.74 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 17:59:36 - WARNING - METRIC: PROCESS - VALUE: 71.50 - THRESHOLD: 30.00 - MESSAGE: Process 78652 is using a lot of compute power
+2025-06-22 18:00:26 - WARNING - METRIC: CPU - VALUE: 72.39 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 18:00:27 - WARNING - METRIC: PROCESS - VALUE: 56.50 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power
+2025-06-22 18:00:30 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-22 18:00:30 - WARNING - METRIC: CPU - VALUE: 97.24 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 18:00:30 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 18:00:32 - WARNING - METRIC: PROCESS - VALUE: 71.50 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power
+2025-06-22 18:00:34 - WARNING - METRIC: CPU - VALUE: 91.96 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-22 18:00:34 - WARNING - METRIC: CPU - VALUE: 88.19 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 18:00:35 - WARNING - METRIC: CPU - VALUE: 8.04 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 18:00:36 - WARNING - METRIC: PROCESS - VALUE: 74.50 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power
+2025-06-22 18:00:39 - WARNING - METRIC: CPU - VALUE: 74.30 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 18:00:41 - WARNING - METRIC: PROCESS - VALUE: 73.75 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power
+2025-06-22 18:00:44 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-22 18:00:44 - WARNING - METRIC: CPU - VALUE: 95.50 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 18:00:44 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 18:00:45 - WARNING - METRIC: PROCESS - VALUE: 74.50 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power
+2025-06-22 18:00:48 - WARNING - METRIC: CPU - VALUE: 78.35 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 18:00:48 - WARNING - METRIC: CPU - VALUE: 18.81 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 18:00:49 - WARNING - METRIC: PROCESS - VALUE: 73.25 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power
+2025-06-22 18:00:52 - WARNING - METRIC: CPU - VALUE: 92.19 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-22 18:00:52 - WARNING - METRIC: CPU - VALUE: 87.91 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-22 18:00:53 - WARNING - METRIC: CPU - VALUE: 7.81 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-22 18:00:54 - WARNING - METRIC: PROCESS - VALUE: 73.50 - THRESHOLD: 30.00 - MESSAGE: Process 82107 is using a lot of compute power

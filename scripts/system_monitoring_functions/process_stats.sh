@@ -8,7 +8,7 @@ show_process_tree() {
 }
 
 show_load() {
-    print_statements="\n"
+    print_statements=""
     load_vals=$(uptime | awk -F 'load average: ' '{ print $2 }' | sed 's/^ *//')
     
     IFS=', ' read -r load1 load5 load15 <<< "$load_vals"

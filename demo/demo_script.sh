@@ -25,7 +25,7 @@ source "$PROJECT_DIR/scripts/monitor-all.sh"
 
 # === Menu Definitions ===
 # Define main and submenu options as arrays
-main_menu=("System Info" "Hardware Management" "Process Management" "Network Management" "User Management" "IDS" "EXIT")
+main_menu=("System Info" "IDS" "Hardware Management" "Process Management" "Network Management" "User Management" "EXIT")
 hardware_menu=("CPU" "DISK" "RAM" "back")
 network_menu=("PORTS" "TRAFFIC" "back")
 user_menu=("LOGS" "back")
@@ -114,18 +114,64 @@ handle_submenu() {
           case "$selected" in
             "INFO")
               clear
-              echo -e "${BOLD}${COLOR_MENU}=== System Info ===${COLOR_RESET}"
+              echo -e "${BOLD}${COLOR_MENU}=== System Info ===${COLOR_RESET}\n"
               get_system_info
-              read -p "Press Enter to return to System Info menu..."
+              read -p "Press [Enter] to return to System Info menu..."
               ;;
             "SPECS")
               clear
-              echo -e "${BOLD}${COLOR_MENU}=== HARDWARE INFO ===${COLOR_RESET}"
+              echo -e "${BOLD}${COLOR_MENU}=== HARDWARE INFO ===${COLOR_RESET}\n"
               get_hardware_info
-              read -p "Press Enter to return to System Info menu..."
+              read -p "Press [Enter] to return to System Info menu..."
               ;;
           esac
           ;;
+      # === IDS Submenu ===
+      "IDS")
+        case "$selected" in
+          "ONE TIME")
+            LOG_FILE="$LOG_DIR/temp_logs.log"
+            touch "$LOG_FILE"
+            clear
+            tput civis
+            trap "tput cnorm; stty echo" EXIT
+            echo -e "${BOLD}${COLOR_MENU}=== Please Wait a Few Seconds to View the Warnings ===${COLOR_RESET}"
+            output=$(monitor_all)
+            clear
+            echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}"
+            echo -e "$output"
+            cat "$LOG_FILE"
+            cat "$LOG_FILE" >> "$LOG_DIR/system_logs.log"
+            WARNING_COUNT=$(wc -l < "$LOG_FILE")
+            rm "$LOG_FILE"
+            LOG_FILE="$LOG_DIR/system_logs.log"
+            echo
+            echo -e "Found $WARNING_COUNT warnings."
+            read -p "Press [Enter] to return to IDS menu..."
+            ;;
+          "REAL TIME")
+            clear
+            echo -e "${BOLD}${COLOR_MENU}=== Please Wait a Few Seconds to View the Warnings ===${COLOR_RESET}"
+            WARNING_COUNT=0
+            while true; do
+              LOG_FILE="$LOG_DIR/temp_logs.log"
+              touch $LOG_FILE
+              monitor_all
+              tput cup 0 0; tput ed
+              echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}\n"
+              cat $LOG_FILE
+              cat $LOG_FILE >> "$LOG_DIR/system_logs.log"
+              COUNT=$(wc -l < "$LOG_FILE")
+              (( WARNING_COUNT += COUNT ))
+              echo -e "\nFound $WARNING_COUNT warnings since the start of real time monitoring (view "$LOG_DIR/system_logs.log" to see them all)\nPress [Enter] to return to IDS menu..."
+              rm $LOG_FILE
+              read -t 1 -s input && [[ -z "$input" ]] && break
+            done
+            LOG_FILE="$LOG_DIR/system_logs.log"
+            tput cnorm
+            ;;
+          esac
+        ;;
       # === Hardware Submenu ===
       "Hardware Management")
         case "$selected" in
@@ -138,10 +184,10 @@ handle_submenu() {
               avg_cpu=$(get_average_cpu_stats)
               all_cpu=$(get_all_cpu_stats)
               tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Real-Time CPU Average Utilization ===${COLOR_RESET}"
+              echo -e "${BOLD}${COLOR_MENU}=== Real-Time CPU Average Utilization ===${COLOR_RESET}\n"
               echo "$avg_cpu"
               echo
-              echo -e "${COLOR_MENU}${BOLD}=== Real-Time CPU Utilization Per Core ===${COLOR_RESET}"
+              echo -e "${COLOR_MENU}${BOLD}=== Real-Time CPU Utilization Per Core ===${COLOR_RESET}\n"
               echo "$all_cpu"
               echo -e "\nPress [Enter] to exit AVERAGE CPU monitoring."
               read -t 1 -s input && [[ -z "$input" ]] && break
@@ -158,10 +204,10 @@ handle_submenu() {
               disk_usage=$(get_disk_usage)
               disk_io=$(get_disk_io_stats)
               tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Disk Usage ===${COLOR_RESET}"
+              echo -e "${BOLD}${COLOR_MENU}=== Disk Usage ===${COLOR_RESET}\n"
               echo "$disk_usage"
               echo
-              echo -e "\n${BOLD}${COLOR_MENU}=== Disk I/O Stats ===${COLOR_RESET}"
+              echo -e "\n${BOLD}${COLOR_MENU}=== Disk I/O Stats ===${COLOR_RESET}\n"
               echo "$disk_io"
               echo -e "\nPress [Enter] to exit real-time view."
               read -t 1 -s input && [[ -z "$input" ]] && break
@@ -173,15 +219,15 @@ handle_submenu() {
             clear
             tput civis
             trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== Real-Time Memory and Swap Usage ===${COLOR_RESET}"
+            echo -e "${BOLD}${COLOR_MENU}=== Please Wait 1 Second for Real-Time Memory and Swap Usage ===${COLOR_RESET}"
             while true; do
               mem_stats=$(get_memory_stats)
               swap_stats=$(get_swap_stats)
               tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Real-Time Memory Usage ===${COLOR_RESET}"
+              echo -e "${BOLD}${COLOR_MENU}=== Real-Time Memory Usage ===${COLOR_RESET}\n"
               echo "$mem_stats"
               echo
-              echo -e "\n${BOLD}${COLOR_MENU}=== Real-Time Swap Usage ===${COLOR_RESET}"
+              echo -e "\n${BOLD}${COLOR_MENU}=== Real-Time Swap Usage ===${COLOR_RESET}\n"
               echo "$swap_stats"
               echo -e "\nPress [Enter] to exit RAM monitoring."
               read -t 1 -s input && [[ -z "$input" ]] && break
@@ -203,10 +249,10 @@ handle_submenu() {
               top_cpu_process=$(get_top_processes_cpu)
               top_mem_process=$(get_top_processes_mem)
               tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Top CPU-consuming Processes ===${COLOR_RESET}"
+              echo -e "${BOLD}${COLOR_MENU}=== Top CPU-consuming Processes ===${COLOR_RESET}\n"
               echo "$top_cpu_process"
               echo
-              echo -e "${BOLD}${COLOR_MENU}=== Top Memory-consuming Processes ===${COLOR_RESET}"
+              echo -e "${BOLD}${COLOR_MENU}=== Top Memory-consuming Processes ===${COLOR_RESET}\n"
               echo "$top_mem_process"
               echo -e "\nPress [Enter] to exit DEMANDING PROCESS monitoring."
               read -t 1 -s input && [[ -z "$input" ]] && break
@@ -215,15 +261,15 @@ handle_submenu() {
             ;;
           "PROCESS TREE")
             clear
-            echo -e "${BOLD}${COLOR_MENU}=== Process Tree ===${COLOR_RESET}"
+            echo -e "${BOLD}${COLOR_MENU}=== Process Tree ===${COLOR_RESET}\n"
             show_process_tree
-            read -p "Press Enter to return to Process Management menu..."
+            read -p "Press [Enter] to return to Process Management menu..."
             ;;
           "LOAD AVERAGE")
             clear
-            echo -e "${BOLD}${COLOR_MENU}=== Load Average Over 1min, 5min and 15min ===${COLOR_RESET}"
+            echo -e "${BOLD}${COLOR_MENU}=== Load Average Over 1min, 5min and 15min ===${COLOR_RESET}\n"
             show_load
-            read -p "Press Enter to return to Process Management menu..."
+            read -p "Press [Enter] to return to Process Management menu..."
             ;;
         esac
         ;;
@@ -234,13 +280,13 @@ handle_submenu() {
           "TRAFFIC")
             clear
             source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
-            read -p "Press Enter to return to Network menu..."
+            read -p "Press [Enter] to return to Network menu..."
             ;;
           "PORTS")
             clear
-            echo -e "${BOLD}${COLOR_MENU}=== Open Ports ===${COLOR_RESET}"
+            echo -e "${BOLD}${COLOR_MENU}=== Open Ports ===${COLOR_RESET}\n"
 
-            read -p "Press Enter to return to Network menu..."
+            read -p "Press [Enter] to return to Network menu..."
             ;;
         esac
         ;;
@@ -262,44 +308,6 @@ handle_submenu() {
             tput cnorm
             ;;
         esac
-        ;;
-
-      # === IDS Submenu ===
-      "IDS")
-        case "$selected" in
-          "ONE TIME")
-            LOG_FILE="$LOG_DIR/temp_logs.log"
-            touch $LOG_FILE
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}"
-            monitor_all
-            cat $LOG_FILE
-            cat $LOG_FILE >> "$LOG_DIR/system_logs.log"
-            rm $LOG_FILE
-            LOG_FILE="$LOG_DIR/system_logs.log"
-            read -p "Press Enter to return to Network menu..."
-            ;;
-          "REAL TIME")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}"
-            while true; do
-              LOG_FILE="$LOG_DIR/temp_logs.log"
-              touch $LOG_FILE
-              monitor_all
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}"
-              cat $LOG_FILE
-              cat $LOG_FILE >> "$LOG_DIR/system_logs.log"
-              echo -e "\nPress [Enter] to exit LOGS monitoring."
-              rm $LOG_FILE
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            LOG_FILE="$LOG_DIR/system_logs.log"
-            tput cnorm
-            ;;
-          esac
         ;;
     esac
   done

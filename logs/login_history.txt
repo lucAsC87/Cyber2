@@ -1,4 +1,6 @@
-twinkpad tty7         :0               Sat Jun 21 15:59 - still logged in
+twinkpad tty7         :0               Sun Jun 22 16:50 - still logged in
+lightdm  tty7         :0               Sun Jun 22 16:49 - 16:50  (00:00)
+twinkpad tty7         :0               Sat Jun 21 15:59 - 20:06  (04:07)
 lightdm  tty7         :0               Sat Jun 21 15:58 - 15:59  (00:00)
 twinkpad tty7         :0               Fri Jun 20 14:50 - 15:00  (00:10)
 lightdm  tty7         :0               Fri Jun 20 14:50 - 14:50  (00:00)
@@ -6,7 +8,3 @@ twinkpad tty7         :0               Fri Jun 20 08:51 - still logged in
 twinkpad tty7         :0               Thu Jun 19 15:18 - 01:28  (10:10)
 twinkpad tty7         :0               Thu Jun 19 09:02 - still logged in
 twinkpad tty7         :0               Wed Jun 18 08:44 - 16:51  (08:06)
-twinkpad tty7         :0               Tue Jun 17 13:38 - 21:19  (07:41)
-twinkpad tty7         :0               Tue Jun 17 08:38 - 12:23  (03:44)
-
-wtmpdb begins Tue Jun 17 08:38:21 2025

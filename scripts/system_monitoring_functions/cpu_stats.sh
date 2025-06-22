@@ -12,7 +12,7 @@ get_average_cpu_stats() {
     read -r _ _ usr nice sys iowait irq soft steal guest gnice idle <<<"$cpu_stats"
     total=$(awk -v idle="$idle" 'BEGIN { printf "%.2f", 100 - idle }')
 
-    print_statements+="\n${BOLD}$(print_metric "Total (%)" "$total" $DEFAULT_CPU_TOTAL_THRESHOLD "over" "CPU usage is high; may be overloaded" "CPU")\n"
+    print_statements+="${BOLD}$(print_metric "Total (%)" "$total" $DEFAULT_CPU_TOTAL_THRESHOLD "over" "CPU usage is high; may be overloaded" "CPU")\n"
     print_statements+="$(print_metric "usr (%)" "$usr" $DEFAULT_CPU_USR_THRESHOLD "over" "Too much user-space processing" "CPU")\n"
     print_statements+="$(print_metric "nice (%)" "$nice" $DEFAULT_CPU_NICE_THRESHOLD "over" "Too many low-priority background jobs" "CPU")\n"
     print_statements+="$(print_metric "sys (%)" "$sys" $DEFAULT_CPU_SYS_THRESHOLD "over" "Excessive system/kernel activity" "CPU")\n"
@@ -38,7 +38,7 @@ get_all_cpu_stats() {
         read -r cpu_id usr nice sys iowait irq soft steal guest gnice idle <<<"$line"
         total=$(awk -v i="$idle" 'BEGIN { printf "%.2f", 100 - i }')
 
-        print_statements+="\n${BOLD}Core $cpu_id:\n"
+        print_statements+="${BOLD}Core $cpu_id:\n"
         print_statements+="${BOLD}$(print_metric "Total (%)" "$total" $DEFAULT_CPU_TOTAL_THRESHOLD "over" "High usage on Core $cpu_id" "CPU")  "
         print_statements+="$(print_metric "usr (%)" "$usr" $DEFAULT_CPU_USR_THRESHOLD "over" "High usr on Core $cpu_id" "CPU")  "
         print_statements+="$(print_metric "nice (%)" "$nice" $DEFAULT_CPU_NICE_THRESHOLD "over" "High nice on Core $cpu_id" "CPU")  "

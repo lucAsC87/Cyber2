@@ -7,7 +7,7 @@ get_disk_io_stats() {
     local print_statements=""
 
     while read -r dev read_mb write_mb util; do
-        print_statements+="\n${BOLD}Device ${dev}:${COLOR_RESET}\n"
+        print_statements+="${BOLD}Device ${dev}:${COLOR_RESET}\n"
         print_statements+="$(print_metric "Read MB/s" "$read_mb" $DEFAULT_DISK_READ_THRESHOLD "over" "High read on $dev" "DISK")  "
         print_statements+="$(print_metric "Write MB/s" "$write_mb" $DEFAULT_DISK_WRITE_THRESHOLD "over" "High write on $dev" "DISK")  "
         print_statements+="$(print_metric "Util (%)" "$util" $DEFAULT_DISK_TPS_THRESHOLD "over" "High utilization on $dev" "DISK")${COLOR_RESET}\n"
@@ -40,7 +40,7 @@ get_disk_usage() {
         used_gb=$(awk -v kb="$used" 'BEGIN { printf "%.2f", kb / 1024 / 1024 }')
         avail_gb=$(awk -v kb="$avail" 'BEGIN { printf "%.2f", kb / 1024 / 1024 }')
 
-        print_statements+="\n${BOLD}Device ${source}:${COLOR_RESET}\n"
+        print_statements+="${BOLD}Device ${source}:${COLOR_RESET}\n"
         print_statements+="$(print_metric "Size (GB)" "$size_gb" 0 "none" "")  "
         print_statements+="$(print_metric "Used (GB)" "$used_gb" 0 "none" "")  "
         print_statements+="$(print_metric "Avail (GB)" "$avail_gb" 0 "none" "")  "

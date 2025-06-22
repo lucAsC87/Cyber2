@@ -20,9 +20,9 @@ grep -i "error" "$LOG_HISTORY_FILE" | tail -n 5 > "$LOG_DIR/history_report.txt"
 sudo journalctl -p err --no-pager | tail -n 5 > "$LOG_DIR/system_error_report.txt"
 
 # Get login history
-sudo last -n 10 > "$LOG_DIR/login_history.txt"
+sudo last -n 10 | grep -Ev '^(reboot|shutdown|wtmp|btmp|$)' > "$LOG_DIR/login_history.txt"
 total_logins=$(wc -l < "$LOG_DIR/login_history.txt")
-unique_users=$(sort -u "$LOG_DIR/login_history.txt" | grep -c "^")
+unique_users=$(awk '{print $1}' "$LOG_DIR/login_history.txt" | sort -u | wc -l)
 
 # Create backups (overwrite existing ones)
 cp -p "$LOG_HISTORY_FILE" "$LOG_DIR/history.backup"

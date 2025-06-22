@@ -8,7 +8,7 @@ get_system_info(){
     echo -e "${COLOR_TEXT}Shell: ${COLOR_RESET}$SHELL"
     echo -e "${COLOR_TEXT}Terminal: ${COLOR_RESET}$TERM"
     echo -e "${COLOR_TEXT}CPU: ${COLOR_RESET}$(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 | sed 's/^ //')"
-    echo -e "${COLOR_TEXT}Memory: ${COLOR_RESET}$(free -h | awk '/^Mem:/ {print $3 " / " $2}')"
+    echo -e "${COLOR_TEXT}Memory: ${COLOR_RESET}$(free -h | awk '/^Mem:/ {print $3 " / " $2}')\n"
     }
 
 get_hardware_info(){
@@ -17,5 +17,5 @@ get_hardware_info(){
     echo -e "${COLOR_TEXT}Architecture: ${COLOR_RESET}$(uname -m)"
     echo -e "${COLOR_TEXT}Memory: ${COLOR_RESET}$(free -h | awk '/^Mem:/ {print $3 " / " $2}')"
     echo -e "${COLOR_TEXT}GPU: ${COLOR_RESET}$(lspci | grep -i 'vga\|3d\|2d' | cut -d: -f3 | sed 's/^ //')"
-    echo -e "${COLOR_TEXT}Disk(s): ${COLOR_RESET}$(lsblk -d -o NAME,SIZE,MODEL | grep -v '^NAME')"
+    echo -e "${COLOR_TEXT}Disk(s): ${COLOR_RESET}$(lsblk -d -o NAME,SIZE,MODEL | grep -v '^NAME')\n"
 }

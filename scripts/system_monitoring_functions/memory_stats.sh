@@ -17,7 +17,7 @@ get_memory_stats() {
     print_statements+="$(print_metric "Total RAM (MB)" "$total" 0 "none" "")\n"
     print_statements+="$(print_metric "Used RAM (MB)" "$used" 0 "none" "")\n"
     print_statements+="$(print_metric "Free RAM (MB)" "$free" $DEFAULT_MEM_LIMIT "under" "Low free memory; consider closing apps" "RAM")\n"
-    print_statements+="$(print_metric "RAM Usage (%)" "$mem_usage_pct" $DEFAULT_MEM_THRESHOLD "over" "High RAM usage" "RAM")\n\n"
+    print_statements+="$(print_metric "RAM Usage (%)" "$mem_usage_pct" $DEFAULT_MEM_THRESHOLD "over" "High RAM usage" "RAM")\n"
 
     echo -e "$print_statements"
 }
@@ -28,7 +28,7 @@ get_swap_stats(){
         return
     fi
 
-    local print_statements="\n"
+    local print_statements=""
 
     read -r _ swap_total swap_used swap_free <<< \
         $(free -m | awk '/^Swap:/ {print $1, $2, $3, $4}')
