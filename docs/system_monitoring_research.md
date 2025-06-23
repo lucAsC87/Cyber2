@@ -33,13 +33,37 @@ All these commands rely heavily on the virtual filesystems `/proc` and `/sys` to
 | `/proc`         | Virtual filesystem with live kernel and system stats (`/proc/stat`, `/proc/meminfo`, `/proc/diskstats`, `/proc/net/dev`) |
 | `/sys`          | Hardware and kernel subsystem information and device stats           |
 
+## 2. Why Monitoring Matters in a Security Context
 
-## 2. Hardware monitoring.
+Effective system monitoring is one of the cornerstones of cybersecurity defense. While firewalls, antivirus, and access control lists form the perimeter, continuous system monitoring enables real-time detection of anomalies that bypass those defenses.
+
+### Security-Relevant Monitoring Benefits:
+| Area              | What You Can Catch                                      |
+| ----------------- | ------------------------------------------------------- |
+| **CPU**           | Cryptomining malware, runaway processes                 |
+| **Disk I/O**      | Ransomware, keyloggers, exfiltration tools              |
+| **Memory (RAM)**  | Memory leaks, resident malware, fork bombs              |
+| **Swap**          | Resource exhaustion, DoS symptoms                       |
+| **Processes**     | Unknown daemons, privilege escalation attempts          |
+| **Network Tools** | Hidden connections, reverse shells, port scanning tools |
+
+### Why It Matters:
+
+- Prevention: Early detection helps stop attacks before they cause damage.
+
+- Containment: Identifying the source of an issue quickly limits scope.
+
+- Investigation: Monitoring provides logs and data critical for forensics.
+
+- Without monitoring, attacks may go unnoticed for weeks or months, leading to data breaches, financial loss, or legal consequences.
+
+## 3. Hardware monitoring.
 
 Hardware monitoring on Debian-based Linux systems is crucial for maintaining system health, diagnosing performance bottlenecks, and preventing hardware failures. It involves tracking metrics such as CPU temperature, fan speeds, voltages, disk health, and battery status. Debian and its derivatives, like Ubuntu and Kali Linux, provide a variety of tools and interfaces for accessing real-time hardware information through the /proc and /sys filesystems, as well as through sensor libraries and utilities.
 
+---
 
-### 2.1. CPU monitoring.
+### 3.1. CPU monitoring.
 
 Monitoring CPU usage is essential for spotting abnormal system behavior that may indicate malware. Malware often consumes high CPU resources to perform unauthorized activities like cryptomining or spying. By tracking CPU load and identifying unexpected spikes or sustained usage, administrators can detect and investigate suspicious processes early, helping prevent system slowdowns and security breaches.
 
@@ -97,7 +121,6 @@ softirq 8816861 7 3686105 222 464377 60465 0 15611 3225571 0 1364503
 | `procs_running` | Number of processes currently running                                                         | 1            |
 | `procs_blocked` | Number of processes currently blocked (usually waiting on I/O)  
 
----
 
 #### Concept: Monitoring CPU Usage from `/proc/stat`
 
@@ -108,7 +131,9 @@ To calculate CPU usage accurately, we must:
 
 This approach allows for precise tracking of CPU usage, broken down by mode (user, system, idle, etc.), and is exactly how tools like `top`, `vmstat`, and `htop` derive their metrics behind the scenes.
 
-### 2.2. Disk I/O monitoring.
+--- 
+
+### 3.2. Disk I/O monitoring.
 Monitoring disk I/O activity is important because it helps us understand how our system reads from and writes to storage devices, which affects overall performance and responsiveness. High or unusual disk I/O can indicate bottlenecks that slow down applications or the entire system.
 
 From a security perspective, monitoring disk I/O can help detect suspicious behavior, such as unexpected spikes in read/write operations caused by malware, ransomware encrypting files, or unauthorized data exfiltration. Early detection of abnormal disk activity enables timely investigation and response to potential threats, helping protect data integrity and system stability.
@@ -162,6 +187,81 @@ To measure disk I/O activity accurately, we follow a similar method:
 
 This technique enables precise tracking of how much data is being read from or written to each device, how busy each disk is, and how long I/O operations are taking. It's the foundation for many performance monitoring tools like iostat, dstat, and collectl.
 
-### 2.3. Swap monitoring.
+---
 
-### 2.4. Process monitoring
+### 3.3. Ram & Swap monitoring.
+
+Monitoring RAM and swap usage is essential for maintaining system performance and detecting early signs of memory exhaustion or abuse. If RAM usage is consistently high, the system may slow down or begin swapping to disk — which is far slower than physical memory. Excessive swapping (or "thrashing") is a red flag that could indicate poorly behaving applications, memory leaks, or malicious processes consuming memory to perform attacks like fork bombs or DoS.
+
+From a security standpoint, abnormally high memory consumption can be a sign of rootkits, cryptominers, or memory-resident malware.
+
+#### Understanding `/proc/meminfo`
+This file provides detailed metrics about system memory usage, including RAM and swap.
+
+```bash
+┌──(thinkpad@Becode)-[~]
+└─$ cat /proc/meminfo
+MemTotal:        8029460 kB
+MemFree:         1234120 kB
+MemAvailable:    2350000 kB
+Buffers:          123456 kB
+Cached:          2123456 kB
+SwapTotal:       2097148 kB
+SwapFree:        2096148 kB
+Active:          3123456 kB
+Inactive:        1234567 kB
+```
+##### Field Breakdown:
+| Field             | Description                                                  |
+| ----------------- | ------------------------------------------------------------ |
+| `MemTotal`        | Total installed physical RAM                                 |
+| `MemFree`         | Memory not in use at all                                     |
+| `MemAvailable`    | Estimation of how much memory is available for new processes |
+| `Buffers`         | Memory used by kernel buffers                                |
+| `Cached`          | Memory used for caching files (can be reclaimed)             |
+| `SwapTotal`       | Total swap space                                             |
+| `SwapFree`        | Free swap space                                              |
+| `Active/Inactive` | Pages actively/inactively used                               |
+
+#### Concept: Monitoring RAM/SWAP Usage
+
+You can monitor and respond to memory pressure by:
+
+- Checking how much free vs cached memory is available.
+
+- Tracking swap usage: usage of swap under normal RAM load may indicate issues.
+
+- Using tools like free, vmstat, or top to view real-time memory status.
+---
+### 3.4. Process monitoring
+
+Monitoring running processes is essential for detecting unauthorized or malicious activity on a system. Every user, system, or attacker action is executed through a process. A compromised system often shows signs such as unknown background services, resource-hogging programs, or processes running from unusual locations.
+
+From a security perspective, identifying and investigating suspicious processes (e.g., using high CPU, running as root, or accessing network sockets) is key to early detection of intrusions, rootkits, or data exfiltration.
+
+#### Understanding `/proc/[pid]/`
+
+The /proc directory contains subdirectories named after each process's PID (process ID), offering real-time introspection into process behavior and resource consumption.
+
+Example:
+```bash
+/proc/1234/
+├── cmdline        # The command line that started the process
+├── status         # Process status and memory usage
+├── fd/            # Open file descriptors
+├── exe ->         # Symlink to the executed binary
+├── environ        # Environment variables
+├── maps           # Memory map of the process
+```
+
+#### Key Indicators of Suspicious Processes:
+
+- High and persistent CPU or memory usage
+
+- Processes running from /tmp, /dev, or /var
+
+- Executables with no associated command line ([kworker], etc.)
+
+- Parent-child relationships indicating privilege escalation
+
+- Processes listening on unusual ports

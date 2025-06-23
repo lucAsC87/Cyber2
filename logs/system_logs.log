@@ -170,3 +170,124 @@
 2025-06-22 23:30:56 - WARNING - METRIC: NETWORK - VALUE: 4508.62 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
 2025-06-22 23:31:01 - WARNING - METRIC: NETWORK - VALUE: 4573.81 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
 2025-06-22 23:31:06 - WARNING - METRIC: NETWORK - VALUE: 4457.30 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:13:58 - WARNING - METRIC: NETWORK - VALUE: 4141.61 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:00 - WARNING - METRIC: NETWORK - VALUE: 3804.07 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:02 - WARNING - METRIC: NETWORK - VALUE: 3903.80 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:04 - WARNING - METRIC: NETWORK - VALUE: 4068.53 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:06 - WARNING - METRIC: NETWORK - VALUE: 4064.65 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:08 - WARNING - METRIC: NETWORK - VALUE: 3937.28 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:10 - WARNING - METRIC: NETWORK - VALUE: 3693.91 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:12 - WARNING - METRIC: NETWORK - VALUE: 4535.07 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:14 - WARNING - METRIC: NETWORK - VALUE: 4697.77 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:16 - WARNING - METRIC: NETWORK - VALUE: 4753.57 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:18 - WARNING - METRIC: NETWORK - VALUE: 4912.56 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:21 - WARNING - METRIC: NETWORK - VALUE: 4986.39 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:23 - WARNING - METRIC: NETWORK - VALUE: 4197.38 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:25 - WARNING - METRIC: NETWORK - VALUE: 4364.34 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:27 - WARNING - METRIC: NETWORK - VALUE: 4021.43 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:29 - WARNING - METRIC: NETWORK - VALUE: 4102.72 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:31 - WARNING - METRIC: NETWORK - VALUE: 4119.72 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:34 - WARNING - METRIC: NETWORK - VALUE: 3693.57 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:36 - WARNING - METRIC: NETWORK - VALUE: 4078.69 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:38 - WARNING - METRIC: NETWORK - VALUE: 3877.54 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:40 - WARNING - METRIC: NETWORK - VALUE: 4293.28 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:42 - WARNING - METRIC: NETWORK - VALUE: 3742.75 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:44 - WARNING - METRIC: NETWORK - VALUE: 3413.70 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:14:46 - WARNING - METRIC: NETWORK - VALUE: 4616.40 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:16:09 - WARNING - METRIC: NETWORK - VALUE: 4656.52 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:16:14 - WARNING - METRIC: NETWORK - VALUE: 4015.61 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:16:19 - WARNING - METRIC: NETWORK - VALUE: 3661.95 - THRESHOLD: 1024.00 - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 09:16:31 - WARNING - METRIC: PROCESS - VALUE: 31.75 - THRESHOLD: 30.00 - MESSAGE: Process 17484 is using a lot of compute power
+2025-06-23 09:16:35 - WARNING - METRIC: CPU - VALUE: 71.46 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 09:16:37 - WARNING - METRIC: PROCESS - VALUE: 59.25 - THRESHOLD: 30.00 - MESSAGE: Process 17484 is using a lot of compute power
+2025-06-23 09:16:41 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-23 09:16:41 - WARNING - METRIC: CPU - VALUE: 93.77 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 09:16:41 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-23 09:16:43 - WARNING - METRIC: PROCESS - VALUE: 66.75 - THRESHOLD: 30.00 - MESSAGE: Process 17484 is using a lot of compute power
+2025-06-23 09:16:47 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-23 09:16:47 - WARNING - METRIC: CPU - VALUE: 96.00 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 09:16:47 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-23 09:16:49 - WARNING - METRIC: PROCESS - VALUE: 71.25 - THRESHOLD: 30.00 - MESSAGE: Process 17484 is using a lot of compute power
+2025-06-23 09:18:11 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-23 09:18:11 - WARNING - METRIC: CPU - VALUE: 98.25 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 09:18:11 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-23 09:18:12 - WARNING - METRIC: PROCESS - VALUE: 76.25 - THRESHOLD: 30.00 - MESSAGE: Process 29457 is using a lot of compute power
+2025-06-23 10:43:44 - WARNING - METRIC: CPU - VALUE: 95.96 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 1
+2025-06-23 10:43:44 - WARNING - METRIC: CPU - VALUE: 95.96 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 1
+2025-06-23 10:43:45 - WARNING - METRIC: CPU - VALUE: 4.04 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 1
+2025-06-23 10:43:45 - WARNING - METRIC: CPU - VALUE: 79.21 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 3
+2025-06-23 10:43:45 - WARNING - METRIC: CPU - VALUE: 19.80 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 3
+2025-06-23 10:43:47 - WARNING - METRIC: CPU - VALUE: 71.83 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 10:43:48 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 0
+2025-06-23 10:43:48 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 0
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 0
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 1
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 99.01 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 1
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 1
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 2
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 98.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 2
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 2
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 3
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 94.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 3
+2025-06-23 10:43:49 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 3
+2025-06-23 10:43:51 - WARNING - METRIC: CPU - VALUE: 80.31 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 10:43:52 - WARNING - METRIC: CPU - VALUE: 16.37 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-23 10:43:53 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 0
+2025-06-23 10:43:53 - WARNING - METRIC: CPU - VALUE: 99.01 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 0
+2025-06-23 10:43:53 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 0
+2025-06-23 10:43:53 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 1
+2025-06-23 10:43:53 - WARNING - METRIC: CPU - VALUE: 99.01 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 1
+2025-06-23 10:43:53 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 1
+2025-06-23 10:43:56 - WARNING - METRIC: CPU - VALUE: 99.26 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-23 10:43:56 - WARNING - METRIC: CPU - VALUE: 93.56 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 10:43:56 - WARNING - METRIC: CPU - VALUE: 0.74 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-23 10:43:57 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 0
+2025-06-23 10:43:57 - WARNING - METRIC: CPU - VALUE: 96.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 0
+2025-06-23 10:43:57 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 0
+2025-06-23 10:43:57 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 1
+2025-06-23 10:43:57 - WARNING - METRIC: CPU - VALUE: 96.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 1
+2025-06-23 10:43:58 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 1
+2025-06-23 10:43:58 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 2
+2025-06-23 10:43:58 - WARNING - METRIC: CPU - VALUE: 93.07 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 2
+2025-06-23 10:43:58 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 2
+2025-06-23 10:43:58 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 3
+2025-06-23 10:43:58 - WARNING - METRIC: CPU - VALUE: 96.97 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 3
+2025-06-23 10:43:58 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 3
+2025-06-23 10:44:00 - WARNING - METRIC: CPU - VALUE: 74.43 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 10:44:01 - WARNING - METRIC: CPU - VALUE: 90.91 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 0
+2025-06-23 10:44:01 - WARNING - METRIC: CPU - VALUE: 89.90 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 0
+2025-06-23 10:44:01 - WARNING - METRIC: CPU - VALUE: 9.09 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 0
+2025-06-23 10:44:02 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 3
+2025-06-23 10:44:02 - WARNING - METRIC: CPU - VALUE: 98.99 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 3
+2025-06-23 10:44:02 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 3
+2025-06-23 10:44:04 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-23 10:44:04 - WARNING - METRIC: CPU - VALUE: 99.25 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 10:44:04 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-23 10:44:05 - WARNING - METRIC: CPU - VALUE: 86.87 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 1
+2025-06-23 10:44:05 - WARNING - METRIC: CPU - VALUE: 85.86 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 1
+2025-06-23 10:44:06 - WARNING - METRIC: CPU - VALUE: 13.13 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 1
+2025-06-23 10:44:06 - WARNING - METRIC: CPU - VALUE: 86.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 2
+2025-06-23 10:44:06 - WARNING - METRIC: CPU - VALUE: 85.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 2
+2025-06-23 10:44:06 - WARNING - METRIC: CPU - VALUE: 14.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 2
+2025-06-23 10:44:08 - WARNING - METRIC: CPU - VALUE: 73.48 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 10:44:09 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 1
+2025-06-23 10:44:09 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 1
+2025-06-23 10:44:09 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 1
+2025-06-23 10:44:09 - WARNING - METRIC: CPU - VALUE: 99.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 2
+2025-06-23 10:44:10 - WARNING - METRIC: CPU - VALUE: 98.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 2
+2025-06-23 10:44:10 - WARNING - METRIC: CPU - VALUE: 1.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 2
+2025-06-23 10:44:12 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: CPU usage is high; may be overloaded
+2025-06-23 10:44:12 - WARNING - METRIC: CPU - VALUE: 98.75 - THRESHOLD: 70.00 - MESSAGE: Too much user-space processing
+2025-06-23 10:44:12 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle means CPU is heavily loaded
+2025-06-23 10:44:13 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 0
+2025-06-23 10:44:13 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 0
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 0
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 1
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 99.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 1
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 1
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 2
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 99.00 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 2
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 2
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 100.00 - THRESHOLD: 85.00 - MESSAGE: High usage on Core 3
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 96.04 - THRESHOLD: 70.00 - MESSAGE: High usr on Core 3
+2025-06-23 10:44:14 - WARNING - METRIC: CPU - VALUE: 0.00 - THRESHOLD: 20.00 - MESSAGE: Low idle on Core 3

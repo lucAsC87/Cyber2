@@ -1,3 +1,8 @@
+source "$PROJECT_DIR/scripts/source_ui_scripts.sh"
+source "$PROJECT_DIR/scripts/reporting-mechanism.sh"
+source "$PROJECT_DIR/scripts/monitor-system-ressources.sh"
+source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
+
 COLOR_MENU="\e[34m"
 COLOR_ENDPOINT="\e[35m"
 COLOR_BACK="\e[31m"

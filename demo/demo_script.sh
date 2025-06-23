@@ -7,22 +7,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Extract root project directory (assumes "Cyber2" is the project root folder).
 PROJECT_DIR="$(echo "$SCRIPT_DIR" | sed -E 's|(.*\/Cyber2).*|\1|')"
 
-# === Log File Setup ===
-# Define log directory and file path
-LOG_DIR="$PROJECT_DIR/logs"
-LOG_FILE="$LOG_DIR/system_logs.log"
+# === Load Dependencies ===
+# Source configuration and resource monitoring functions
+source "$PROJECT_DIR/toolkit/config.sh"
 
 # Create log directory if it doesn't exist and initialize the log file
 mkdir -p "$LOG_DIR"
 touch "$LOG_FILE"
-
-# === Load Dependencies ===
-# Source configuration and resource monitoring functions
-source "$PROJECT_DIR/toolkit/config.sh"
-source "$PROJECT_DIR/scripts/monitor-system-ressources.sh"
-source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
-source "$PROJECT_DIR/scripts/monitor-all.sh"
-
 
 # === Menu Definitions ===
 # Define main and submenu options as arrays
@@ -114,16 +105,10 @@ handle_submenu() {
         "System Info")
           case "$selected" in
             "INFO")
-              clear
-              echo -e "${BOLD}${COLOR_MENU}=== System Info ===${COLOR_RESET}\n"
-              get_system_info
-              read -p "Press [Enter] to return to System Info menu..."
+              ui_get_info
               ;;
             "SPECS")
-              clear
-              echo -e "${BOLD}${COLOR_MENU}=== HARDWARE INFO ===${COLOR_RESET}\n"
-              get_hardware_info
-              read -p "Press [Enter] to return to System Info menu..."
+              ui_get_specs
               ;;
           esac
           ;;
@@ -131,50 +116,10 @@ handle_submenu() {
       "IDS")
         case "$selected" in
           "ONE TIME")
-            LOG_FILE="$LOG_DIR/temp_logs.log"
-            touch "$LOG_FILE"
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== Choose Network Interface ===${COLOR_RESET}"
-            IFACE=$(choose_interface)
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== Please Wait a Few Seconds to View the Warnings ===${COLOR_RESET}"
-            monitor_all
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}"
-            cat "$LOG_FILE"
-            cat "$LOG_FILE" >> "$LOG_DIR/system_logs.log"
-            WARNING_COUNT=$(wc -l < "$LOG_FILE")
-            rm "$LOG_FILE"
-            LOG_FILE="$LOG_DIR/system_logs.log"
-            echo
-            echo -e "Found $WARNING_COUNT warnings."
-            read -p "Press [Enter] to return to IDS menu..."
+            ui_get_one_time
             ;;
           "REAL TIME")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== Choose Network Interface ===${COLOR_RESET}"
-            IFACE=$(choose_interface)
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== Please Wait a Few Seconds to View the Warnings ===${COLOR_RESET}"
-            WARNING_COUNT=0
-            while true; do
-              LOG_FILE="$LOG_DIR/temp_logs.log"
-              touch $LOG_FILE
-              monitor_all
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}\n"
-              cat $LOG_FILE
-              cat $LOG_FILE >> "$LOG_DIR/system_logs.log"
-              COUNT=$(wc -l < "$LOG_FILE")
-              (( WARNING_COUNT += COUNT ))
-              echo -e "\nFound $WARNING_COUNT warnings since the start of real time monitoring (view "$LOG_DIR/system_logs.log" to see them all)\nPress [Enter] to return to IDS menu..."
-              rm $LOG_FILE
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            LOG_FILE="$LOG_DIR/system_logs.log"
-            tput cnorm
+            ui_get_real_time
             ;;
           esac
         ;;
@@ -182,63 +127,15 @@ handle_submenu() {
       "Hardware Management")
         case "$selected" in
           "CPU") 
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== Please Wait 2 Seconds for Real-Time CPU Utilization ===${COLOR_RESET}"
-            while true; do
-              avg_cpu=$(get_average_cpu_stats)
-              all_cpu=$(get_all_cpu_stats)
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Real-Time CPU Average Utilization ===${COLOR_RESET}\n"
-              echo "$avg_cpu"
-              echo
-              echo -e "${COLOR_MENU}${BOLD}=== Real-Time CPU Utilization Per Core ===${COLOR_RESET}\n"
-              echo "$all_cpu"
-              echo -e "\nPress [Enter] to exit AVERAGE CPU monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
+            ui_get_cpu
             ;;
 
           "DISK")
-            clear
-            tput civis  # Hide cursor
-            trap "tput cnorm; stty echo" EXIT  # Ensure cursor is restored on exit
-            echo -e "${BOLD}${COLOR_MENU}=== Disk Usage and I/O ===${COLOR_RESET}"
-            while true; do
-              disk_usage=$(get_disk_usage)
-              disk_io=$(get_disk_io_stats)
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Disk Usage ===${COLOR_RESET}\n"
-              echo "$disk_usage"
-              echo
-              echo -e "\n${BOLD}${COLOR_MENU}=== Disk I/O Stats ===${COLOR_RESET}\n"
-              echo "$disk_io"
-              echo -e "\nPress [Enter] to exit real-time view."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
+            ui_get_disk
             ;;
 
           "RAM")
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== Please Wait 1 Second for Real-Time Memory and Swap Usage ===${COLOR_RESET}"
-            while true; do
-              mem_stats=$(get_memory_stats)
-              swap_stats=$(get_swap_stats)
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Real-Time Memory Usage ===${COLOR_RESET}\n"
-              echo "$mem_stats"
-              echo
-              echo -e "\n${BOLD}${COLOR_MENU}=== Real-Time Swap Usage ===${COLOR_RESET}\n"
-              echo "$swap_stats"
-              echo -e "\nPress [Enter] to exit RAM monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
+            ui_get_ram
             ;;
         esac
         ;;
@@ -247,35 +144,13 @@ handle_submenu() {
       "Process Management")
         case "$selected" in
           "DEMANDING PROCESSES")
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== Top CPU-consuming Processes ===${COLOR_RESET}"
-            while true; do
-              top_cpu_process=$(get_top_processes_cpu)
-              top_mem_process=$(get_top_processes_mem)
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Top CPU-consuming Processes ===${COLOR_RESET}\n"
-              echo "$top_cpu_process"
-              echo
-              echo -e "${BOLD}${COLOR_MENU}=== Top Memory-consuming Processes ===${COLOR_RESET}\n"
-              echo "$top_mem_process"
-              echo -e "\nPress [Enter] to exit DEMANDING PROCESS monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
+            ui_get_demanding_process
             ;;
           "PROCESS TREE")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== Process Tree ===${COLOR_RESET}\n"
-            show_process_tree
-            read -p "Press [Enter] to return to Process Management menu..."
+            ui_get_process_tree
             ;;
           "LOAD AVERAGE")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== Load Average Over 1min, 5min and 15min ===${COLOR_RESET}\n"
-            show_load
-            read -p "Press [Enter] to return to Process Management menu..."
+            ui_get_load_average
             ;;
         esac
         ;;
@@ -284,35 +159,10 @@ handle_submenu() {
       "Network Management")
         case "$selected" in
           "TRAFFIC")
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== Network Traffic ===${COLOR_RESET}"
-            IFACE=$(choose_interface)
-            while true; do
-              output=$(show_traffic "$IFACE")
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Network Traffic ===${COLOR_RESET}\n"
-              echo "$output"
-              echo -e "\nPress [Enter] to exit TRAFFIC monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
+            ui_get_traffic
             ;;
           "CHECK SUPICIOUS PORT ACTIVITY")
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== CHECKING SUPICIOUS PORT ACTIVITY ===${COLOR_RESET}"
-            while true; do
-              output=$(check_suspicious)
-              tput cup 0 0; tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== CHECKING SUPICIOUS PORT ACTIVITY ===${COLOR_RESET}"
-              echo "$output"
-              echo -e "\nPress [Enter] to exit  SUPICIOUS PORT ACTIVITY monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
+            ui_get_supicious_port
             ;;
         esac
         ;;
@@ -321,17 +171,7 @@ handle_submenu() {
       "User Management")
         case "$selected" in
           "LOGS")
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            while true; do
-              harlod=$(source "$PROJECT_DIR/scripts/monitor-log-files.sh")
-              tput cup 0 0; tput ed
-              echo "$harlod"
-              echo -e "\nPress [Enter] to exit LOGS monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
+            ui_get_logs
             ;;
         esac
         ;;

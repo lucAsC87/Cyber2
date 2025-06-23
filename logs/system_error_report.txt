@@ -1,5 +1,5 @@
-Jun 22 16:49:50 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
-Jun 22 16:50:06 TwinkPad lightdm[917]: gkr-pam: unable to locate daemon control file
-Jun 22 16:50:06 TwinkPad lightdm[810]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
-Jun 22 16:50:09 TwinkPad obexd[1431]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
-Jun 22 16:50:09 TwinkPad obexd[1431]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 23 09:06:59 TwinkPad kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 23 09:07:36 TwinkPad lightdm[915]: gkr-pam: unable to locate daemon control file
+Jun 23 09:07:36 TwinkPad lightdm[809]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 23 09:07:40 TwinkPad obexd[1433]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 23 09:07:40 TwinkPad obexd[1433]: Unable to acquire registry: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.

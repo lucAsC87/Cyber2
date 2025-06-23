@@ -1,11 +1,3 @@
-#!/bin/bash
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(echo "$SCRIPT_DIR" | sed -E 's|(./Cyber2).*|\1|')"
-LOG_DIR="$PROJECT_DIR/logs"
-LOG_FILE="$LOG_DIR/system_logs.log"
-source "$PROJECT_DIR/scripts/system_monitoring_functions/logging.sh"
-source "$PROJECT_DIR/toolkit/config.sh"
-
 choose_interface() {
     export LC_ALL=C
     while true; do
