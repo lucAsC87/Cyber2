@@ -14,3 +14,5 @@
 2025-06-23 15:53:34 - WARNING - METRIC: CPU - VALUE: 99.00 % - THRESHOLD: 70.00 % - MESSAGE: High usr on Core 3
 2025-06-23 15:53:34 - WARNING - METRIC: CPU - VALUE: 0.00 % - THRESHOLD: 20.00 % - MESSAGE: Low idle on Core 3
 2025-06-23 15:55:15 - WARNING - METRIC: NETWORK - VALUE: 5739.55 KB/s - THRESHOLD: 1024.00 KB/s - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 17:29:04 - WARNING - METRIC: RAM - VALUE: 285 MB - THRESHOLD: 300.00 MB - MESSAGE: Low free memory; consider closing apps
+2025-06-23 17:29:05 - WARNING - METRIC: SWAP - VALUE: 54.98 % - THRESHOLD: 50.00 % - MESSAGE: High swap usage; system may be swapping

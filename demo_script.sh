@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export LC_ALL=C
+
 # Get the directory where the script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -7,7 +9,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(echo "$SCRIPT_DIR" | sed -E 's|(.*\/Cyber2).*|\1|')"
 
 # Source shared configuration (should define things like $LOG_DIR, $LOG_FILE, $COLOR_*)
-source "$PROJECT_DIR/toolkit/config.sh"
+source "$PROJECT_DIR/config.sh"
 
 # Ensure log directories and files exist
 mkdir -p "$LOG_DIR"

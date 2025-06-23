@@ -73,3 +73,8 @@
 2025-06-23 15:55:05 - WARNING - METRIC: NETWORK - VALUE: 3968.42 KB/s - THRESHOLD: 1024.00 KB/s - MESSAGE: Suspicious download on the network: incoming traffic above threshold
 2025-06-23 15:55:10 - WARNING - METRIC: NETWORK - VALUE: 5202.15 KB/s - THRESHOLD: 1024.00 KB/s - MESSAGE: Suspicious download on the network: incoming traffic above threshold
 2025-06-23 15:55:15 - WARNING - METRIC: NETWORK - VALUE: 5739.55 KB/s - THRESHOLD: 1024.00 KB/s - MESSAGE: Suspicious download on the network: incoming traffic above threshold
+2025-06-23 17:24:36 - WARNING - METRIC: SWAP - VALUE: 54.98 % - THRESHOLD: 50.00 % - MESSAGE: High swap usage; system may be swapping
+2025-06-23 17:28:59 - WARNING - METRIC: RAM - VALUE: 288 MB - THRESHOLD: 300.00 MB - MESSAGE: Low free memory; consider closing apps
+2025-06-23 17:29:00 - WARNING - METRIC: SWAP - VALUE: 54.98 % - THRESHOLD: 50.00 % - MESSAGE: High swap usage; system may be swapping
+2025-06-23 17:29:04 - WARNING - METRIC: RAM - VALUE: 285 MB - THRESHOLD: 300.00 MB - MESSAGE: Low free memory; consider closing apps
+2025-06-23 17:29:05 - WARNING - METRIC: SWAP - VALUE: 54.98 % - THRESHOLD: 50.00 % - MESSAGE: High swap usage; system may be swapping

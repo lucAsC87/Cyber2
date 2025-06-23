@@ -1,0 +1,203 @@
+
+Start-Date: 2025-06-01  14:33:21
+Commandline: aptdaemon role='role-commit-packages' sender=':1.572'
+Upgrade: krb5-locales:amd64 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), libgssapi-krb5-2:amd64 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), libgssapi-krb5-2:i386 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), python3-setuptools-whl:amd64 (68.1.2-2ubuntu1.1, 68.1.2-2ubuntu1.2), update-manager:amd64 (1:24.04.9, 1:24.04.12), apt:amd64 (2.7.14build2, 2.8.3), tzdata:amd64 (2025b-0ubuntu0.24.04, 2025b-0ubuntu0.24.04.1), apport-gtk:amd64 (2.28.1-0ubuntu3.5, 2.28.1-0ubuntu3.6), libinput10:amd64 (1.25.0-1ubuntu3, 1.25.0-1ubuntu3.1), wireless-regdb:amd64 (2024.07.04-0ubuntu1~24.04.1, 2024.10.07-0ubuntu2~24.04.1), libkrb5support0:amd64 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), libkrb5support0:i386 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), libsoup2.4-common:amd64 (2.74.3-6ubuntu1.4, 2.74.3-6ubuntu1.5), python3-pkg-resources:amd64 (68.1.2-2ubuntu1.1, 68.1.2-2ubuntu1.2), libsoup-2.4-1:amd64 (2.74.3-6ubuntu1.4, 2.74.3-6ubuntu1.5), libsoup-3.0-0:amd64 (3.4.4-5ubuntu0.3, 3.4.4-5ubuntu0.4), libkrb5-3:amd64 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), libkrb5-3:i386 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), update-manager-core:amd64 (1:24.04.9, 1:24.04.12), libk5crypto3:amd64 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), libk5crypto3:i386 (1.20.1-6ubuntu2.5, 1.20.1-6ubuntu2.6), linux-firmware:amd64 (20240318.git3b128b60-0ubuntu2.11, 20240318.git3b128b60-0ubuntu2.12), libapt-pkg6.0t64:amd64 (2.7.14build2, 2.8.3), apt-transport-https:amd64 (2.7.14build2, 2.8.3), python3-update-manager:amd64 (1:24.04.9, 1:24.04.12), python3-apport:amd64 (2.28.1-0ubuntu3.5, 2.28.1-0ubuntu3.6), libsoup-3.0-common:amd64 (3.4.4-5ubuntu0.3, 3.4.4-5ubuntu0.4), gir1.2-soup-3.0:amd64 (3.4.4-5ubuntu0.3, 3.4.4-5ubuntu0.4), apt-utils:amd64 (2.7.14build2, 2.8.3), apport-core-dump-handler:amd64 (2.28.1-0ubuntu3.5, 2.28.1-0ubuntu3.6), python3-setuptools:amd64 (68.1.2-2ubuntu1.1, 68.1.2-2ubuntu1.2), python3-problem-report:amd64 (2.28.1-0ubuntu3.5, 2.28.1-0ubuntu3.6), apport:amd64 (2.28.1-0ubuntu3.5, 2.28.1-0ubuntu3.6), libinput-bin:amd64 (1.25.0-1ubuntu3, 1.25.0-1ubuntu3.1)
+End-Date: 2025-06-01  14:33:51
+
+Start-Date: 2025-06-05  09:33:46
+Commandline: apt upgrade
+Requested-By: lucasc87 (1000)
+Upgrade: libvpx9:amd64 (1.14.0-1ubuntu2.1, 1.14.0-1ubuntu2.2), libvpx9:i386 (1.14.0-1ubuntu2.1, 1.14.0-1ubuntu2.2), python3-tornado:amd64 (6.4.0-1ubuntu0.1, 6.4.0-1ubuntu0.2)
+End-Date: 2025-06-05  09:33:48
+
+Start-Date: 2025-06-06  16:47:52
+Commandline: apt remove python3-notebook jupyter-core
+Requested-By: lucasc87 (1000)
+Remove: jupyter-notebook:amd64 (6.4.12-2.2ubuntu1+esm1), jupyter-core:amd64 (5.3.2-1ubuntu1), python3-notebook:amd64 (6.4.12-2.2ubuntu1+esm1)
+End-Date: 2025-06-06  16:47:54
+
+Start-Date: 2025-06-06  16:49:33
+Commandline: apt remove jupyter-nbextension-jupyter-js-widgets
+Requested-By: lucasc87 (1000)
+Remove: python3-widgetsnbextension:amd64 (8.1.1-2), jupyter-nbextension-jupyter-js-widgets:amd64 (8.1.1-2), python3-ipywidgets:amd64 (8.1.1-2)
+End-Date: 2025-06-06  16:49:33
+
+Start-Date: 2025-06-06  16:51:13
+Commandline: apt autoremove
+Requested-By: lucasc87 (1000)
+Remove: python3-parso:amd64 (0.8.3-1), python3-nbclient:amd64 (0.8.0-1), python3-jedi:amd64 (0.19.1+ds1-1), python3-appdirs:amd64 (1.4.4-4), python3-fs:amd64 (2.4.16-3), python3-jupyter-core:amd64 (5.3.2-1ubuntu1), python3-py:amd64 (1.11.0-2), python3-fastjsonschema:amd64 (2.19.0-1), libjs-bootstrap-tour:amd64 (0.12.0+dfsg-5), python3-debugpy:amd64 (1.8.0+ds-4ubuntu4), python3-lxml-html-clean:amd64 (0.1.1-1), fonts-lyx:amd64 (2.4.0~RC3-1build4), libjs-bootstrap:amd64 (3.4.1+dfsg-3), python3-nbconvert:amd64 (6.5.3-5), libjs-jed:amd64 (1.1.1-4), python3-tinycss2:amd64 (1.2.1-2), python3-tornado:amd64 (6.4.0-1ubuntu0.2), python3-unicodedata2:amd64 (15.1.0+ds-1build1), libjs-backbone:amd64 (1.4.1~dfsg+~1.4.15-3), python3-entrypoints:amd64 (0.4-2), python3-matplotlib:amd64 (3.6.3-1ubuntu5), python3-argon2:amd64 (21.1.0-2build1), libjs-jquery-ui:amd64 (1.13.2+dfsg-1), python3-nest-asyncio:amd64 (1.5.4-1), python3-contourpy:amd64 (1.0.7-2build1), python3-ipython:amd64 (8.20.0-1), pandoc-data:amd64 (3.1.3-1), libjs-text-encoding:amd64 (0.7.0-5), python3-ipykernel:amd64 (6.29.3-1), unicode-data:amd64 (15.1.0-1), python3-decorator:amd64 (5.1.1-5), fonts-glyphicons-halflings:amd64 (1.009~3.4.1+dfsg-3), python3-scipy:amd64 (1.11.4-6build1), python3-coverage:amd64 (7.4.4+dfsg1-0ubuntu2), libjs-moment:amd64 (2.29.4+ds-1), python3-executing:amd64 (2.0.1-0.1), python3-sympy:amd64 (1.12-7), python3-fonttools:amd64 (4.46.0-1build2), python3-send2trash:amd64 (1.8.2-1), node-jed:amd64 (1.1.1-4), python3-pydevd:amd64 (2.10.0+ds-10ubuntu1), libjs-es6-promise:amd64 (4.2.8-12), python3-jupyter-client:amd64 (7.4.9-2ubuntu1), libjs-requirejs-text:amd64 (2.0.12-1.1), python3-wcwidth:amd64 (0.2.5+dfsg1-1.1ubuntu1), python3-asttokens:amd64 (2.4.1-1), python3-jupyterlab-pygments:amd64 (0.2.2-3), python3-defusedxml:amd64 (0.7.1-2), python3-bleach:amd64 (6.1.0-2), python3-prompt-toolkit:amd64 (3.0.43-1), isympy3:amd64 (1.12-7), python-matplotlib-data:amd64 (3.6.3-1ubuntu5), libjs-requirejs:amd64 (2.3.6+ds+~2.1.34-2), python3-lz4:amd64 (4.0.2+dfsg-1build4), fonts-mathjax:amd64 (2.7.9+dfsg-1), libjs-mathjax:amd64 (2.7.9+dfsg-1), python3-kiwisolver:amd64 (1.4.4-2build1), python-tinycss2-common:amd64 (1.2.1-2), fonts-font-awesome:amd64 (5.0.10+really4.7.0~dfsg-4.1), python3-mpmath:amd64 (1.2.1-3), python3-traitlets:amd64 (5.5.0-2), python3-zmq:amd64 (24.0.1-5build1), python3-cycler:amd64 (0.11.0-2), libjs-codemirror:amd64 (5.65.0+~cs5.83.9-3), python3-comm:amd64 (0.2.1-1), libjs-jquery-typeahead:amd64 (2.11.0+dfsg1-3), python3-pandocfilters:amd64 (1.5.0-1), python3-bytecode:amd64 (0.15.1-3), liblbfgsb0:amd64 (3.0+dfsg.4-1build1), python3-prometheus-client:amd64 (0.19.0+ds1-1), python3-stack-data:amd64 (0.6.3-1), python3-ufolib2:amd64 (0.16.0+dfsg1-1), python3-matplotlib-inline:amd64 (0.1.6-2), python3-terminado:amd64 (0.17.1-1), python3-nbformat:amd64 (5.9.1-1), libjs-marked:amd64 (4.2.3+ds+~4.0.7-3), python3-ipython-genutils:amd64 (0.2.0-6), libjs-xterm:amd64 (5.3.0-2), python3-pure-eval:amd64 (0.2.2-1), pandoc:amd64 (3.1.3+ds-2), isympy-common:amd64 (1.12-7)
+End-Date: 2025-06-06  16:51:28
+
+Start-Date: 2025-06-09  11:18:23
+Commandline: aptdaemon role='role-commit-packages' sender=':1.133'
+Upgrade: librdmacm1t64:amd64 (50.0-2build2, 50.0-2ubuntu0.2), libibverbs1:amd64 (50.0-2build2, 50.0-2ubuntu0.2), cloud-init:amd64 (24.4.1-0ubuntu0~24.04.3, 25.1.2-0ubuntu0~24.04.1), update-notifier:amd64 (3.192.68.1, 3.192.68.2), ibverbs-providers:amd64 (50.0-2build2, 50.0-2ubuntu0.2), update-notifier-common:amd64 (3.192.68.1, 3.192.68.2)
+End-Date: 2025-06-09  11:18:35
+
+Start-Date: 2025-06-11  08:56:45
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: udev:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), systemd-oomd:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), systemd-timesyncd:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libpam-systemd:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libsystemd0:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libsystemd0:i386 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libnss-systemd:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libudev-dev:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), systemd:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libudev1:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libudev1:i386 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), systemd-dev:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), systemd-resolved:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), libsystemd-shared:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8), systemd-sysv:amd64 (255.4-1ubuntu8.6, 255.4-1ubuntu8.8)
+End-Date: 2025-06-11  08:57:05
+
+Start-Date: 2025-06-11  08:57:09
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: apport-gtk:amd64 (2.28.1-0ubuntu3.6, 2.28.1-0ubuntu3.7), python3-apport:amd64 (2.28.1-0ubuntu3.6, 2.28.1-0ubuntu3.7), apport-core-dump-handler:amd64 (2.28.1-0ubuntu3.6, 2.28.1-0ubuntu3.7), python3-problem-report:amd64 (2.28.1-0ubuntu3.6, 2.28.1-0ubuntu3.7), apport:amd64 (2.28.1-0ubuntu3.6, 2.28.1-0ubuntu3.7)
+End-Date: 2025-06-11  08:57:14
+
+Start-Date: 2025-06-11  08:57:18
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: amd64-microcode:amd64 (3.20231019.1ubuntu2.1, 3.20250311.1ubuntu0.24.04.1)
+End-Date: 2025-06-11  08:57:23
+
+Start-Date: 2025-06-11  10:58:28
+Commandline: apt install nginx
+Requested-By: lucasc87 (1000)
+Install: nginx:amd64 (1.24.0-2ubuntu7.3), nginx-common:amd64 (1.24.0-2ubuntu7.3, automatic)
+End-Date: 2025-06-11  10:58:31
+
+Start-Date: 2025-06-11  14:41:32
+Commandline: apt install smbclient
+Requested-By: lucasc87 (1000)
+Install: python3-samba:amd64 (2:4.19.5+dfsg-4ubuntu9, automatic), samba-dsdb-modules:amd64 (2:4.19.5+dfsg-4ubuntu9, automatic), samba-common-bin:amd64 (2:4.19.5+dfsg-4ubuntu9, automatic), python3-talloc:amd64 (2.4.2-1build2, automatic), python3-gpg:amd64 (1.18.0-4.1ubuntu4, automatic), python3-ldb:amd64 (2:2.8.0+samba4.19.5+dfsg-4ubuntu9, automatic), smbclient:amd64 (2:4.19.5+dfsg-4ubuntu9), python3-tdb:amd64 (1.4.10-1build1, automatic), python3-markdown:amd64 (3.5.2-1, automatic), samba-common:amd64 (2:4.19.5+dfsg-4ubuntu9, automatic)
+End-Date: 2025-06-11  14:41:37
+
+Start-Date: 2025-06-11  16:50:38
+Commandline: apt upgrade
+Requested-By: lucasc87 (1000)
+Upgrade: openssh-client:amd64 (1:9.6p1-3ubuntu13.11, 1:9.6p1-3ubuntu13.12), libqt5quickwidgets5:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), qml-module-qtquick-layouts:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), qml-module-qtquick-window2:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), qml-module-qt-labs-settings:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), libqt5qml5:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), libtraceevent1-plugin:amd64 (1:1.8.2-1ubuntu2, 1:1.8.2-1ubuntu2.1), libqt5quick5:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), libtraceevent1:amd64 (1:1.8.2-1ubuntu2, 1:1.8.2-1ubuntu2.1), qml-module-qt-labs-folderlistmodel:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), linux-firmware:amd64 (20240318.git3b128b60-0ubuntu2.12, 20240318.git3b128b60-0ubuntu2.13), qml-module-qtqml-models2:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), libqt5qmlmodels5:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), qml-module-qtquick2:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), libqt5qmlworkerscript5:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1), qml-module-qtqml:amd64 (5.15.13+dfsg-1, 5.15.13+dfsg-1ubuntu0.1)
+End-Date: 2025-06-11  16:50:53
+
+Start-Date: 2025-06-12  09:27:38
+Commandline: apt install tftp-hpa
+Requested-By: lucasc87 (1000)
+Install: tftp-hpa:amd64 (5.2+20150808-1.4build1)
+End-Date: 2025-06-12  09:27:40
+
+Start-Date: 2025-06-13  09:03:08
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: libjavascriptcoregtk-4.1-0:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1), gir1.2-javascriptcoregtk-4.1:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1), gir1.2-javascriptcoregtk-6.0:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1), gir1.2-webkit2-4.1:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1), libjavascriptcoregtk-6.0-1:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1), libwebkit2gtk-4.1-0:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1), gir1.2-webkit-6.0:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1), libwebkitgtk-6.0-4:amd64 (2.48.1-0ubuntu0.24.04.1, 2.48.3-0ubuntu0.24.04.1)
+End-Date: 2025-06-13  09:03:11
+
+Start-Date: 2025-06-14  11:15:15
+Commandline: apt-get upgrade
+Requested-By: lucasc87 (1000)
+Upgrade: gnome-control-center-faces:amd64 (1:46.7-0ubuntu0.24.04.1, 1:46.7-0ubuntu0.24.04.2), gnome-control-center-data:amd64 (1:46.7-0ubuntu0.24.04.1, 1:46.7-0ubuntu0.24.04.2), gnome-control-center:amd64 (1:46.7-0ubuntu0.24.04.1, 1:46.7-0ubuntu0.24.04.2)
+End-Date: 2025-06-14  11:15:17
+
+Start-Date: 2025-06-14  11:17:22
+Commandline: apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+Requested-By: lucasc87 (1000)
+Install: containerd.io:amd64 (1.7.27-1), docker-compose-plugin:amd64 (2.36.2-1~ubuntu.24.04~noble), docker-ce-cli:amd64 (5:28.2.2-1~ubuntu.24.04~noble), pigz:amd64 (2.8-1, automatic), libslirp0:amd64 (4.7.0-1ubuntu3, automatic), docker-buildx-plugin:amd64 (0.24.0-1~ubuntu.24.04~noble), docker-ce:amd64 (5:28.2.2-1~ubuntu.24.04~noble), docker-ce-rootless-extras:amd64 (5:28.2.2-1~ubuntu.24.04~noble, automatic), slirp4netns:amd64 (1.2.1-1build2, automatic)
+End-Date: 2025-06-14  11:17:37
+
+Start-Date: 2025-06-14  11:20:12
+Commandline: apt-get install ./docker-desktop-amd64.deb
+Requested-By: lucasc87 (1000)
+Install: librados2:amd64 (19.2.0-0ubuntu0.24.04.2, automatic), qemu-system-x86:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), ovmf:amd64 (2024.02-2ubuntu0.4, automatic), libfdt1:amd64 (1.7.0-2build1, automatic), pass:amd64 (1.7.4-6, automatic), qemu-system-modules-opengl:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), librbd1:amd64 (19.2.0-0ubuntu0.24.04.2, automatic), libqrencode4:amd64 (4.1.1-1build2, automatic), libsubid4:amd64 (1:4.13+dfsg1-4ubuntu3.2, automatic), qemu-system-modules-spice:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), ipxe-qemu-256k-compat-efi-roms:amd64 (1.0.0+git-20150424.a25a16d-0ubuntu5, automatic), libpmemobj1:amd64 (1.13.1-1.1ubuntu2, automatic), libspice-server1:amd64 (0.15.1-1build2, automatic), ipxe-qemu:amd64 (1.21.1+git-20220113.fbbdc3926-0ubuntu2, automatic), qrencode:amd64 (4.1.1-1build2, automatic), qemu-utils:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), docker-desktop:amd64 (4.41.2-191736), libusbredirparser1t64:amd64 (0.13.0-2.1build1, automatic), libaio1t64:amd64 (0.3.113-6build1.1, automatic), libdaxctl1:amd64 (77-2ubuntu2, automatic), msr-tools:amd64 (1.3-5build1, automatic), liburing2:amd64 (2.5-1build1, automatic), seabios:amd64 (1.16.3-2, automatic), cpu-checker:amd64 (0.7-1.3build2, automatic), libcacard0:amd64 (1:2.8.0-3build4, automatic), uidmap:amd64 (1:4.13+dfsg1-4ubuntu3.2, automatic), qemu-system-common:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), qemu-block-extra:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), libndctl6:amd64 (77-2ubuntu2, automatic), xclip:amd64 (0.13-3, automatic), libvirglrenderer1:amd64 (1.0.0-1ubuntu2, automatic), wl-clipboard:amd64 (2.2.1-1build1, automatic), libpmem1:amd64 (1.13.1-1.1ubuntu2, automatic), qemu-system-data:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), tree:amd64 (2.1.1-2ubuntu3, automatic), qemu-system-gui:amd64 (1:8.2.2+ds-0ubuntu1.7, automatic), libiscsi7:amd64 (1.19.0-3build4, automatic)
+End-Date: 2025-06-14  11:20:46
+
+Start-Date: 2025-06-16  10:17:56
+Commandline: apt-get install iftop
+Requested-By: lucasc87 (1000)
+Install: iftop:amd64 (1.0~pre4-9build2)
+End-Date: 2025-06-16  10:17:57
+
+Start-Date: 2025-06-16  10:19:18
+Commandline: apt-get install nload
+Requested-By: lucasc87 (1000)
+Install: nload:amd64 (0.7.4-2build3)
+End-Date: 2025-06-16  10:19:20
+
+Start-Date: 2025-06-16  10:21:08
+Commandline: apt-get install net-tools
+Requested-By: lucasc87 (1000)
+Install: net-tools:amd64 (2.10-0.1ubuntu4.4)
+End-Date: 2025-06-16  10:21:09
+
+Start-Date: 2025-06-16  10:22:32
+Commandline: apt-get install iptraf-ng
+Requested-By: lucasc87 (1000)
+Install: iptraf-ng:amd64 (1:1.2.1-1build3)
+End-Date: 2025-06-16  10:22:32
+
+Start-Date: 2025-06-16  10:22:58
+Commandline: apt-get install bmon
+Requested-By: lucasc87 (1000)
+Install: libconfuse-common:amd64 (3.3-3build1, automatic), libconfuse2:amd64 (3.3-3build1, automatic), bmon:amd64 (1:4.0-10)
+End-Date: 2025-06-16  10:22:59
+
+Start-Date: 2025-06-17  08:40:16
+Commandline: aptdaemon role='role-commit-packages' sender=':1.117'
+Upgrade: python3-requests:amd64 (2.31.0+dfsg-1ubuntu1, 2.31.0+dfsg-1ubuntu1.1)
+End-Date: 2025-06-17  08:40:18
+
+Start-Date: 2025-06-18  09:03:10
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: python3.12:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6), libpython3.12-minimal:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6), python3.12-venv:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6), libpython3.12t64:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6), libpython3.12-dev:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6), python3.12-dev:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6), python3.12-minimal:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6), libpython3.12-stdlib:amd64 (3.12.3-1ubuntu0.5, 3.12.3-1ubuntu0.6)
+End-Date: 2025-06-18  09:03:16
+
+Start-Date: 2025-06-20  09:36:35
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: gir1.2-udisks-2.0:amd64 (2.10.1-6ubuntu1, 2.10.1-6ubuntu1.2), udisks2:amd64 (2.10.1-6ubuntu1, 2.10.1-6ubuntu1.2), libudisks2-0:amd64 (2.10.1-6ubuntu1, 2.10.1-6ubuntu1.2)
+End-Date: 2025-06-20  09:36:40
+
+Start-Date: 2025-06-20  09:36:44
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: libblockdev-part3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev-swap3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev-fs3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev-loop3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev-utils3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev-mdraid3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev-nvme3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1), libblockdev-crypto3:amd64 (3.1.1-1, 3.1.1-1ubuntu0.1)
+End-Date: 2025-06-20  09:36:45
+
+Start-Date: 2025-06-20  09:36:49
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: xserver-xorg-core:amd64 (2:21.1.12-1ubuntu1.3, 2:21.1.12-1ubuntu1.4), xserver-xorg-legacy:amd64 (2:21.1.12-1ubuntu1.3, 2:21.1.12-1ubuntu1.4), xserver-common:amd64 (2:21.1.12-1ubuntu1.3, 2:21.1.12-1ubuntu1.4), xserver-xephyr:amd64 (2:21.1.12-1ubuntu1.3, 2:21.1.12-1ubuntu1.4)
+End-Date: 2025-06-20  09:36:51
+
+Start-Date: 2025-06-20  09:36:54
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: xwayland:amd64 (2:23.2.6-1ubuntu0.5, 2:23.2.6-1ubuntu0.6)
+End-Date: 2025-06-20  09:36:56
+
+Start-Date: 2025-06-20  09:36:59
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: libpam-runtime:amd64 (1.5.3-5ubuntu5.1, 1.5.3-5ubuntu5.4), libpam-modules:amd64 (1.5.3-5ubuntu5.1, 1.5.3-5ubuntu5.4), libpam-modules-bin:amd64 (1.5.3-5ubuntu5.1, 1.5.3-5ubuntu5.4), libpam0g:amd64 (1.5.3-5ubuntu5.1, 1.5.3-5ubuntu5.4)
+End-Date: 2025-06-20  09:37:03
+
+Start-Date: 2025-06-21  10:20:12
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: python3.12:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7), libpython3.12-minimal:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7), python3.12-venv:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7), libpython3.12t64:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7), libpython3.12-dev:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7), python3.12-dev:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7), python3.12-minimal:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7), libpython3.12-stdlib:amd64 (3.12.3-1ubuntu0.6, 3.12.3-1ubuntu0.7)
+End-Date: 2025-06-21  10:20:20
+
+Start-Date: 2025-06-21  10:20:24
+Commandline: /usr/bin/unattended-upgrade
+Install: linux-modules-6.8.0-62-generic:amd64 (6.8.0-62.65, automatic), linux-image-6.8.0-62-generic:amd64 (6.8.0-62.65, automatic), linux-headers-6.8.0-62-generic:amd64 (6.8.0-62.65, automatic), linux-tools-6.8.0-62-generic:amd64 (6.8.0-62.65, automatic), linux-tools-6.8.0-62:amd64 (6.8.0-62.65, automatic), linux-modules-extra-6.8.0-62-generic:amd64 (6.8.0-62.65, automatic), linux-headers-6.8.0-62:amd64 (6.8.0-62.65, automatic)
+Upgrade: linux-tools-common:amd64 (6.8.0-60.63, 6.8.0-62.65), linux-headers-generic:amd64 (6.8.0-60.63, 6.8.0-62.65), linux-generic:amd64 (6.8.0-60.63, 6.8.0-62.65), linux-image-generic:amd64 (6.8.0-60.63, 6.8.0-62.65), linux-libc-dev:amd64 (6.8.0-60.63, 6.8.0-62.65)
+End-Date: 2025-06-21  10:21:22
+
+Start-Date: 2025-06-21  10:21:26
+Commandline: /usr/bin/unattended-upgrade
+Remove: linux-tools-6.8.0-59:amd64 (6.8.0-59.61), linux-tools-6.8.0-59-generic:amd64 (6.8.0-59.61)
+End-Date: 2025-06-21  10:21:27
+
+Start-Date: 2025-06-21  10:21:30
+Commandline: /usr/bin/unattended-upgrade
+Remove: linux-modules-extra-6.8.0-59-generic:amd64 (6.8.0-59.61)
+End-Date: 2025-06-21  10:21:32
+
+Start-Date: 2025-06-21  10:21:35
+Commandline: /usr/bin/unattended-upgrade
+Remove: linux-headers-6.8.0-59-generic:amd64 (6.8.0-59.61), linux-headers-6.8.0-59:amd64 (6.8.0-59.61)
+End-Date: 2025-06-21  10:21:37
+
+Start-Date: 2025-06-21  10:21:40
+Commandline: /usr/bin/unattended-upgrade
+Remove: linux-image-6.8.0-59-generic:amd64 (6.8.0-59.61)
+End-Date: 2025-06-21  10:21:42
+
+Start-Date: 2025-06-21  10:21:45
+Commandline: /usr/bin/unattended-upgrade
+Remove: linux-modules-6.8.0-59-generic:amd64 (6.8.0-59.61)
+End-Date: 2025-06-21  10:21:45
+
+Start-Date: 2025-06-23  14:58:30
+Commandline: apt install stress-ng
+Requested-By: lucasc87 (1000)
+Install: libipsec-mb1:amd64 (1.5-1build1, automatic), libsctp1:amd64 (1.0.19+dfsg-2build1, automatic), libjudydebian1:amd64 (1.0.5-5.1build1, automatic), stress-ng:amd64 (0.17.06-1build1)
+End-Date: 2025-06-23  14:58:33

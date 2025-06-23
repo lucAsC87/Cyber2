@@ -6,7 +6,7 @@ ui_get_logs(){
 
     # Start real time loop
     while true; do
-        harlod=$(source "$PROJECT_DIR/scripts/monitor-log-files.sh")
+        harlod=$(source "$PROJECT_DIR/scripts/monitor_log_files.sh")
         tput cup 0 0; tput ed   # Reset cursor position and clear screen from cursor down
         echo "$harlod"
         echo -e "\nPress [Enter] to exit LOGS monitoring."
