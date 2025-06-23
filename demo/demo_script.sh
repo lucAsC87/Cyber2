@@ -1,49 +1,53 @@
 #!/bin/bash
 
+# Get the directory where the script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Derive the root project directory based on a known path pattern
 PROJECT_DIR="$(echo "$SCRIPT_DIR" | sed -E 's|(.*\/Cyber2).*|\1|')"
-LOG_DIR="$PROJECT_DIR/logs"
-LOG_FILE="$LOG_DIR/system_logs.log"
-# Source stat functions
+
+# Source shared configuration (should define things like $LOG_DIR, $LOG_FILE, $COLOR_*)
 source "$PROJECT_DIR/toolkit/config.sh"
-source "$PROJECT_DIR/scripts/monitor-system-ressources.sh"
 
+# Ensure log directories and files exist
 mkdir -p "$LOG_DIR"
-touch $LOG_FILE
+touch "$LOG_FILE"
+touch "$RECENT_LOG_FILE"
 
-# Menu definitions
-main_menu=("System Info" "Hardware Management" "Process Management" "Network Management" "User Management" "IPS" "EXIT")
+# Define menu options for each section of the tool
+main_menu=("System Info" "IDS" "Hardware Management" "Process Management" "Network Management" "User Management" "EXIT")
 hardware_menu=("CPU" "DISK" "RAM" "back")
-network_menu=("PORTS" "TRAFFIC" "back")
+network_menu=("TRAFFIC" "CHECK SUPICIOUS PORT ACTIVITY" "back")
 user_menu=("LOGS" "back")
-ips_menu=("ONE TIME" "REAL TIME" "back")
-cpu_menu=("AVERAGE CPU UTIL" "ALL CPU UTIL" "back")
+ids_menu=("ONE TIME" "REAL TIME" "RECENT WARNINGS" "back")
 system_info_menu=("INFO" "SPECS" "back")
 process_menu=("DEMANDING PROCESSES" "PROCESS TREE" "LOAD AVERAGE" "back")
 
-# Detect if menu entry is a submenu
+# is_menu returns success if the given menu item corresponds to a submenu category, or failure if it is an endpoint action.
 is_menu() {
   case "$1" in
-    "Hardware Management"|"Network Management"|"User Management"|"IPS"|"CPU"|"System Info"|"Process Management")
-      return 0
+    "Hardware Management"|"Network Management"|"User Management"|"IDS"|"System Info"|"Process Management")
+      return 0  # True: it's a submenu
       ;;
-    *) return 1 ;;
+    *) return 1 ;;  # False: it's an endpoint
   esac
 }
 
-# Menu navigation handler
+# navigate_menu displays a menu, allows navigation with arrow keys, highlights the current selection, and returns the index of the selected item when Enter is pressed.
 navigate_menu() {
-  local -n menu_items=$1
-  local prompt="${2:-Select an option:}"
-  local selected=0
+  local -n menu_items=$1   # Pass menu by name (reference)
+  local prompt=$2          # Prompt title for the menu
+  local selected=0         # Default selected index
 
   while true; do
     clear
     echo -e "${BOLD}${COLOR_MENU}=== $prompt ===${COLOR_RESET}"
+
     for i in "${!menu_items[@]}"; do
       local item="${menu_items[$i]}"
       local color
 
+      # Choose color based on item type
       if [[ "$item" == "back" || "$item" == "EXIT" ]]; then
         color=$COLOR_BACK
       elif is_menu "$item"; then
@@ -52,6 +56,7 @@ navigate_menu() {
         color=$COLOR_ENDPOINT
       fi
 
+      # Highlight selected item
       if [[ $i -eq $selected ]]; then
         echo -e "> ${COLOR_SELECTED}${item}${COLOR_RESET}"
       else
@@ -59,213 +64,106 @@ navigate_menu() {
       fi
     done
 
+    # Read user input (arrow keys)
     read -rsn1 key
     if [[ $key == $'\x1b' ]]; then
-      read -rsn2 -t 0.1 key
+      read -rsn2 -t 0.1 key  # Handle arrow keys
     fi
 
     case "$key" in
-      "[A") ((selected--)); ((selected < 0)) && selected=$((${#menu_items[@]} - 1)) ;;
-      "[B") ((selected++)); ((selected >= ${#menu_items[@]})) && selected=0 ;;
-      "") return $selected ;;
+      "[A") ((selected--)); ((selected < 0)) && selected=$((${#menu_items[@]} - 1)) ;;  # Up
+      "[B") ((selected++)); ((selected >= ${#menu_items[@]})) && selected=0 ;;         # Down
+      "") return $selected ;;  # Enter key: return index
     esac
   done
 }
 
-# Submenu logic handler
+# handle_submenu displays a submenu, processes user selection, and invokes the corresponding UI function for the chosen action.
 handle_submenu() {
-  local -n submenu=$1
-  local title=$2
+  local -n submenu=$1  # Menu passed by name
+  local title=$2       # Title for the submenu
 
   while true; do
     navigate_menu submenu "$title"
     choice=$?
     selected="${submenu[$choice]}"
 
-    # Handle back
+    # Go back to the previous menu
     if [[ "$selected" == "back" ]]; then
       return
     fi
 
+    # Call the correct function depending on selected submenu and item
     case "$title" in
-      "Hardware Management")
-        case "$selected" in
-          "CPU") handle_submenu cpu_menu "CPU" ;;
-          "DISK")
-            clear
-            tput civis
-            trap "tput cnorm; stty echo" EXIT
-            echo -e "${BOLD}${COLOR_MENU}=== Disk Usage ===${COLOR_RESET}"
-            while true; do
-              disk_usage=$(get_disk_usage)
-              disk_io=$(get_disk_io_stats)
-              tput cup 0 0
-              tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Disk Usage ===${COLOR_RESET}"
-              echo "$disk_usage"
-              echo -e "\n${BOLD}${COLOR_MENU}=== Disk I/O Stats ===${COLOR_RESET}"
-              echo "$disk_io"
-              echo -e "\nPress [Enter] to exit real-time view."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
-            ;;
-          "RAM")
-            clear
-            tput civis  # Hide cursor
-            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
-            echo -e "${BOLD}${COLOR_MENU}=== Real-Time Memory Usage ===${COLOR_RESET}"
-            while true; do
-              memory_stats=$(get_memory_stats)
-              swap_stats=$(get_swap_stats)
-              tput cup 0 0
-              tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Real-Time Memory Usage ===${COLOR_RESET}"
-              echo "$memory_stats"
-              echo -e "\n${BOLD}${COLOR_MENU}=== Real-Time Swap Usage ===${COLOR_RESET}"
-              echo "$swap_stats"
-              echo -e "\nPress [Enter] to exit RAM monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm  # Ensure cursor is shown again
-            ;;
-        esac
-        ;;
-
-      "CPU")
-        case "$selected" in
-          "AVERAGE CPU UTIL")
-            clear
-            tput civis  # Hide cursor
-            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
-            echo -e "${BOLD}${COLOR_MENU}=== Real-Time CPU Average Utilization ===${COLOR_RESET}"
-            while true; do
-              average_cpu=$(get_average_cpu_stats)  # Capture output instead of printing it live
-              tput cup 0 0
-              tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Real-Time CPU Average Utilization ===${COLOR_RESET}"
-              echo "$average_cpu"
-              echo -e "\nPress [Enter] to exit AVERAGE CPU monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done
-            tput cnorm
-            ;;
-          "ALL CPU UTIL")
-            clear
-            tput civis  # Hide cursor
-            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
-            echo -e "${COLOR_MENU}${BOLD}=== Real-Time CPU Utilization Per Core ===${COLOR_RESET}"
-            while true; do
-              all_cpu=$(get_all_cpu_stats)
-              tput cup 0 0
-              tput ed
-              echo -e "${COLOR_MENU}${BOLD}=== Real-Time CPU Utilization Per Core ===${COLOR_RESET}"
-              echo "$all_cpu"
-              echo -e "\nPress [Enter] to exit ALL CPU monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done  
-            tput cnorm
-            ;;
-        esac
-        ;;
-
       "System Info")
         case "$selected" in
-          "INFO")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== System Info ===${COLOR_RESET}"
-            get_system_info
-            read -p "Press Enter to return to System Info menu..."
-            ;;
-          "SPECS")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== HARDWARE INFO ===${COLOR_RESET}"
-            get_hardware_info
-            read -p "Press Enter to return to System Info menu..."
-            ;;
+          "INFO") ui_get_info ;;
+          "SPECS") ui_get_specs ;;
         esac
         ;;
-      "Network Management")
+
+      "IDS")
         case "$selected" in
-          "TRAFFIC")
-            clear
-            source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
-            read -p "Press Enter to return to System Info menu..."
-            ;;
-          "PORTS")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== System Info ===${COLOR_RESET}"
-            get_system_info
-            read -p "Press Enter to return to System Info menu..."
-            ;;
+          "ONE TIME") ui_get_one_time ;;
+          "REAL TIME") ui_get_real_time ;;
+          "RECENT WARNINGS") ui_get_recent_warnings ;;
         esac
         ;;
+
+      "Hardware Management")
+        case "$selected" in
+          "CPU") ui_get_cpu ;;
+          "DISK") ui_get_disk ;;
+          "RAM") ui_get_ram ;;
+        esac
+        ;;
+
       "Process Management")
         case "$selected" in
-          "DEMANDING PROCESSES")
-            clear
-            tput civis  # Hide cursor
-            trap "tput cnorm; stty echo" EXIT  # Restore cursor on exit
-            echo -e "${BOLD}${COLOR_MENU}=== Top consuming processes ===${COLOR_RESET}\n"
-            while true; do
-              demanding_processes_cpu=$(get_top_processes_cpu)
-              demanding_processes_mem=$(get_top_processes_mem)
-              tput cup 0 0
-              tput ed
-              echo -e "${BOLD}${COLOR_MENU}=== Top cpu-consuming processes ===${COLOR_RESET}\n"
-              echo "$demanding_processes_cpu"
-              echo
-              echo -e "${BOLD}${COLOR_MENU}=== Top memory-consuming processes ===${COLOR_RESET}\n"
-              echo "$demanding_processes_mem"
-              echo -e "\nPress [Enter] to exit DEMANDING PROCESS monitoring."
-              read -t 1 -s input && [[ -z "$input" ]] && break
-            done  
-            tput cnorm
-            ;;
-          "PROCESS TREE")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== Process Tree ===${COLOR_RESET}"
-            show_process_tree
-            read -p "Press Enter to return to Process Management menu..."
-            ;;
-          "LOAD AVERAGE")
-            clear
-            echo -e "${BOLD}${COLOR_MENU}=== Load Average Over 1min, 5min and 15min ===${COLOR_RESET}"
-            show_load
-            read -p "Press Enter to return to Process Management menu..."
-            ;;
+          "DEMANDING PROCESSES") ui_get_demanding_process ;;
+          "PROCESS TREE") ui_get_process_tree ;;
+          "LOAD AVERAGE") ui_get_load_average ;;
         esac
         ;;
+
+      "Network Management")
+        case "$selected" in
+          "TRAFFIC") ui_get_traffic ;;
+          "CHECK SUPICIOUS PORT ACTIVITY") ui_get_supicious_port ;;
+        esac
+        ;;
+
       "User Management")
         case "$selected" in
-          "LOGS")
-            clear
-            source "$PROJECT_DIR/scripts/monitor-log-files.sh" 
-            ;;
+          "LOGS") ui_get_logs ;;
         esac
-        ;;
-      "User Management"|"IPS")
-        clear
-        echo -e "${COLOR_ENDPOINT}>>> '$selected' selected (feature not implemented yet).${COLOR_RESET}"
-        read -p "Press Enter to return to $title menu..."
         ;;
     esac
   done
 }
 
-# Main program loop
-while true; do
-  navigate_menu main_menu "Main Menu"
-  choice=$?
-  selected="${main_menu[$choice]}"
+# main launches the interactive menu system and routes user selections to the appropriate submenu or exits the script.
+main() {
+  while true; do
+    navigate_menu main_menu "Main Menu"
+    choice=$?
+    selected="${main_menu[$choice]}"
 
-  case "$selected" in
-    "Hardware Management") handle_submenu hardware_menu "Hardware Management" ;;
-    "Network Management") handle_submenu network_menu "Network Management" ;;
-    "User Management") handle_submenu user_menu "User Management" ;;
-    "IPS") handle_submenu ips_menu "IPS" ;;
-    "System Info") handle_submenu system_info_menu "System Info" ;;
-    "Process Management") handle_submenu process_menu "Process Management" ;;
-    "EXIT") clear; echo "Exiting..."; exit 0 ;;
-  esac
-done
+    # Route to appropriate submenu or exit
+    case "$selected" in
+      "Hardware Management") handle_submenu hardware_menu "Hardware Management" ;;
+      "Network Management") handle_submenu network_menu "Network Management" ;;
+      "User Management") handle_submenu user_menu "User Management" ;;
+      "IDS") handle_submenu ids_menu "IDS" ;;
+      "System Info") handle_submenu system_info_menu "System Info" ;;
+      "Process Management") handle_submenu process_menu "Process Management" ;;
+      "EXIT")
+        clear
+        echo "Exiting..."
+        exit 0 ;;
+    esac
+  done
+}
+
+# Start the program
+main
