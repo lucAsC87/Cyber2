@@ -1,3 +1,4 @@
+# ui_get_logs provides a real-time terminal interface for monitoring log files, updating the display continuously until the user presses Enter to exit.
 ui_get_logs(){
     clear
     tput civis                          # Hide the cursor

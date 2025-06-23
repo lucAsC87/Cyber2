@@ -1,4 +1,4 @@
-# Centralized alert logging function
+# log_alert records a timestamped alert entry for a metric threshold violation, ensuring only the latest alert with a given message appears in the recent log file and appending all alerts to a persistent log file.
 log_alert() {
     local severity="$1"       # Severity level (e.g., WARNING)
     local metric="$2"         # Name of the metric being checked (e.g., CPU, Memory)
@@ -22,7 +22,9 @@ log_alert() {
 
 
 
-# Function to print a metric in colored, formatted output, and optionally log an alert
+# print_metric displays a metric with color-coded formatting, highlights threshold violations, and logs alerts if necessary.
+#
+# If the metric value exceeds or falls below the specified threshold (based on the given condition), the output is shown in an alert color and an alert is logged. Units are extracted from the metric name if present, and metrics named "Total" are printed in bold. The output includes the metric name, value (to two decimal places), and unit.
 print_metric() {
     local name="$1"           # Display name (includes unit in parentheses)
     local value="$2"          # Current value of the metric

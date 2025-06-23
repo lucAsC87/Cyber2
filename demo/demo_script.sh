@@ -23,7 +23,7 @@ ids_menu=("ONE TIME" "REAL TIME" "RECENT WARNINGS" "back")
 system_info_menu=("INFO" "SPECS" "back")
 process_menu=("DEMANDING PROCESSES" "PROCESS TREE" "LOAD AVERAGE" "back")
 
-# Determine if a selected menu item is a submenu or an endpoint action
+# is_menu returns success if the given menu item corresponds to a submenu category, or failure if it is an endpoint action.
 is_menu() {
   case "$1" in
     "Hardware Management"|"Network Management"|"User Management"|"IDS"|"System Info"|"Process Management")
@@ -33,7 +33,7 @@ is_menu() {
   esac
 }
 
-# Display and navigate a menu using arrow keys and highlight the selected item
+# navigate_menu displays a menu, allows navigation with arrow keys, highlights the current selection, and returns the index of the selected item when Enter is pressed.
 navigate_menu() {
   local -n menu_items=$1   # Pass menu by name (reference)
   local prompt=$2          # Prompt title for the menu
@@ -78,7 +78,7 @@ navigate_menu() {
   done
 }
 
-# Handle a submenu by calling the correct UI function based on selection
+# handle_submenu displays a submenu, processes user selection, and invokes the corresponding UI function for the chosen action.
 handle_submenu() {
   local -n submenu=$1  # Menu passed by name
   local title=$2       # Title for the submenu
@@ -142,7 +142,7 @@ handle_submenu() {
   done
 }
 
-# Entry point of the script
+# main launches the interactive menu system and routes user selections to the appropriate submenu or exits the script.
 main() {
   while true; do
     navigate_menu main_menu "Main Menu"

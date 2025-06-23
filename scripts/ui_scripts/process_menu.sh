@@ -1,3 +1,4 @@
+# ui_get_demanding_process displays a real-time, continuously updating list of the top CPU- and memory-consuming processes until the user presses Enter to exit.
 ui_get_demanding_process(){
     clear
     tput civis                 # Hide the cursor
@@ -25,6 +26,7 @@ ui_get_demanding_process(){
     tput cnorm                  # Restore cursor visibility
 }
 
+# ui_get_process_tree displays the system's process tree and waits for user input before returning to the process management menu.
 ui_get_process_tree(){
     clear
     echo -e "${BOLD}${COLOR_MENU}=== Process Tree ===${COLOR_RESET}\n"
@@ -32,6 +34,7 @@ ui_get_process_tree(){
     read -p "Press [Enter] to return to Process Management menu..."
 }
 
+# ui_get_load_average clears the terminal, displays system load averages for 1, 5, and 15 minutes, and waits for user input before returning to the menu.
 ui_get_load_average(){
     clear
     echo -e "${BOLD}${COLOR_MENU}=== Load Average Over 1min, 5min and 15min ===${COLOR_RESET}\n"

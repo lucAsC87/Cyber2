@@ -1,3 +1,4 @@
+# get_average_cpu_stats collects and displays average CPU usage statistics across all CPUs, formatting each metric and highlighting those that exceed predefined thresholds.
 get_average_cpu_stats() {
     local print_statements=""
 
@@ -36,6 +37,7 @@ get_average_cpu_stats() {
 }
 
 
+# get_all_cpu_stats collects and displays CPU usage statistics for each individual CPU core using mpstat, formatting and highlighting metrics that exceed predefined thresholds.
 get_all_cpu_stats() {
     # Check if the 'mpstat' command is available
     if ! command -v mpstat &>/dev/null; then
