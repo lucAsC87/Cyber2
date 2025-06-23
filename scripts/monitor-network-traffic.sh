@@ -1,3 +1,4 @@
+# choose_interface prompts the user to select an active network interface and returns the chosen interface name.
 choose_interface() {
     export LC_ALL=C
     while true; do
@@ -16,7 +17,7 @@ choose_interface() {
     done
 }
 
-# Function to show traffic
+# show_traffic measures and displays network traffic statistics for a specified interface over a one-second interval, including download/upload rates and totals, with alerts for suspicious activity.
 show_traffic() {
     local iface="$1"
     local old_rx=$(awk -v i="^ *$iface:" '$0 ~ i {print $2}' /proc/net/dev)
@@ -74,7 +75,9 @@ show_traffic() {
 # 2323   - Alternative Telnet
 MONITOR_PORTS="21 22 23 25 53 80 110 139 143 445 3389 5900 3306 5432 6379 8080 8443 27017 6667 5000 12345 31337 2323"
 
-# Function to check suspicious connections
+# check_suspicious scans for established TCP connections on monitored ports and reports any suspicious activity.
+#
+# Identifies active connections involving commonly targeted or sensitive ports, logs alerts for each detected connection, and outputs formatted alerts for further monitoring. If no suspicious connections are found, notifies the user.
 check_suspicious() {
     local ports_regex=$(echo "$MONITOR_PORTS" | sed 's/ /|/g')
 

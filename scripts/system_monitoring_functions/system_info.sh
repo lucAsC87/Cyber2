@@ -1,3 +1,4 @@
+# get_system_info displays key system information including user, host, OS, kernel, uptime, shell, terminal, CPU model, and memory usage with color-coded labels.
 get_system_info(){
 
     # Print the current username
@@ -29,6 +30,7 @@ get_system_info(){
 }
 
 
+# get_hardware_info displays detailed hardware information including CPU model, core count, architecture, memory usage, GPU details, and disk device information with color-coded labels.
 get_hardware_info(){
 
     # Print the CPU model name

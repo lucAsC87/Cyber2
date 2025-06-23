@@ -1,3 +1,4 @@
+# ui_get_cpu displays a real-time terminal interface showing average and per-core CPU utilization, refreshing every second until the user presses Enter to exit.
 ui_get_cpu(){
     clear
     tput civis                     # Hide the cursor
@@ -26,6 +27,7 @@ ui_get_cpu(){
 }
 
 
+# ui_get_disk provides a real-time terminal interface displaying current disk usage and disk I/O statistics, refreshing every second until the user presses Enter to exit.
 ui_get_disk(){
     clear
     tput civis                         # Hide the cursor
@@ -54,6 +56,7 @@ ui_get_disk(){
 }
 
 
+# ui_get_ram provides a real-time terminal interface for monitoring system memory and swap usage, updating statistics every second until the user presses Enter to exit.
 ui_get_ram(){
     clear
     tput civis                         # Hide the cursor

@@ -1,3 +1,4 @@
+# ui_get_traffic provides an interactive terminal interface to monitor real-time network traffic for a user-selected network interface, refreshing the display every second until the user exits.
 ui_get_traffic(){
     clear
     tput civis                  # Hide the cursor
@@ -23,6 +24,7 @@ ui_get_traffic(){
     tput cnorm                    # Restore cursor visibility
 }
 
+# ui_get_supicious_port provides a real-time terminal interface for monitoring suspicious port activity, refreshing the display every second until the user presses Enter to exit.
 ui_get_supicious_port(){
     clear
     tput civis                   # Hide the cursor

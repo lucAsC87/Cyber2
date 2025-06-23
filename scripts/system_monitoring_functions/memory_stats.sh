@@ -1,3 +1,4 @@
+# get_memory_stats collects and displays system RAM usage statistics, including total, used, free memory, and usage percentage, with threshold-based warnings for low free memory or high usage.
 get_memory_stats() {
     # Ensure the 'free' command is available
     if ! command -v free &>/dev/null; then
@@ -26,6 +27,7 @@ get_memory_stats() {
 }
 
 
+# get_swap_stats collects and displays formatted system swap usage statistics, including total, used, and free swap, swap usage percentage, and swap-in/out rates, with threshold-based warnings.
 get_swap_stats(){
     # Ensure the 'free' command is available
     if ! command -v free &>/dev/null; then

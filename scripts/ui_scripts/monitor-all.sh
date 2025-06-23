@@ -1,3 +1,4 @@
+# monitor_all runs a sequence of system and network monitoring functions, discarding their outputs.
 monitor_all(){
     show_traffic "$IFACE" >/dev/null
     check_suspicious >/dev/null

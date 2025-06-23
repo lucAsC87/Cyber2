@@ -1,3 +1,6 @@
+# get_disk_io_stats collects and displays disk I/O statistics for physical devices, highlighting metrics that exceed predefined thresholds.
+#
+# Uses `iostat` to gather read and write throughput (in MB/s) and utilization percentage for each detected disk device, formatting the output with alerts for high usage. Only physical disks matching standard device patterns are included.
 get_disk_io_stats() {
     # Check if 'iostat' is available; if not, prompt the user and exit
     if ! command -v iostat &>/dev/null; then
@@ -43,6 +46,7 @@ get_disk_io_stats() {
     echo -e "$print_statements"
 }
 
+# get_disk_usage collects and displays disk usage statistics for physical disk devices, formatting the output with thresholds and alerts for high usage.
 get_disk_usage() {
     local print_statements=""
 

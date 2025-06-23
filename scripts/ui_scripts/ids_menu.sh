@@ -1,3 +1,4 @@
+# ui_get_one_time runs a one-time network monitoring session, displays detected warnings, and appends them to the main log file before returning to the IDS menu.
 ui_get_one_time(){
     LOG_FILE="$LOG_DIR/temp_logs.log"
     touch "$LOG_FILE"                      # Create temporary log file
@@ -28,6 +29,7 @@ ui_get_one_time(){
 }
 
 
+# ui_get_real_time provides a real-time interactive display of network monitoring warnings, updating continuously until the user exits.
 ui_get_real_time(){
     clear
     echo -e "${BOLD}${COLOR_MENU}=== Choose Network Interface ===${COLOR_RESET}"
@@ -66,6 +68,7 @@ ui_get_real_time(){
     tput cnorm                            # Restore cursor visibility
 }
 
+# ui_get_recent_warnings displays the contents of the recent warnings log file and waits for user input before returning to the IDS menu.
 ui_get_recent_warnings(){
     clear
     echo -e "${BOLD}${COLOR_MENU}=== RECENT WARNINGS ===${COLOR_RESET}\n"

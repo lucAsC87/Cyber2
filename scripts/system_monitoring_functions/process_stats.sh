@@ -1,3 +1,4 @@
+# show_process_tree displays a detailed ASCII process tree for the user "age" if the 'pstree' command is available, or prints an installation warning if not.
 show_process_tree() {
     # Check if 'pstree' is available
     if command -v pstree &>/dev/null; then
@@ -11,6 +12,7 @@ show_process_tree() {
 }
 
 
+# show_load extracts and displays the system's 1, 5, and 15-minute load averages, highlighting values that exceed a predefined threshold.
 show_load() {
     print_statements=""
 
@@ -31,7 +33,7 @@ show_load() {
 }
 
 
-# Functions to get top processes
+# get_top_processes_cpu prints a formatted report of the top 20 CPU-consuming processes, highlighting those exceeding a defined CPU usage threshold.
 get_top_processes_cpu() {
     process_tree_cpu=""
 
@@ -57,6 +59,7 @@ get_top_processes_cpu() {
 }
 
 
+# get_top_processes_mem prints a formatted report of the top 20 memory-consuming processes, highlighting those exceeding a memory usage threshold.
 get_top_processes_mem(){
     process_tree_mem=""
 
