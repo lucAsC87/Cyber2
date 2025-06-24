@@ -6,6 +6,9 @@ if [ ! -f "$LOG_HISTORY_FILE" ]; then
     exit 1
 fi
 
+# Clear the screen
+clear
+
 # Print fancy header
 echo -e "\n${BLUE}╔════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║         Log Analysis in Progress         ║${NC}"

@@ -1,7 +1,11 @@
-lucasc87 tty2         tty2             Mon Jun 23 08:17   still logged in
-lucasc87 seat0        login screen     Mon Jun 23 08:17   still logged in
-lucasc87 tty2         tty2             Sun Jun 22 11:41 - down   (12:30)
-lucasc87 seat0        login screen     Sun Jun 22 11:41 - down   (12:30)
-lucasc87 tty2         tty2             Sat Jun 21 10:16 - down   (14:00)
-lucasc87 seat0        login screen     Sat Jun 21 10:16 - down   (14:00)
-lucasc87 tty2         tty2             Fri Jun 20 17:38 - down   (07:14)
+kali     tty7         :0               Tue Jun 24 03:30 - still logged in
+lightdm  tty7         :0               Tue Jun 24 03:26 - 03:30  (00:04)
+kali     tty7         :0               Fri Jun 20 03:01 - 08:03  (05:02)
+lightdm  tty7         :0               Fri Jun 20 03:00 - 03:01  (00:00)
+kali     tty7         :0               Wed Jun 18 03:21 - 14:39  (11:18)
+lightdm  tty7         :0               Wed Jun 18 03:20 - 03:21  (00:00)
+kali     tty7         :0               Tue Jun 17 12:51 - 16:16  (03:25)
+lightdm  tty7         :0               Tue Jun 17 12:50 - 12:51  (00:00)
+kali     tty7         :0               Tue Jun 17 05:39 - 12:07  (06:27)
+lightdm  tty7         :0               Tue Jun 17 05:39 - 05:39  (00:00)
+/var/lib/wtmpdb/wtmp.db begins Tue Jun 17 05:39:01 2025

@@ -1,5 +1,5 @@
-Jun 23 16:29:29 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
-Jun 23 17:03:08 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
-Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
-Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
-Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 24 03:26:19 kali kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Jun 24 03:30:54 kali lightdm[867]: gkr-pam: unable to locate daemon control file
+Jun 24 03:30:54 kali lightdm[756]: pam_systemd(lightdm-greeter:session): Failed to release session: Transport endpoint is not connected
+Jun 24 03:31:09 kali obexd[1482]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
+Jun 24 03:31:09 kali obexd[1482]: Unable to acquire registery: Error calling StartServiceByName for org.gnome.evolution.dataserver.Sources5: Unit evolution-source-registry.service not found.
