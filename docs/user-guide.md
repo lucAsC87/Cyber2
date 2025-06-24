@@ -12,6 +12,10 @@ _A Component of the HIDS Project_
 - RAM and swap  
 - Running processes  
 - System load averages
+- Network traffic
+- Suspicious port activity
+- System Logs
+- User Logins
 
 This script is designed as a core building block for a Host-based Intrusion Detection System (HIDS), allowing users to detect unusual system activity, resource bottlenecks, or other security-relevant anomalies.
 
@@ -21,10 +25,10 @@ This script is designed as a core building block for a Host-based Intrusion Dete
 
 This project is a collaborative effort:
 
-- Harold Defree  
-- Jérémie Loriaux  
-- Luca Cavallo  
-- Daiane Roveda
+- [Harold Defree](https://github.com/GSGSDgggdzez)
+- [Jérémie Loriaux](https://github.com/JeremieLoriaux)
+- [Luca Cavallo](https://github.com/lucAsC87)
+- [Daiane Roveda](https://github.com/DaianeR02)
 
 ---
 
@@ -89,17 +93,17 @@ This will launch the interactive menu interface.
 
 ## 6. Main Menu Options
 
-System Info: Display OS and hardware specs
+- System Info: Display OS and hardware specs
+
+- IDS (Intrusion Detection System): Simulated threat response
 
 - Hardware Management: Monitor CPU, Disk, RAM
 
 - Process Management: Analyze processes and system load
 
-- Network Management: Monitor ports and traffic
+- Network Management: Monitor suspicious ports and traffic
 
-- User Management: View user-related logs
-
-- IPS (Intrusion Prevention System): Simulated threat response
+- User Management: View user-related logs and user logins
 
 - EXIT: Close the program
 
@@ -107,7 +111,6 @@ System Info: Display OS and hardware specs
 ### 7.1 System Info
 
 INFO
-Displays:
 
 - Logged-in user
 
@@ -124,7 +127,6 @@ Displays:
 - Memory summary (Used / Total)
 
 SPECS
-Displays:
 
 - CPU model and core count
 
@@ -139,7 +141,7 @@ Displays:
 ## 7.2 Hardware Management
 #### 7.2.1 CPU Monitoring
 
-AVERAGE CPU UTIL
+Average CPU utilization
 
 - Real-time overall CPU metrics:
 
@@ -147,17 +149,15 @@ AVERAGE CPU UTIL
 
 - Alerts shown for abnormal values
 
-- Updates every second
+- Updates every 2 seconds
 
-- Press Enter to exit
-
-ALL CPU UTIL
+CPU core utilization
 
 - Per-core breakdown of the above metrics
 
 - Individual core alerts
 
-- Updates every second
+- Updates every 2 seconds
 
 - Press Enter to exit
 
@@ -182,7 +182,6 @@ Disk I/O Stats
 #### 7.2.3 RAM Monitoring
 
 Memory Stats
-
 - Total, Used, Free RAM
 
 - RAM usage (%) with alerts
@@ -225,7 +224,7 @@ LOAD AVERAGE
 
 ## 7.4 Network Management 
 
-PORTS
+CHECK SUPICIOUS PORT ACTIVITY
 
 - Shows currently open ports and associated services
 
@@ -254,7 +253,7 @@ TRAFFIC:
 ## 7.5 User Management
 
 LOGS
-
+Displays:
 - Monitors /var/log/auth.log and other log files for login and authentication attempts
 
 - Looks for failed login patterns or sudo misuse
@@ -265,29 +264,21 @@ LOGS
 
 - Press Enter to return
 
-## 7.6 IPS (Intrusion Prevention System) (Under Development)
+## 7.6 IDS (Intrusion Detection System)
 
 ONE TIME: 
 
-- Simulates a single-time intrusion response
+- Monitors all previously mentioned categories for alerts
 
-- Example: Checks for common malware signatures or unauthorized root shells
-
-- Designed as a proof-of-concept for proactive HIDS action
-
-- May log detected events or raise alerts
+- Outputs the found alerts to the terminal
 
 - Press Enter to return
 
 REAL TIME: 
 
-- Monitors live process behavior or filesystem changes (if supported)
+- Continuously monitors all previously mentioned categories for alerts
 
-- Simulates detection of ongoing suspicious activity
-
-- Real-time responses such as logging, alerting, or process termination (optional)
-
-- Still in prototype stage
+- Outputs the currently active alerts to the terminal
 
 - Press Enter to return
 
@@ -295,11 +286,11 @@ REAL TIME:
 
 - A logs/ folder is created inside the project root
 
-- Contains system_logs.log
+- Contains all_system_logs.log (contains all the alerts) and recent_system_logs.log (containes the most recent unique alerts)
 
-- Some sourced scripts (e.g., network or log monitoring) may write to this file
+- All scripts write to these files when they encounter an alert
 
-- Main views typically output directly to the terminal
+- Main outputs typically output directly to the terminal
 
 # 9. Demo Menu Breakdown
 
@@ -313,10 +304,12 @@ This document outlines the menu structure and functionality of the HIDS demo.
     * **INFO**: Basic system info
     * **SPECS**: Hardware specifications
 
+* **IDS**: Placeholder for intrusion prevention
+    * **ONE TIME**: monitors all categories once
+    * **REAL TIME**: monitors all categories until stopped
+
 * **Hardware Management**
-    * **CPU**
-        * **AVERAGE CPU UTIL**: Real-time CPU usage
-        * **ALL CPU UTIL**: Per-core stats
+    * **CPU**: average and per core CPU usage
     * **DISK**: Disk usage and I/O
     * **RAM**: Memory and swap usage
 
@@ -326,13 +319,10 @@ This document outlines the menu structure and functionality of the HIDS demo.
     * **LOAD AVERAGE**: System load averages
 
 * **Network Management**
-    * **PORTS**: (Currently placeholder)
     * **TRAFFIC**: Network traffic monitoring
-
+    * **CHECK SUPICIOUS PORT ACTIVITY**: Monitors suspicous port activity
 * **User Management**
-    * **LOGS**: View log activity
-
-* **IPS**: Placeholder for intrusion prevention
+    * **LOGS**: View log activity and user logins
 
 * **EXIT**
 
@@ -347,10 +337,5 @@ Problem	Solution
 - Real-time views freeze	Ensure the terminal is responsive; press Enter again
 
 - Unexpected behavior in unfinished features	Scripts under development (e.g., User or Network modules) may not behave consistently
-
-# 11. Final Notes
-
-This script is an evolving prototype within a larger HIDS project. Feedback and contributions are welcome.
-
 
 ---

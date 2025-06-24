@@ -1,0 +1,100 @@
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79308 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79309 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79510 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79511 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79512 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79514 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79515 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79519 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79520 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79521 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79522 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79523 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79524 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79525 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79527 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79528 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79533 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79534 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79535 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79536 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79537 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79538 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79540 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79541 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79542 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79549 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79550 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79551 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79552 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79553 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79554 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79556 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79557 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79558 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79782 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79783 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79784 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79785 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 08:58:13 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #79786 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 09:08:39 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 09:08:39 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 09:08:39 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 09:08:39 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 09:24:00 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 09:24:00 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 09:47:37 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #35451 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 09:47:44 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #64129 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 09:47:44 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #64130 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 09:47:44 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #64131 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 09:47:44 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #64132 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 09:47:44 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #64133 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 09:47:44 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #64134 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 10:07:57 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 10:07:57 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 10:07:57 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 10:07:57 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 10:33:36 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 10:33:36 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 11:07:16 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 11:07:16 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 11:07:16 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 11:07:16 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 11:36:55 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 11:36:55 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 12:06:35 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 12:06:35 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 12:06:35 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 12:06:35 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 12:30:20 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 12:30:20 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 13:05:57 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 13:05:57 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 13:05:57 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 13:05:57 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 13:27:08 conan-troutman nm-openvpn[9865]: AEAD Decrypt error: bad packet ID (may be a replay): [ #17475 ] -- see the man page entry for --no-replay and --replay-window for more info or silence this warning with --mute-replay-warnings
+Jun 23 13:32:24 conan-troutman nm-openvpn[9865]: event_wait : Interrupted system call (fd=-1,code=4)
+Jun 23 13:34:51 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 13:34:51 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 14:05:16 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 14:05:16 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 14:05:16 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 14:05:16 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 14:28:34 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 14:28:34 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 15:04:34 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 15:04:34 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 15:04:34 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 15:04:34 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 15:21:22 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 15:21:22 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 16:03:51 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 16:03:51 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 16:03:51 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 16:03:51 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 16:29:29 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: Failed to remove stale fixed CVEs information: remove /var/snap/canonical-livepatch/common/fixed-cves: no such file or directory
+Jun 23 16:29:29 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)

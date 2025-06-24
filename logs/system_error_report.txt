@@ -1,0 +1,5 @@
+Jun 23 16:29:29 conan-troutman canonical-livepatch.canonical-livepatchd[1695]: fetch fixed CVEs failed: nil payload
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: No handler for Region [RCM0] (000000002c3e9273) [SystemCMOS] (20230628/evregion-131)
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Region SystemCMOS (ID=5) has no handler (20230628/exfldio-261)
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Aborting method \_SB.WMID.ESDT due to previous error (AE_NOT_EXIST) (20230628/psparse-529)
+Jun 23 17:03:08 conan-troutman kernel: ACPI Error: Aborting method \_SB.PCI0.LPC0.EC0._Q42 due to previous error (AE_NOT_EXIST) (20230628/psparse-529)

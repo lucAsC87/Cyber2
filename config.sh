@@ -6,9 +6,9 @@ LOG_FILE="$LOG_DIR/all_system_logs.log"
 RECENT_LOG_FILE="$LOG_DIR/recent_system_logs.log"
 
 source "$PROJECT_DIR/scripts/source_ui_scripts.sh"
-source "$PROJECT_DIR/scripts/reporting-mechanism.sh"
-source "$PROJECT_DIR/scripts/monitor-system-ressources.sh"
-source "$PROJECT_DIR/scripts/monitor-network-traffic.sh"
+source "$PROJECT_DIR/scripts/reporting_mechanism.sh"
+source "$PROJECT_DIR/scripts/monitor_system_resources.sh"
+source "$PROJECT_DIR/scripts/monitor_network_traffic.sh"
 
 COLOR_MENU="\e[34m"
 COLOR_ENDPOINT="\e[35m"
@@ -25,7 +25,8 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-MONITOR_PORTS="21 22 23 25 53 80 110 139 143 445 3389 5900 3306 5432 6379 8080 8443 27017 6667 5000 12345 31337 2323"
+# port 54321 used mainly for testing
+MONITOR_PORTS="21 22 23 25 53 80 110 139 143 445 3389 5900 3306 5432 6379 8080 8443 27017 6667 5000 12345 31337 2323 54321"
 DEFAULT_CPU_TOTAL_THRESHOLD=85.00
 DEFAULT_CPU_USR_THRESHOLD=70.00
 DEFAULT_CPU_NICE_THRESHOLD=20.00
