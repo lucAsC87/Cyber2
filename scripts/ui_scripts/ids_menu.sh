@@ -6,7 +6,7 @@ ui_get_one_time(){
     tput civis                            # Hide the cursor
     trap "tput cnorm; stty echo" EXIT    # Ensure cursor is restored when script exits
 
-    echo -e "${BOLD}${COLOR_MENU}=== Choose Network Interface ===${COLOR_RESET}"
+    echo -e "${BOLD}${COLOR_MENU}=== Choose Network Interface ===${COLOR_RESET}\n"
     IFACE=$(choose_interface)             # Let user pick network interface to monitor
 
     clear
@@ -14,7 +14,7 @@ ui_get_one_time(){
     monitor_all                          # Run monitoring; write warnings to LOG_FILE
 
     clear
-    echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}"
+    echo -e "${BOLD}${COLOR_MENU}=== WARNINGS!!!! ===${COLOR_RESET}\n"
     cat "$LOG_FILE"                      # Display collected warnings to user
 
     cat "$LOG_FILE" >> "$LOG_DIR/all_system_logs.log"  # Append warnings to main log file
@@ -56,6 +56,7 @@ ui_get_real_time(){
         (( WARNING_COUNT += COUNT ))   # Accumulate total warnings
 
         echo -e "\nFound $WARNING_COUNT warnings since the start of real time monitoring (view \"$LOG_DIR/all_system_logs.log\" to see them all)"
+        echo
         echo -e "Press [Enter] to return to IDS menu..."
 
         rm $LOG_FILE                  # Remove temp log file for next iteration

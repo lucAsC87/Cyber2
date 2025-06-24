@@ -16,9 +16,9 @@ get_disk_io_stats() {
         print_statements+="${BOLD}Device ${dev}:${COLOR_RESET}\n"
 
         # Append formatted metrics using print_metric (with thresholds and alerts)
-        print_statements+="$(print_metric "Read MB/s" "$read_mb" $DEFAULT_DISK_READ_THRESHOLD "over" "High read on $dev" "DISK")  "
-        print_statements+="$(print_metric "Write MB/s" "$write_mb" $DEFAULT_DISK_WRITE_THRESHOLD "over" "High write on $dev" "DISK")  "
-        print_statements+="$(print_metric "Util (%)" "$util" $DEFAULT_DISK_TPS_THRESHOLD "over" "High utilization on $dev" "DISK")${COLOR_RESET}\n"
+        print_statements+="$(print_metric "Read (MB/s)" "$read_mb" $DEFAULT_DISK_READ_THRESHOLD "over" "High read on $dev" "DISK" "WARNING")  "
+        print_statements+="$(print_metric "Write (MB/s)" "$write_mb" $DEFAULT_DISK_WRITE_THRESHOLD "over" "High write on $dev" "DISK" "WARNING")  "
+        print_statements+="$(print_metric "Util (%)" "$util" $DEFAULT_DISK_TPS_THRESHOLD "over" "High utilization on $dev" "DISK" "WARNING")${COLOR_RESET}\n"
     
     # Use iostat to get extended device stats, sample over 1 second
     done < <(
@@ -68,7 +68,7 @@ get_disk_usage() {
         print_statements+="$(print_metric "Avail (GB)" "$avail_gb" 0 "none" "")  "
 
         # Check usage percentage against threshold
-        print_statements+="$(print_metric "Usage (%)" "$usage_val" $DEFAULT_DISK_THRESHOLD "over" "Disk almost full: $source" "DISK")${COLOR_RESET}\n"
+        print_statements+="$(print_metric "Usage (%)" "$usage_val" $DEFAULT_DISK_THRESHOLD "over" "Disk almost full" "DISK" "INFO")${COLOR_RESET}\n"
     
     # Get disk usage info in kilobytes, ignore irrelevant devices like tmpfs or loop
     done < <(

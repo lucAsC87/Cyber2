@@ -35,13 +35,13 @@ show_traffic() {
 
     echo
     printf "[%s] " "$(date '+%H:%M:%S')"
-    print_metric "Download (KB/s)" "$rx_kb" "$DEFAULT_DOWNLOAD_THRESHOLD" "over" "Suspicious download on the network: incoming traffic above threshold" "NETWORK"
+    print_metric "Download (KB/s)" "$rx_kb" "$DEFAULT_DOWNLOAD_THRESHOLD" "over" "Suspicious download on the network: incoming traffic above threshold" "NETWORK" "WARNING"
     echo -n " | "
-    print_metric "Upload (KB/s)" "$tx_kb" "$DEFAULT_UPLOAD_THRESHOLD" "over" "Suspicious upload on the network: outgoing traffic above threshold" "NETWORK"
+    print_metric "Upload (KB/s)" "$tx_kb" "$DEFAULT_UPLOAD_THRESHOLD" "over" "Suspicious upload on the network: outgoing traffic above threshold" "NETWORK" "WARNING"
     echo -n " | "
-    print_metric "Total Downloaded (MB)" "$rx_mb" 0 "" "" "TRAFFIC"
+    print_metric "Total Downloaded (MB)" "$rx_mb" 0 "" "" "NETWORK"
     echo -n " | "
-    print_metric "Total Uploaded (MB)" "$tx_mb" 0 "" "" "TRAFFIC"
+    print_metric "Total Uploaded (MB)" "$tx_mb" 0 "" "" "NETWORK"
     echo
 
 
@@ -100,7 +100,7 @@ check_suspicious() {
             logger "HIDS ALERT: $local_ip:$local_port -> $remote_ip:$remote_port PID=$pid PROC=$pname"
 
             # Use print_metric to display suspicious connection
-            print_metric "Suspicious Connection" 1 0 "over" "Connection to monitored port detected: $local_ip:$local_port -> $remote_ip:$remote_port (PID $pid, PROC $pname)" "NETWORK"
+            print_metric "Suspicious Connection" 1 0 "over" "Connection to monitored port detected: $local_ip:$local_port -> $remote_ip:$remote_port (PID $pid, PROC $pname)" "NETWORK" "CRITICAL"
             echo
         done
     else

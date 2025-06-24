@@ -45,10 +45,10 @@ get_top_processes_cpu() {
         normalized_cpu=$(awk -v c="$cpu" -v d="$DEFAULT_LOAD_AVERAGE" 'BEGIN { printf "%.2f", c / d }')
 
         # Append formatted metric with warning if needed
-        process_tree_cpu+="$(print_metric "${user} (%)" "$normalized_cpu" $DEFAULT_PROCESS_CPU_THRESHOLD "over" "Process ${pid} is using a lot of compute power" "PROCESS")  PID: $pid  $path\n"
+        process_tree_cpu+="$(print_metric "${user} (%)" "$normalized_cpu" $DEFAULT_PROCESS_CPU_THRESHOLD "over" "Process ${path} is using a lot of compute power" "PROCESS" "WARNING")  PID: $pid  $path\n"
     
     # Use 'ps' to fetch the top 20 CPU-consuming processes, skipping the header
-    done < <(ps aux --sort=-%cpu | grep -v "[p]s aux" | head -21 | tail -20 | awk '{
+    done < <(ps aux --sort=-%cpu | grep -v "[p]s aux" | head -16 | tail -15 | awk '{
         cmd=""; 
         for(i=11;i<=NF;i++) cmd=cmd $i (i==NF ? "" : " ");
         printf "%s %s %s %s\n", $1, $2, $3, $11
@@ -68,10 +68,10 @@ get_top_processes_mem(){
         read -r user pid mem path <<<"$line"
 
         # Append memory usage with formatting and warning if above threshold
-        process_tree_mem+="$(print_metric "${user} (%)" "$mem" $DEFAULT_PROCESS_MEM_THRESHOLD "over" "Process ${pid} is using a lot of memory" "PROCESS")  PID: $pid  $path\n"
+        process_tree_mem+="$(print_metric "${user} (%)" "$mem" $DEFAULT_PROCESS_MEM_THRESHOLD "over" "Process ${path} is using a lot of memory" "PROCESS" ""WARNING)  PID: $pid  $path\n"
     
     # Use 'ps' to fetch the top 20 memory-consuming processes, skipping the header
-    done < <(ps aux --sort=-%mem | grep -v "[p]s aux" | head -21 | tail -20 | awk '{
+    done < <(ps aux --sort=-%mem | grep -v "[p]s aux" | head -16 | tail -15 | awk '{
         cmd="";
         for(i=11;i<=NF;i++) cmd=cmd $i (i==NF ? "" : " ");
         printf "%s %s %s %s\n", $1, $2, $4, $11

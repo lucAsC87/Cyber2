@@ -4,13 +4,13 @@ ui_get_demanding_process(){
     tput civis                 # Hide the cursor
     trap "tput cnorm; stty echo" EXIT # Ensure cursor is restored when script exits
     
-    echo -e "${BOLD}${COLOR_MENU}=== Top CPU-consuming Processes ===${COLOR_RESET}"
+    echo -e "${BOLD}${COLOR_MENU}=== Top CPU-consuming Processes ===${COLOR_RESET}\n"
     
     # Start real time loop
     while true; do
         top_cpu_process=$(get_top_processes_cpu)    # Get top CPU-consuming processes info
         top_mem_process=$(get_top_processes_mem)    # Get top memory-consuming processes info
-        
+
         tput cup 0 0; tput ed   # Reset cursor position and clear screen from cursor down
         
         echo -e "${BOLD}${COLOR_MENU}=== Top CPU-consuming Processes ===${COLOR_RESET}\n"

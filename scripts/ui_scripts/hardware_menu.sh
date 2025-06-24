@@ -43,7 +43,6 @@ ui_get_disk(){
         tput cup 0 0; tput ed               # Reset cursor position and clear screen from cursor down
         echo -e "${BOLD}${COLOR_MENU}=== Disk Usage ===${COLOR_RESET}\n"
         echo "$disk_usage"
-        echo
         echo -e "\n${BOLD}${COLOR_MENU}=== Disk I/O Stats ===${COLOR_RESET}\n"
         echo "$disk_io"
 
@@ -72,7 +71,6 @@ ui_get_ram(){
         tput cup 0 0; tput ed           # Reset cursor position and clear screen from cursor down
         echo -e "${BOLD}${COLOR_MENU}=== Real-Time Memory Usage ===${COLOR_RESET}\n"
         echo "$mem_stats"
-        echo
         echo -e "\n${BOLD}${COLOR_MENU}=== Real-Time Swap Usage ===${COLOR_RESET}\n"
         echo "$swap_stats"
 

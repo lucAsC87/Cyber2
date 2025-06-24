@@ -10,8 +10,12 @@ log_alert() {
     local timestamp
     timestamp=$(date '+%F %T')
 
+    # Escape slashes and special characters for safe sed use
+    local escaped_message
+    escaped_message=$(printf '%s\n' "$message" | sed 's/[&|]/\\&/g')
+
     # Remove any existing log line with the same message from the recent log file
-    sed -i "/MESSAGE: $message/d" "$RECENT_LOG_FILE"
+    sed -i "\|MESSAGE: $escaped_message|d" "$RECENT_LOG_FILE"
 
     # Append formatted log line to recent log file
     echo "$timestamp - $severity - METRIC: $metric - VALUE: $value - THRESHOLD: $threshold - MESSAGE: $message" >> "$RECENT_LOG_FILE"
@@ -32,6 +36,7 @@ print_metric() {
     local condition="$4"      # Comparison condition: "over" or "under"
     local message="$5"        # Message to log if condition is violated
     local metric="$6"         # Metric identifier (for logging purposes)
+    local warning_msg="$7"    # Type identifier (for logging purposes)
 
     local color="$COLOR_BELOW_THRESHOLD"   # Default color (green)
     local violated=0                       # Flag to indicate if threshold was violated
@@ -47,16 +52,19 @@ print_metric() {
 
     # Check if the metric violates the threshold
     if [[ "$condition" == "over" && $(echo "$value > $threshold" | bc -l) -eq 1 ]]; then
-        color="$COLOR_ABOVE_THRESHOLD"  # Use alert color
-        violated=1
+        color="$COLOR_ABOVE_THRESHOLD"
+        [[ -n "$warning_msg" ]] && violated=1  # Set violated only if message is non-empty
     elif [[ "$condition" == "under" && $(echo "$value < $threshold" | bc -l) -eq 1 ]]; then
         color="$COLOR_ABOVE_THRESHOLD"
-        violated=1
+        [[ -n "$warning_msg" ]] && violated=1
+    else
+        color="$COLOR_BELOW_THRESHOLD"    # Normal color (e.g., green)
     fi
+
 
     # If threshold is violated, log the alert
     (( violated )) && {
-        log_alert "WARNING" "$metric" "$value $unit" "$threshold $unit" "$message"
+        log_alert "$warning_msg" "$metric" "$value $unit" "$threshold $unit" "$message"
     }
 
     # Highlight "Total" metrics in bold
