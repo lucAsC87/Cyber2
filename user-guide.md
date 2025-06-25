@@ -126,10 +126,6 @@ INFO
 
 - Shell and terminal type
 
-- CPU model
-
-- Memory summary (Used / Total)
-
 SPECS
 
 - CPU model and core count
@@ -242,7 +238,7 @@ TRAFFIC:
 
 - Press Enter to exit
 
-CHECK SUPICIOUS PORT ACTIVITY
+CHECK SUSPICIOUS PORT ACTIVITY
 
 - Shows currently open ports and associated services
 
@@ -324,7 +320,7 @@ This document outlines the menu structure and functionality of the HIDS demo.
 
 * **Network Management**
     * **TRAFFIC**: Network traffic monitoring
-    * **CHECK SUPICIOUS PORT ACTIVITY**: Monitors suspicous port activity
+    * **CHECK SUSPICIOUS PORT ACTIVITY**: Monitors suspicous port activity
 * **User Management**
     * **LOGS**: View log activity and user logins
 
